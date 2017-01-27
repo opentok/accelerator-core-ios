@@ -35,6 +35,7 @@
 		A0AB9F271E3ADA200068E20F /* OTAcceleratorCoreBundle.bundle in Resources */ = {isa = PBXBuildFile; fileRef = A0AB9F261E3ADA200068E20F /* OTAcceleratorCoreBundle.bundle */; };
 		A0AB9F291E3ADABF0068E20F /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A0AB9F281E3ADABF0068E20F /* Default-568h@2x.png */; };
 		A0AB9F2B1E3ADE2D0068E20F /* OTAcceleratorCoreOneToOneCommunicatorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A0AB9F2A1E3ADE2D0068E20F /* OTAcceleratorCoreOneToOneCommunicatorTests.m */; };
+		A0AB9F2F1E3B20950068E20F /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = A0AB9F2E1E3B20950068E20F /* README.md */; };
 		A0E904EA1DBB00DD00270E87 /* TestOneToOneCommunicatorSwitchingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A0E904E91DBB00DD00270E87 /* TestOneToOneCommunicatorSwitchingViewController.m */; };
 		A0FEAC001D73B3BF000BDDA4 /* OTAcceleratorCore.podspec in Resources */ = {isa = PBXBuildFile; fileRef = A0FEABFD1D73B3BF000BDDA4 /* OTAcceleratorCore.podspec */; };
 /* End PBXBuildFile section */
@@ -112,6 +113,7 @@
 		A0AB9F261E3ADA200068E20F /* OTAcceleratorCoreBundle.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = OTAcceleratorCoreBundle.bundle; sourceTree = "<group>"; };
 		A0AB9F281E3ADABF0068E20F /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		A0AB9F2A1E3ADE2D0068E20F /* OTAcceleratorCoreOneToOneCommunicatorTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OTAcceleratorCoreOneToOneCommunicatorTests.m; sourceTree = "<group>"; };
+		A0AB9F2E1E3B20950068E20F /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		A0CDA0981DF23F060018A2BA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A0CDA09E1DF23F060018A2BA /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A0E904E81DBB00DD00270E87 /* TestOneToOneCommunicatorSwitchingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestOneToOneCommunicatorSwitchingViewController.h; sourceTree = "<group>"; };
@@ -148,6 +150,7 @@
 		A0127A821D34651B00CDA3F5 = {
 			isa = PBXGroup;
 			children = (
+				A0AB9F2E1E3B20950068E20F /* README.md */,
 				A0AB9F281E3ADABF0068E20F /* Default-568h@2x.png */,
 				A0565F361DF640CD001F9032 /* Podfile */,
 				A0FEABFC1D73B3BF000BDDA4 /* CHANGELOG.md */,
@@ -404,6 +407,7 @@
 				A0127AC81D3466AD00CDA3F5 /* FakeAccePack1.m in Sources */,
 				A0AB9F0D1E3AC11F0068E20F /* ShareWholeScreenViewController.m in Sources */,
 				A0565F341DF63F62001F9032 /* OTVideoView.m in Sources */,
+				A0AB9F2F1E3B20950068E20F /* README.md in Sources */,
 				A0AB9F101E3AC2D50068E20F /* OTScreenCapture.m in Sources */,
 				A0565F321DF63F62001F9032 /* OTMultiPartyCommunicator.m in Sources */,
 				A0565F351DF63F62001F9032 /* UIView+Helper.m in Sources */,
