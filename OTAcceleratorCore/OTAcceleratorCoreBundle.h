@@ -9,8 +9,8 @@
 @interface OTAcceleratorCoreBundle : NSObject
 
 /**
- *  @return The bundle for assets in OTAcceleratorPackUtil.
+ *  @return The bundle for assets in OTAcceleratorCore.
  */
-+ (NSBundle *)acceleratorPackUtilBundle;
++ (NSBundle *)acceleratorCoreBundle;
 
 @end

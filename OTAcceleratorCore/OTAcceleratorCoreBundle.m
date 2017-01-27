@@ -8,15 +8,15 @@
 
 @implementation OTAcceleratorCoreBundle
 
-+ (NSBundle *)acceleratorPackUtilBundle {
++ (NSBundle *)acceleratorCoreBundle {
     
-    NSURL *acceleratorPackUtilBundleURL = [[NSBundle mainBundle] URLForResource:@"OTAcceleratorCoreBundle" withExtension:@"bundle"];
-    if (acceleratorPackUtilBundleURL){
-        NSBundle *annotationBundle = [NSBundle bundleWithURL:acceleratorPackUtilBundleURL];
-        if (!annotationBundle.isLoaded) {
-            [annotationBundle load];
+    NSURL *acceleratorCoreBundleURL = [[NSBundle mainBundle] URLForResource:@"OTAcceleratorCoreBundle" withExtension:@"bundle"];
+    if (acceleratorCoreBundleURL){
+        NSBundle *acceleratorCoreBundle = [NSBundle bundleWithURL:acceleratorCoreBundleURL];
+        if (!acceleratorCoreBundle.isLoaded) {
+            [acceleratorCoreBundle load];
         }
-        return annotationBundle;
+        return acceleratorCoreBundle;
     }
     
     return  nil;

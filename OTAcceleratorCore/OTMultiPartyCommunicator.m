@@ -183,8 +183,8 @@ static NSString* const KLogVariationFailure = @"Failure";
 
 - (instancetype)initWithView:(UIView *)view {
     
-    if (!view) return nil;
-    if (self = [[OTMultiPartyCommunicator alloc] init]) {
+    if (!view || CGRectEqualToRect(view.frame, CGRectZero)) return nil;
+    if (self = [[OTMultiPartyCommunicator alloc] initWithName:[NSString stringWithFormat:@"%@-%@-ScreenShare", [UIDevice currentDevice].systemName, [UIDevice currentDevice].name]]) {
         _screenSharingView = view;
     }
     return self;

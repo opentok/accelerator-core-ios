@@ -24,14 +24,14 @@
 
 - (UIImage *)noAudioImage {
     if (!_noAudioImage) {
-        _noAudioImage = [UIImage imageNamed:@"noAudio" inBundle:[OTAcceleratorCoreBundle acceleratorPackUtilBundle] compatibleWithTraitCollection: nil];
+        _noAudioImage = [UIImage imageNamed:@"noAudio" inBundle:[OTAcceleratorCoreBundle acceleratorCoreBundle] compatibleWithTraitCollection: nil];
     }
     return _noAudioImage;
 }
 
 - (UIImage *)noVideoImage {
     if (!_noVideoImage) {
-        _noVideoImage = [UIImage imageNamed:@"noVideo" inBundle:[OTAcceleratorCoreBundle acceleratorPackUtilBundle] compatibleWithTraitCollection: nil];
+        _noVideoImage = [UIImage imageNamed:@"noVideo" inBundle:[OTAcceleratorCoreBundle acceleratorCoreBundle] compatibleWithTraitCollection: nil];
     }
     return _noVideoImage;
 }
@@ -183,8 +183,8 @@
     if (self = [super init]) {
         
         self.backgroundColor = [UIColor lightGrayColor];
-        _audioImage = [UIImage imageNamed:@"audio" inBundle:[OTAcceleratorCoreBundle acceleratorPackUtilBundle] compatibleWithTraitCollection: nil];
-        _videoImage = [UIImage imageNamed:@"video" inBundle:[OTAcceleratorCoreBundle acceleratorPackUtilBundle] compatibleWithTraitCollection: nil];
+        _audioImage = [UIImage imageNamed:@"audio" inBundle:[OTAcceleratorCoreBundle acceleratorCoreBundle] compatibleWithTraitCollection: nil];
+        _videoImage = [UIImage imageNamed:@"video" inBundle:[OTAcceleratorCoreBundle acceleratorCoreBundle] compatibleWithTraitCollection: nil];
         _audioButton = [UIButton buttonWithType:UIButtonTypeCustom];
         [_audioButton setImage:_audioImage forState:UIControlStateNormal];
         _audioButton.translatesAutoresizingMaskIntoConstraints = NO;
@@ -236,7 +236,7 @@
     
     
     if (self = [[OTVideoView alloc] initWithVideoView:publisher.view
-                                     placeHolderImage:[UIImage imageNamed:@"avatar" inBundle:[OTAcceleratorCoreBundle acceleratorPackUtilBundle] compatibleWithTraitCollection: nil]]) {
+                                     placeHolderImage:[UIImage imageNamed:@"avatar" inBundle:[OTAcceleratorCoreBundle acceleratorCoreBundle] compatibleWithTraitCollection: nil]]) {
         
         _publisher = publisher;
         [self addObserver:self
@@ -259,7 +259,7 @@
     
     
     if (self = [[OTVideoView alloc] initWithVideoView:subscriber.view
-                                     placeHolderImage:[UIImage imageNamed:@"avatar" inBundle:[OTAcceleratorCoreBundle acceleratorPackUtilBundle] compatibleWithTraitCollection: nil]]) {
+                                     placeHolderImage:[UIImage imageNamed:@"avatar" inBundle:[OTAcceleratorCoreBundle acceleratorCoreBundle] compatibleWithTraitCollection: nil]]) {
         
         _subscriber = subscriber;
         [self addObserver:self
@@ -312,7 +312,7 @@
 - (UIImage *)placeHolderImage {
     if (!_placeHolderImage) {
         _placeHolderImage = [UIImage imageNamed:@"avatar"
-                                       inBundle:[OTAcceleratorCoreBundle acceleratorPackUtilBundle]
+                                       inBundle:[OTAcceleratorCoreBundle acceleratorCoreBundle]
                   compatibleWithTraitCollection: nil];
     }
     return _placeHolderImage;
