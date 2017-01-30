@@ -39,7 +39,6 @@
 		A0AB9FF01E3ED0020068E20F /* OTAcceleratorCoreMultipartyCommunicatorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A0AB9FEF1E3ED0020068E20F /* OTAcceleratorCoreMultipartyCommunicatorTests.m */; };
 		A0AB9FF21E3ED08B0068E20F /* OTViewHelperTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A0AB9FF11E3ED08B0068E20F /* OTViewHelperTests.m */; };
 		A0AB9FF41E3ED2060068E20F /* OTVideoViewTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A0AB9FF31E3ED2060068E20F /* OTVideoViewTests.m */; };
-		A0E904EA1DBB00DD00270E87 /* TestOneToOneCommunicatorSwitchingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A0E904E91DBB00DD00270E87 /* TestOneToOneCommunicatorSwitchingViewController.m */; };
 		A0FEAC001D73B3BF000BDDA4 /* OTAcceleratorCore.podspec in Resources */ = {isa = PBXBuildFile; fileRef = A0FEABFD1D73B3BF000BDDA4 /* OTAcceleratorCore.podspec */; };
 /* End PBXBuildFile section */
 
@@ -122,8 +121,6 @@
 		A0AB9FF31E3ED2060068E20F /* OTVideoViewTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OTVideoViewTests.m; sourceTree = "<group>"; };
 		A0CDA0981DF23F060018A2BA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A0CDA09E1DF23F060018A2BA /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		A0E904E81DBB00DD00270E87 /* TestOneToOneCommunicatorSwitchingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestOneToOneCommunicatorSwitchingViewController.h; sourceTree = "<group>"; };
-		A0E904E91DBB00DD00270E87 /* TestOneToOneCommunicatorSwitchingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestOneToOneCommunicatorSwitchingViewController.m; sourceTree = "<group>"; };
 		A0FEABFC1D73B3BF000BDDA4 /* CHANGELOG.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = CHANGELOG.md; sourceTree = "<group>"; };
 		A0FEABFD1D73B3BF000BDDA4 /* OTAcceleratorCore.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = OTAcceleratorCore.podspec; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -193,8 +190,6 @@
 				A0127AC71D3466AD00CDA3F5 /* FakeAccePack2.m */,
 				A0127ACA1D34675A00CDA3F5 /* TestOneToOneCommunicatorViewController.h */,
 				A0127ACB1D34675A00CDA3F5 /* TestOneToOneCommunicatorViewController.m */,
-				A0E904E81DBB00DD00270E87 /* TestOneToOneCommunicatorSwitchingViewController.h */,
-				A0E904E91DBB00DD00270E87 /* TestOneToOneCommunicatorSwitchingViewController.m */,
 				A0565F181DF63ACB001F9032 /* TestMultipartyCommunicatorViewController.h */,
 				A0565F191DF63ACB001F9032 /* TestMultipartyCommunicatorViewController.m */,
 				A0AB9F0B1E3AC11F0068E20F /* ShareWholeScreenViewController.h */,
@@ -338,7 +333,6 @@
 					};
 					A0AB9F1B1E3AD9F20068E20F = {
 						CreatedOnToolsVersion = 8.2.1;
-						DevelopmentTeam = MGD69Q275W;
 						ProvisioningStyle = Automatic;
 						TestTargetID = A0127A8A1D34651B00CDA3F5;
 					};
@@ -412,7 +406,6 @@
 				A0127A901D34651B00CDA3F5 /* main.m in Sources */,
 				A0565F331DF63F62001F9032 /* OTOneToOneCommunicator.m in Sources */,
 				A0127AC91D3466AD00CDA3F5 /* FakeAccePack2.m in Sources */,
-				A0E904EA1DBB00DD00270E87 /* TestOneToOneCommunicatorSwitchingViewController.m in Sources */,
 				A0127AC81D3466AD00CDA3F5 /* FakeAccePack1.m in Sources */,
 				A0AB9F0D1E3AC11F0068E20F /* ShareWholeScreenViewController.m in Sources */,
 				A0565F341DF63F62001F9032 /* OTVideoView.m in Sources */,
@@ -629,7 +622,7 @@
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
-				DEVELOPMENT_TEAM = MGD69Q275W;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = OTAcceleratorCoreTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -644,7 +637,7 @@
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
-				DEVELOPMENT_TEAM = MGD69Q275W;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = OTAcceleratorCoreTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
