@@ -231,9 +231,8 @@
 @synthesize placeHolderImage = _placeHolderImage;
 
 - (instancetype)initWithPublisher:(OTPublisher *)publisher {
-    if (![publisher isKindOfClass:[OTPublisher class]]) return nil;
     
-    
+    if (!publisher || ![publisher isKindOfClass:[OTPublisher class]]) return nil;
     
     if (self = [[OTVideoView alloc] initWithVideoView:publisher.view
                                      placeHolderImage:[UIImage imageNamed:@"avatar" inBundle:[OTAcceleratorCoreBundle acceleratorCoreBundle] compatibleWithTraitCollection: nil]]) {
@@ -255,8 +254,8 @@
 }
 
 - (instancetype)initWithSubscriber:(OTSubscriber *)subscriber {
-    if (![subscriber isKindOfClass:[OTSubscriber class]]) return nil;
     
+    if (!subscriber || ![subscriber isKindOfClass:[OTSubscriber class]]) return nil;
     
     if (self = [[OTVideoView alloc] initWithVideoView:subscriber.view
                                      placeHolderImage:[UIImage imageNamed:@"avatar" inBundle:[OTAcceleratorCoreBundle acceleratorCoreBundle] compatibleWithTraitCollection: nil]]) {
@@ -433,6 +432,20 @@
     _placeHolderImage = nil;
     [_placeHolderImageView removeFromSuperview];
     _placeHolderImageView = nil;
+}
+
+- (void)dealloc {
+    if (self.publisher) {
+        [self removeObserver:self forKeyPath:@"publisher.publishVideo"];
+        [self removeObserver:self forKeyPath:@"publisher.publishAudio"];
+    }
+    
+    if (self.subscriber) {
+        [self removeObserver:self forKeyPath:@"subscriber.subscribeToVideo"];
+        [self removeObserver:self forKeyPath:@"subscriber.stream.hasVideo"];
+        [self removeObserver:self forKeyPath:@"subscriber.subscribeToAudio"];
+        [self removeObserver:self forKeyPath:@"subscriber.stream.hasAudio"];
+    }
 }
 
 - (void)refresh {

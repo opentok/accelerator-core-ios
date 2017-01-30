@@ -1,19 +1,19 @@
 //
-//  OTAcceleratorCoreOneToOneCommunicatorTests.m
+//  OTAcceleratorCoreMultipartyCommunicatorTests.m
 //  OTAcceleratorCore
 //
-//  Created by Xi Huang on 1/26/17.
+//  Created by Xi Huang on 1/29/17.
 //  Copyright © 2017 Tokbox, Inc. All rights reserved.
 //
 
 #import <XCTest/XCTest.h>
-#import "OTOneToOneCommunicator.h"
+#import "OTMultiPartyCommunicator.h"
 
-@interface OTAcceleratorCoreOneToOneCommunicatorTests : XCTestCase
+@interface OTAcceleratorCoreMultipartyCommunicatorTests : XCTestCase
 
 @end
 
-@implementation OTAcceleratorCoreOneToOneCommunicatorTests
+@implementation OTAcceleratorCoreMultipartyCommunicatorTests
 
 - (void)setUp {
     [super setUp];
@@ -26,25 +26,25 @@
 }
 
 - (void)testOneToOneCommunicatorInit {
-    OTOneToOneCommunicator *communciator = [[OTOneToOneCommunicator alloc] init];
+    OTMultiPartyCommunicator *communciator = [[OTMultiPartyCommunicator alloc] init];
     XCTAssertNotNil(communciator);
     NSString *defaultName = [NSString stringWithFormat:@"%@-%@", [UIDevice currentDevice].systemName, [UIDevice currentDevice].name];
     XCTAssertTrue([communciator.name isEqualToString:defaultName]);
 }
 
 - (void)testOneToOneCommunicatorInitWithEmptyView {
-    OTOneToOneCommunicator *communciator = [[OTOneToOneCommunicator alloc] initWithView:[[UIView alloc] initWithFrame:CGRectZero]];
+    OTMultiPartyCommunicator *communciator = [[OTMultiPartyCommunicator alloc] initWithView:[[UIView alloc] initWithFrame:CGRectZero]];
     XCTAssertNil(communciator);
 }
 
 - (void)testOneToOneCommunicatorInitWithNilView {
-    OTOneToOneCommunicator *communciator = [[OTOneToOneCommunicator alloc] initWithView:nil];
+    OTMultiPartyCommunicator *communciator = [[OTMultiPartyCommunicator alloc] initWithView:nil];
     XCTAssertNil(communciator);
 }
 
 - (void)testOneToOneCommunicatorInitWithView {
     
-    OTOneToOneCommunicator *communciator = [[OTOneToOneCommunicator alloc] initWithView:[[UIView alloc] initWithFrame:CGRectMake(0, 0, 1, 1)]];
+    OTMultiPartyCommunicator *communciator = [[OTMultiPartyCommunicator alloc] initWithView:[[UIView alloc] initWithFrame:CGRectMake(0, 0, 1, 1)]];
     XCTAssertNotNil(communciator);
     NSString *name = [NSString stringWithFormat:@"%@-%@-ScreenShare", [UIDevice currentDevice].systemName, [UIDevice currentDevice].name];
     XCTAssertTrue([communciator.name isEqualToString:name]);
