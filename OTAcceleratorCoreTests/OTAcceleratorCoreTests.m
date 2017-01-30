@@ -47,6 +47,8 @@
     FakeAccePack1 *pack = [[FakeAccePack1 alloc] init];
     XCTAssertNil([session registerWithAccePack:pack]);
     XCTAssertTrue([session containsAccePack:pack]);
+    XCTAssertTrue(session.getPublishers.count == 0);
+    XCTAssertTrue(session.getSubscribers.count == 0);
 }
 
 - (void)testAcceleratorSessionDeregister {

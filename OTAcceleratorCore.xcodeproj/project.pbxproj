@@ -36,6 +36,9 @@
 		A0AB9F291E3ADABF0068E20F /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A0AB9F281E3ADABF0068E20F /* Default-568h@2x.png */; };
 		A0AB9F2B1E3ADE2D0068E20F /* OTAcceleratorCoreOneToOneCommunicatorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A0AB9F2A1E3ADE2D0068E20F /* OTAcceleratorCoreOneToOneCommunicatorTests.m */; };
 		A0AB9F2F1E3B20950068E20F /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = A0AB9F2E1E3B20950068E20F /* README.md */; };
+		A0AB9FF01E3ED0020068E20F /* OTAcceleratorCoreMultipartyCommunicatorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A0AB9FEF1E3ED0020068E20F /* OTAcceleratorCoreMultipartyCommunicatorTests.m */; };
+		A0AB9FF21E3ED08B0068E20F /* OTViewHelperTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A0AB9FF11E3ED08B0068E20F /* OTViewHelperTests.m */; };
+		A0AB9FF41E3ED2060068E20F /* OTVideoViewTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A0AB9FF31E3ED2060068E20F /* OTVideoViewTests.m */; };
 		A0E904EA1DBB00DD00270E87 /* TestOneToOneCommunicatorSwitchingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A0E904E91DBB00DD00270E87 /* TestOneToOneCommunicatorSwitchingViewController.m */; };
 		A0FEAC001D73B3BF000BDDA4 /* OTAcceleratorCore.podspec in Resources */ = {isa = PBXBuildFile; fileRef = A0FEABFD1D73B3BF000BDDA4 /* OTAcceleratorCore.podspec */; };
 /* End PBXBuildFile section */
@@ -114,6 +117,9 @@
 		A0AB9F281E3ADABF0068E20F /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		A0AB9F2A1E3ADE2D0068E20F /* OTAcceleratorCoreOneToOneCommunicatorTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OTAcceleratorCoreOneToOneCommunicatorTests.m; sourceTree = "<group>"; };
 		A0AB9F2E1E3B20950068E20F /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		A0AB9FEF1E3ED0020068E20F /* OTAcceleratorCoreMultipartyCommunicatorTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OTAcceleratorCoreMultipartyCommunicatorTests.m; sourceTree = "<group>"; };
+		A0AB9FF11E3ED08B0068E20F /* OTViewHelperTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OTViewHelperTests.m; sourceTree = "<group>"; };
+		A0AB9FF31E3ED2060068E20F /* OTVideoViewTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OTVideoViewTests.m; sourceTree = "<group>"; };
 		A0CDA0981DF23F060018A2BA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A0CDA09E1DF23F060018A2BA /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A0E904E81DBB00DD00270E87 /* TestOneToOneCommunicatorSwitchingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestOneToOneCommunicatorSwitchingViewController.h; sourceTree = "<group>"; };
@@ -242,6 +248,9 @@
 				A0AB9F261E3ADA200068E20F /* OTAcceleratorCoreBundle.bundle */,
 				A0AB9F1E1E3AD9F20068E20F /* OTAcceleratorCoreTests.m */,
 				A0AB9F2A1E3ADE2D0068E20F /* OTAcceleratorCoreOneToOneCommunicatorTests.m */,
+				A0AB9FEF1E3ED0020068E20F /* OTAcceleratorCoreMultipartyCommunicatorTests.m */,
+				A0AB9FF31E3ED2060068E20F /* OTVideoViewTests.m */,
+				A0AB9FF11E3ED08B0068E20F /* OTViewHelperTests.m */,
 				A0AB9F201E3AD9F20068E20F /* Info.plist */,
 			);
 			path = OTAcceleratorCoreTests;
@@ -429,6 +438,9 @@
 			files = (
 				A0AB9F1F1E3AD9F20068E20F /* OTAcceleratorCoreTests.m in Sources */,
 				A0AB9F2B1E3ADE2D0068E20F /* OTAcceleratorCoreOneToOneCommunicatorTests.m in Sources */,
+				A0AB9FF01E3ED0020068E20F /* OTAcceleratorCoreMultipartyCommunicatorTests.m in Sources */,
+				A0AB9FF41E3ED2060068E20F /* OTVideoViewTests.m in Sources */,
+				A0AB9FF21E3ED08B0068E20F /* OTViewHelperTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
