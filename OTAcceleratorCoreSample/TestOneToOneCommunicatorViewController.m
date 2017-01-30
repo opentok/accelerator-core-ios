@@ -50,15 +50,6 @@
     UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Choose an testing option"
                                                                    message:nil
                                                             preferredStyle:UIAlertControllerStyleActionSheet];
-    [alert addAction:[UIAlertAction actionWithTitle:@"START/END CALL" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
-        
-        if (self.communicator.isCallEnabled) {
-            [self.communicator disconnect];
-        }
-        else {
-            [self startCall];
-        }
-    }]];
     
     [alert addAction:[UIAlertAction actionWithTitle:@"SWITCH PUBLISHER VIDEO ON/OFF" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
         
