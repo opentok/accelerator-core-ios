@@ -10,7 +10,17 @@
 #import "OTAcceleratorSession.h"
 #import "OTAcceleratorCoreBundle.h"
 
-#import "FakeAccePack1.h"
+@interface FakeAccePack1 : NSObject<OTSessionDelegate>
+
+@end
+
+@implementation FakeAccePack1
+- (void)sessionDidConnect:(OTSession *)session {}
+- (void)sessionDidDisconnect:(OTSession *)session {}
+- (void)session:(OTSession *)session streamCreated:(OTStream *)stream {}
+- (void)session:(OTSession *)session streamDestroyed:(OTStream *)stream {}
+- (void)session:(OTSession *)session didFailWithError:(OTError *)error {}
+@end
 
 @interface OTAcceleratorCoreTests : XCTestCase
 
