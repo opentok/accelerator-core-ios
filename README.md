@@ -30,6 +30,9 @@ The Accelerator Core is an easy manner to integrate audio/video communication to
 
 1. By using Xcode, you can run a simulator and a device at the same time for 1-1 communication. For multiparty call, you might want to run on other platforms like your browsers:
 
+[Accelerator Core Javascript](https://github.com/opentok/accelerator-core-js) <br />
+[Accelerator Core Android](https://github.com/opentok/accelerator-core-android)
+
 ####Obtaining OpenTok Credentials
 
 To use OpenTok's framework you need a Session ID, Token, and API Key you can get these values at the [OpenTok Developer Dashboard](https://dashboard.tokbox.com/) . For production deployment, you must generate the Session ID and Token values using one of the [OpenTok Server SDKs](https://tokbox.com/developer/sdks/server/).
