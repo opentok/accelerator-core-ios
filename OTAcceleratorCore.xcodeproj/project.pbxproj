@@ -12,9 +12,6 @@
 		A0127A991D34651B00CDA3F5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A0127A971D34651B00CDA3F5 /* Main.storyboard */; };
 		A0127A9B1D34651B00CDA3F5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A0127A9A1D34651B00CDA3F5 /* Assets.xcassets */; };
 		A0127A9E1D34651B00CDA3F5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A0127A9C1D34651B00CDA3F5 /* LaunchScreen.storyboard */; };
-		A0127AC31D34668100CDA3F5 /* TestSessionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A0127AC21D34668100CDA3F5 /* TestSessionViewController.m */; };
-		A0127AC81D3466AD00CDA3F5 /* FakeAccePack1.m in Sources */ = {isa = PBXBuildFile; fileRef = A0127AC51D3466AD00CDA3F5 /* FakeAccePack1.m */; };
-		A0127AC91D3466AD00CDA3F5 /* FakeAccePack2.m in Sources */ = {isa = PBXBuildFile; fileRef = A0127AC71D3466AD00CDA3F5 /* FakeAccePack2.m */; };
 		A0127ACC1D34675A00CDA3F5 /* TestOneToOneCommunicatorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A0127ACB1D34675A00CDA3F5 /* TestOneToOneCommunicatorViewController.m */; };
 		A0565F1A1DF63ACB001F9032 /* TestMultipartyCommunicatorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A0565F191DF63ACB001F9032 /* TestMultipartyCommunicatorViewController.m */; };
 		A0565F301DF63F62001F9032 /* OTAcceleratorCoreBundle.m in Sources */ = {isa = PBXBuildFile; fileRef = A0565F241DF63F62001F9032 /* OTAcceleratorCoreBundle.m */; };
@@ -74,12 +71,6 @@
 		A0127A9A1D34651B00CDA3F5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A0127A9D1D34651B00CDA3F5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A0127A9F1D34651B00CDA3F5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		A0127AC11D34668100CDA3F5 /* TestSessionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestSessionViewController.h; sourceTree = "<group>"; };
-		A0127AC21D34668100CDA3F5 /* TestSessionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestSessionViewController.m; sourceTree = "<group>"; };
-		A0127AC41D3466AD00CDA3F5 /* FakeAccePack1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FakeAccePack1.h; sourceTree = "<group>"; };
-		A0127AC51D3466AD00CDA3F5 /* FakeAccePack1.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FakeAccePack1.m; sourceTree = "<group>"; };
-		A0127AC61D3466AD00CDA3F5 /* FakeAccePack2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FakeAccePack2.h; sourceTree = "<group>"; };
-		A0127AC71D3466AD00CDA3F5 /* FakeAccePack2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FakeAccePack2.m; sourceTree = "<group>"; };
 		A0127ACA1D34675A00CDA3F5 /* TestOneToOneCommunicatorViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestOneToOneCommunicatorViewController.h; sourceTree = "<group>"; };
 		A0127ACB1D34675A00CDA3F5 /* TestOneToOneCommunicatorViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestOneToOneCommunicatorViewController.m; sourceTree = "<group>"; };
 		A0565F181DF63ACB001F9032 /* TestMultipartyCommunicatorViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestMultipartyCommunicatorViewController.h; sourceTree = "<group>"; };
@@ -182,12 +173,6 @@
 				A0AB9F141E3AD0A00068E20F /* OTAcceleratorCoreBundle.bundle */,
 				A0127A911D34651B00CDA3F5 /* AppDelegate.h */,
 				A0127A921D34651B00CDA3F5 /* AppDelegate.m */,
-				A0127AC11D34668100CDA3F5 /* TestSessionViewController.h */,
-				A0127AC21D34668100CDA3F5 /* TestSessionViewController.m */,
-				A0127AC41D3466AD00CDA3F5 /* FakeAccePack1.h */,
-				A0127AC51D3466AD00CDA3F5 /* FakeAccePack1.m */,
-				A0127AC61D3466AD00CDA3F5 /* FakeAccePack2.h */,
-				A0127AC71D3466AD00CDA3F5 /* FakeAccePack2.m */,
 				A0127ACA1D34675A00CDA3F5 /* TestOneToOneCommunicatorViewController.h */,
 				A0127ACB1D34675A00CDA3F5 /* TestOneToOneCommunicatorViewController.m */,
 				A0565F181DF63ACB001F9032 /* TestMultipartyCommunicatorViewController.h */,
@@ -397,7 +382,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A0127AC31D34668100CDA3F5 /* TestSessionViewController.m in Sources */,
 				A0AB9F131E3AC70E0068E20F /* ShareWholeScreenMultipartyViewController.m in Sources */,
 				A0127A931D34651B00CDA3F5 /* AppDelegate.m in Sources */,
 				A0565F301DF63F62001F9032 /* OTAcceleratorCoreBundle.m in Sources */,
@@ -405,8 +389,6 @@
 				A0565F1A1DF63ACB001F9032 /* TestMultipartyCommunicatorViewController.m in Sources */,
 				A0127A901D34651B00CDA3F5 /* main.m in Sources */,
 				A0565F331DF63F62001F9032 /* OTOneToOneCommunicator.m in Sources */,
-				A0127AC91D3466AD00CDA3F5 /* FakeAccePack2.m in Sources */,
-				A0127AC81D3466AD00CDA3F5 /* FakeAccePack1.m in Sources */,
 				A0AB9F0D1E3AC11F0068E20F /* ShareWholeScreenViewController.m in Sources */,
 				A0565F341DF63F62001F9032 /* OTVideoView.m in Sources */,
 				A0AB9F2F1E3B20950068E20F /* README.md in Sources */,
