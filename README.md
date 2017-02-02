@@ -12,11 +12,7 @@ The Accelerator Core is an easy manner to integrate audio/video communication to
 - multiparty screen sharing
 - UI components for handling audio/video enable&disable
 
-# Sample app used by Core
-
-A sample app for javascript, Android and iOS is available [here](https://github.com/opentok/one-to-one-sample-apps). To configure, build and run the sample app follow these steps:
-
-1. Download or git clone the [sample app](https://github.com/opentok/one-to-one-sample-apps).
+# Configure, build and run the sample app <br/>
 
 1. Get values for **API Key**, **Session ID**, and **Token**. See [Obtaining OpenTok Credentials](#obtaining-opentok-credentials) for important information.
 
@@ -34,8 +30,8 @@ A sample app for javascript, Android and iOS is available [here](https://github.
 
 1. By using Xcode, you can run a simulator and a device at the same time for 1-1 communication. For multiparty call, you might want to run on other platforms:
 
-- [Accelerator Core Javascript](https://github.com/opentok/accelerator-core-js).
-- [Accelerator Core Android](https://github.com/opentok/accelerator-core-android).
+[Accelerator Core Javascript](https://github.com/opentok/accelerator-core-js) <br />
+[Accelerator Core Android](https://github.com/opentok/accelerator-core-android)
 
 ####Obtaining OpenTok Credentials
 
