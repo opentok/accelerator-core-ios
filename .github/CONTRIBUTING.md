@@ -1,41 +1,43 @@
-# Contributing to OpenTok One-to-One Communication Sample Apps
+# Contributing Guidelines
 
-## Code of Conduct
+For anyone looking to get involved to this project, we are glad to hear from you. Here are a few types of contributions
+that we would be interested in hearing about.
 
-Please read our [Code of Conduct](https://github.com/opentok/accelerator-core-ios/blob/master/.github/CONDUCT.md). Intolerance, disrespect, and any of form of negativity will not be tolerated.
+*  Bug fixes
+    -  If you find a bug, please first report it using Github Issues.
+    -  Issues that have already been identified as a bug will be labelled `bug`.
+    -  If you'd like to submit a fix for a bug, send a Pull Request from your own fork and mention the Issue number.
+        +  Include a test that isolates the bug and verifies that it was fixed.
+*  New Features
+    -  If you'd like to accomplish something in the library that it doesn't already do, describe the problem in a new
+       Github Issue.
+    -  Issues that have been identified as a feature request will be labelled `enhancement`.
+    -  If you'd like to implement the new feature, please wait for feedback from the project maintainers before spending
+       too much time writing the code. In some cases, `enhancement`s may not align well with the project objectives at
+       the time.
+*  Tests, Documentation, Miscellaneous
+    -  If you think the test coverage could be improved, the documentation could be clearer, you've got an alternative
+       implementation of something that may have more advantages, or any other change we would still be glad hear about
+       it.
+       -  If its a trivial change, go ahead and send a Pull Request with the changes you have in mind
+       -  If not, open a Github Issue to discuss the idea first.
 
-## Opening a new issue
+## Requirements
 
-1. Read *the entire* [README](https://github.com/opentok/accelerator-core-ios/blob/master/README.md).
-* Search [open issues](https://github.com/opentok/accelerator-core-ios/issues) *and* [closed issues](https://github.com/opentok/accelerator-core-ios/issues?q=is%3Aissue+is%3Aclosed) to **avoid opening a duplicate issue.
-* If your issue exists and you have some new information to contribute, you may add a comment to its thread.
-* Otherwise, open a new issue with a clear title and description.
-* Provide **all** of the following information:
-  - Library version(s)
-  - iOS, Android, or browser version(s)
-  - Devices, simulators, or machines affected
-  - Expected behavior vs actual behavior
-  - Complete steps to reproduce the issue
-  - Link to a project that exhibits the issue. It is recommended that you fork the repo and modify the demo project.
-  - Screenshots, GIFs, or videos depicting the issue, if applicable.
-  - Full crash log, if applicable.
-  - A list of all possibly related issues.
+For a contribution to be accepted:
 
-## Submitting a pull request
+*  The test suite must be complete and pass
+*  Code must follow existing styling conventions
+*  Commit messages must be descriptive. Related issues should be mentioned by number.
 
-1. Link to the issue that the pull request resolves. If the issue does not exist, create one.
-2. Write unit tests that test your changes, if applicable.
-3. Update header documentation as needed.
-4. Follow the existing coding style. For more information, see [style guidelines](https://github.com/NYTimes/objective-c-style-guide).
-5. Resolve any merge conflicts.
-6. Squash your commits into a single commit.
+If the contribution doesn't meet these criteria, a maintainer will discuss it with you on the Issue. You can still
+continue to add more commits to the branch you have sent the Pull Request from.
 
-## Did you read all of this?
+## How To Start
 
-Be sure you have visited all the links in this document.
-
-### New issue checklist
-
-When opening your new issue and filling out the checklist, you'll be asked for confirmation. Confirm that you've read this with these emoji: :muscle::sunglasses::facepunch:
-
-> - [x] I have reviewed the contributing guidelines. Confirmation: :muscle::sunglasses::facepunch:
+1. Fork this repository on GitHub.
+1. Clone/fetch your fork to your local development machine.
+1. Create a new branch (e.g. `issue-12`, `feat.add_foo`, etc) and check it out.
+1. Make your changes and commit them. (Did the tests pass?)
+1. Push your new branch to your fork. (e.g. `git push myname issue-12`)
+1. Open a Pull Request from your new branch to the original fork's `master` branch.
