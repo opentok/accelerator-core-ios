@@ -11,15 +11,6 @@
 
 #import <OTKAnalytics/OTKLogger.h>
 
-static NSString* const KLogClientVersion = @"ios-vsol-2.0.0";
-static NSString* const kLogComponentIdentifier = @"oneToOneCommunication";
-static NSString* const KLogActionInitialize = @"Init";
-static NSString* const KLogActionStartCommunication = @"StartComm";
-static NSString* const KLogActionEndCommunication = @"EndComm";
-static NSString* const KLogVariationAttempt = @"Attempt";
-static NSString* const KLogVariationSuccess = @"Success";
-static NSString* const KLogVariationFailure = @"Failure";
-
 @interface LoggingWrapper: NSObject
 @property (nonatomic) OTKLogger *logger;
 @end
@@ -106,9 +97,16 @@ static NSString* const KLogVariationFailure = @"Failure";
 - (NSError *)connect {
     
     LoggingWrapper *loggingWrapper = [LoggingWrapper sharedInstance];
-    [loggingWrapper.logger logEventAction:KLogActionStartCommunication
-                                variation:KLogVariationAttempt
-                               completion:nil];
+    if (!_screenSharingView) {
+        [loggingWrapper.logger logEventAction:KLogActionStartCommunication
+                                    variation:KLogVariationAttempt
+                                   completion:nil];
+    }
+    else {
+        [loggingWrapper.logger logEventAction:KLogActionStartScreenCommunication
+                                    variation:KLogVariationAttempt
+                                   completion:nil];
+    }
     
     NSError *connectError = [self.session registerWithAccePack:self];
     if (!connectError) {

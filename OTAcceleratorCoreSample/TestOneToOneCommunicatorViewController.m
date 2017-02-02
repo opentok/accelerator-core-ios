@@ -20,21 +20,11 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.communicator = [[OTOneToOneCommunicator alloc] init];
-    self.communicator.dataSource = self;
-    [self startCall];
-    
     UIBarButtonItem *rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Options" style:UIBarButtonItemStylePlain target:self action:@selector(navigateToOtherViews)];
     self.navigationItem.rightBarButtonItem = rightBarButtonItem;
-}
-
-- (void)viewWillDisappear:(BOOL)animated {
-    [super viewWillDisappear:animated];
-    [self.communicator disconnect];
-    self.communicator = nil;
-}
-
-- (void)startCall {
+    
+    self.communicator = [[OTOneToOneCommunicator alloc] init];
+    self.communicator.dataSource = self;
     [self.communicator connectWithHandler:^(OTCommunicationSignal signal, NSError *error) {
         if (signal == OTPublisherCreated && !error) {
             self.communicator.publisherView.frame = self.publisherView.bounds;
@@ -50,19 +40,16 @@
     }];
 }
 
+- (void)viewWillDisappear:(BOOL)animated {
+    [super viewWillDisappear:animated];
+    [self.communicator disconnect];
+    self.communicator = nil;
+}
+
 - (void)navigateToOtherViews {
     UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Choose an testing option"
                                                                    message:nil
                                                             preferredStyle:UIAlertControllerStyleActionSheet];
-    [alert addAction:[UIAlertAction actionWithTitle:@"START/END CALL" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
-        
-        if (self.communicator.isCallEnabled) {
-            [self.communicator disconnect];
-        }
-        else {
-            [self startCall];
-        }
-    }]];
     
     [alert addAction:[UIAlertAction actionWithTitle:@"SWITCH PUBLISHER VIDEO ON/OFF" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
         

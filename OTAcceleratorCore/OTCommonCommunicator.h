@@ -8,14 +8,22 @@
 
 #import <Foundation/Foundation.h>
 
-@interface OTCommonCommunicator : NSObject
+static NSString* const KLogClientVersion = @"ios-vsol-2.0.0";
+static NSString* const kLogComponentIdentifier = @"OTAcceleratorCore";
+static NSString* const KLogActionInitialize = @"Init";
+static NSString* const KLogActionStartCommunication = @"StartComm";
+static NSString* const KLogActionStartScreenCommunication = @"StartScreenComm";
+static NSString* const KLogActionEndCommunication = @"EndComm";
+static NSString* const KLogVariationAttempt = @"Attempt";
+static NSString* const KLogVariationSuccess = @"Success";
+static NSString* const KLogVariationFailure = @"Failure";
 
 typedef NS_ENUM(NSUInteger, OTCommunicationSignal) {
-    OTPublisherCreated,
-    OTPublisherDestroyed,
-    OTSubscriberCreated,
-    OTSubscriberReady,
-    OTSubscriberDestroyed,
+    OTPublisherCreated,     // capture camera/screen successfully and publishing in the OpenTok cloud
+    OTPublisherDestroyed,   // stop camera/screen capture and stop publishing in the OpenTok cloud
+    OTSubscriberCreated,    // a new subscriber comes in
+    OTSubscriberReady,      // a new subscriber starts receving the camera/screen audio/video tracks
+    OTSubscriberDestroyed,  // a subscriber stops receving the camera/screen audio/video tracks
     OTSubscriberVideoDisabledByPublisher,
     OTSubscriberVideoDisabledBySubscriber,
     OTSubscriberVideoDisabledByBadQuality,
@@ -35,5 +43,3 @@ typedef NS_ENUM(NSInteger, OTVideoViewContentMode) {
 };
 
 typedef void (^OTCommunicatorBlock)(OTCommunicationSignal signal, NSError *error);
-
-@end

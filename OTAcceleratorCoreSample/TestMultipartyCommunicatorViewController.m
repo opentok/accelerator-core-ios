@@ -23,10 +23,6 @@
     
     self.communicator = [[OTMultiPartyCommunicator alloc] init];
     self.communicator.dataSource = self;
-    [self startCall];
-}
-
-- (void)startCall {
     [self.communicator connectWithHandler:^(OTCommunicationSignal signal, OTMultiPartyRemote *subscriber, NSError *error) {
         if (signal == OTPublisherCreated && !error) {
             self.communicator.publisherView.frame = self.publisherView.bounds;
@@ -50,7 +46,6 @@
         }
     }];
 }
-
 - (void)viewWillDisappear:(BOOL)animated {
     [super viewWillDisappear:animated];
     [self.communicator disconnect];
