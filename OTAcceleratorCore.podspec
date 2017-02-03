@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
   s.name             = "OTAcceleratorCore"
-  s.version          = "1.0.0-beta"
-  s.summary          = "OpenTok Accelerator Core iOS permits all accelerators and samples to share the same OpenTok session."
+  s.version          = "1.0.1"
+  s.summary          = "A painless way to integrate audio/video(screen sharing) to any iOS applications via Tokbox."
 
   s.description      = "The OpenTok Accelerator Core is required whenever you use any of the OpenTok accelerators. The OpenTok Accelerator Core is a common layer that permits all accelerators and samples to share the same OpenTok session. The accelerator packs and sample app access the OpenTok session through the Accelerator Core Pack layer, which allows them to share a single OpenTok session.
 

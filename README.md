@@ -1,6 +1,9 @@
 ![logo](./tokbox-logo.png)
 
 [![Build Status](https://travis-ci.com/opentok/accelerator-core-ios.svg?token=Bgz48rVAyAihVsymz2iz&branch=master)](https://travis-ci.com/opentok/accelerator-core-ios)
+![Version Status](https://img.shields.io/cocoapods/v/OTAcceleratorCore.svg)
+![license MIT](https://img.shields.io/cocoapods/l/OTAcceleratorCore.svg)
+![Platform](https://img.shields.io/cocoapods/p/OTAcceleratorCore.svg)
 
 # Accelerator Core iOS <br/>
 
