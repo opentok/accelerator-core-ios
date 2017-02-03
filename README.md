@@ -36,6 +36,14 @@ The Accelerator Core is an easy manner to integrate audio/video communication to
 [Accelerator Core Javascript](https://github.com/opentok/accelerator-core-js) <br />
 [Accelerator Core Android](https://github.com/opentok/accelerator-core-android)
 
+##Sample Apps that uses the Core
+
+The following sample apps use `Accelerator Core`:
+
+- [OpenTok One-to-One Communication Sample Apps](https://github.com/opentok/one-to-one-sample-apps) 
+
+
+
 ####Obtaining OpenTok Credentials
 
 To use OpenTok's framework you need a Session ID, Token, and API Key you can get these values at the [OpenTok Developer Dashboard](https://dashboard.tokbox.com/) . For production deployment, you must generate the Session ID and Token values using one of the [OpenTok Server SDKs](https://tokbox.com/developer/sdks/server/).
