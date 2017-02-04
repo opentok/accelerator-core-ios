@@ -16,7 +16,7 @@ env:
   #- DESTINATION="OS=9.2,name=iPhone 6s Plus" SDK="$IOS_SDK" SCHEME="$IOS_SCHEME" RUN_TESTS="YES" BUILD_EXAMPLE="NO"  POD_LINT="YES" RUN_UI_TESTS="NO"
   - DESTINATION="OS=9.3,name=iPad Air 2"     SDK="$IOS_SDK" SCHEME="$IOS_SCHEME" RUN_TESTS="YES" BUILD_EXAMPLE="NO"  POD_LINT="YES" RUN_UI_TESTS="NO"
 
-  - DESTINATION="OS=10.0,name=iPhone 6s"   SDK="$IOS_SDK" SCHEME="$IOS_SCHEME" RUN_TESTS="YES" BUILD_EXAMPLE="YES" POD_LINT="YES" RUN_UI_TESTS="NO"
+  - DESTINATION="OS=10.0,name=iPhone 6s"   SDK="$IOS_SDK" SCHEME="$IOS_SCHEME" RUN_TESTS="YES" BUILD_EXAMPLE="NO" POD_LINT="YES" RUN_UI_TESTS="NO"
 
 before_install:
   - gem install cocoapods --pre
@@ -35,3 +35,9 @@ script:
     xcodebuild clean build -workspace "$WORKSPACE" -scheme "$SCHEME" -sdk "$SDK" -destination "$DESTINATION" -configuration Debug ONLY_ACTIVE_ARCH=NO | xcpretty -c;
   fi
 
+notifications:
+  slack:
+    rooms:
+      - secure: D/N8TGgUxGx03qi06J6SyIfsLh4UTevsbfpebpFfSwgOx/L0tknzmQtWkDN7lfnkQLcAoJNQZMD1LWlGPpi5dtvDhNcQoGUcbRNtaXnpJAwqC5Wvgqh8VatMzzyqmJ3wdUdIl2DhHC61Mr5ivHYDoBac9PjRdKSgQCqLuNSQUC4VYOQMIbr3hqjYnswzVtTb2vGg7yYg852Trydyseerqe3BhhbC5z6qZXNtnffxRWP9fmEhVvHeFbff63YsLyQA6/KmfBiEIylPbbrtY+hwHVnza5AVX3oM23IMFPpLc2lVozRyATsxkMfALD3DBY54tTkCP/WZfhflom1ohZNcnxmQx+qe0xBF6SIb5vmgaGHZhETX5KBF8OHbEHSJGjRRESzVSxsfUAnp4gmBkWbXrAW1LAldhwdIwFaA6oyToRKhq+SIgdQOBRPsfg+H1AJeHt6pgkF4nmcnxeZMPor/1vYVLtH1rt2YQg5mMPsz0Ni1Ug3HCY2XlhFpFK2AZNgJpR8QuzsZoC3ExpkDypooLe3dbXJCsLm8AFIyp5WzT9D090xtuD5Bgz6dZb5bkPGJpeSTPCvPHyi6DSEBfPUk6IYMj7Nlpcl57J2iUetULjrT1uGMddj8FeUr/P4/2C7a3tZgLGk9frcBNYJYqyvAII2yhFflj2YQmDybdxeO6Hg=
+    on_success: always
+    on_failure: always

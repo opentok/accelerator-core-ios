@@ -1,9 +1,10 @@
 ![logo](./tokbox-logo.png)
 
 [![Build Status](https://travis-ci.com/opentok/accelerator-core-ios.svg?token=Bgz48rVAyAihVsymz2iz&branch=master)](https://travis-ci.com/opentok/accelerator-core-ios)
-![Version Status](https://img.shields.io/cocoapods/v/OTAcceleratorCore.svg)
-![license MIT](https://img.shields.io/cocoapods/l/OTAcceleratorCore.svg)
-![Platform](https://img.shields.io/cocoapods/p/OTAcceleratorCore.svg)
+[![Version Status](https://img.shields.io/cocoapods/v/OTAcceleratorCore.svg)](https://cocoapods.org/pods/OTAcceleratorCore)
+[![license MIT](https://img.shields.io/cocoapods/l/OTAcceleratorCore.svg)](https://cocoapods.org/pods/OTAcceleratorCore)
+[![Platform](https://img.shields.io/cocoapods/p/OTAcceleratorCore.svg)](https://cocoapods.org/pods/OTAcceleratorCore)
+[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](http://makeapullrequest.com)
 
 # Accelerator Core iOS <br/>
 
@@ -36,7 +37,7 @@ The Accelerator Core is an easy manner to integrate audio/video communication to
 [Accelerator Core Javascript](https://github.com/opentok/accelerator-core-js) <br />
 [Accelerator Core Android](https://github.com/opentok/accelerator-core-android)
 
-##Sample Apps that uses the Core
+# Sample Apps that uses the Core
 
 The following sample apps use `Accelerator Core`:
 
