@@ -32,7 +32,9 @@ The Accelerator Core is an easy manner to integrate audio/video communication to
 
 1. Use Xcode to build and run the app on an iOS simulator or device.
 
-1. By using Xcode, you can run a simulator and a device at the same time for 1-1 communication. For multiparty call, you might want to run on other platforms:
+1. For testing audio/video communication, we include a simple web app to make it easier: [Browser-Demo](https://github.com/opentok/accelerator-core-ios/blob/master/browser-demo.html). Simply open it and replace the corresponding API Key, Session ID, and Token values. Then save and load it to the browser. For multiparty, you can achieve by opening up multiple tabs.
+
+1. You might want to run on other platforms:
 
 [Accelerator Core Javascript](https://github.com/opentok/accelerator-core-js) <br />
 [Accelerator Core Android](https://github.com/opentok/accelerator-core-android)
