@@ -301,6 +301,15 @@
                            forControlEvents:UIControlEventTouchUpInside];
         [self addSubview:_controlView];
         _controlView.frame = CGRectMake(10, 10, CGRectGetWidth(self.frame) * 0.1, CGRectGetHeight(self.frame) * 0.3);
+        
+        if (self.publisher) {
+            [self.controlView updateAudioButton:self.publisher.publishAudio];
+            [self.controlView updateVideoButton:self.publisher.publishVideo];
+        }
+        else if (self.subscriber) {
+            [self.controlView updateAudioButton:self.subscriber.subscribeToAudio];
+            [self.controlView updateVideoButton:self.subscriber.subscribeToVideo];
+        }
     }
     else {
         [_controlView removeFromSuperview];
