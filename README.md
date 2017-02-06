@@ -20,6 +20,12 @@ The Accelerator Core is an easy manner to integrate audio/video communication to
 
 1. Get values for **API Key**, **Session ID**, and **Token**. See [Obtaining OpenTok Credentials](#obtaining-opentok-credentials) for important information.
 
+1. Install CocoaPods as described in [CocoaPods Getting Started](https://guides.cocoapods.org/using/getting-started.html#getting-started).
+
+1. In Terminal, `cd` to your project directory and type `pod install`.
+
+1. Reopen your project in Xcode using the new `*.xcworkspace` file.
+
 1. Replace the following empty strings with the corresponding API Key, Session ID, and Token values:
 
     ```objc
@@ -38,6 +44,63 @@ The Accelerator Core is an easy manner to integrate audio/video communication to
 
 [Accelerator Core Javascript](https://github.com/opentok/accelerator-core-js) <br />
 [Accelerator Core Android](https://github.com/opentok/accelerator-core-android)
+
+# Sample Codes
+
+Each communicator instance will take the OpenTok session from OTOneToOneCommunicatorDataSource, so this applies to each communicator instance:
+
+- Passing the session
+    ```objc
+    - (OTAcceleratorSession *)sessionOfOTOneToOneCommunicator:(OTOneToOneCommunicator *)oneToOneCommunicator {
+        return <#OTAcceleratorSession#>;
+    }
+    ```
+
+- One-to-One
+
+    ```objc
+    self.communicator = [[OTOneToOneCommunicator alloc] init];
+    self.communicator.dataSource = self;
+    [self.communicator connectWithHandler:^(OTCommunicationSignal signal, NSError *error) {
+        if (signal == OTPublisherCreated && !error) {
+            self.communicator.publisherView.frame = CGRectMake(0, 0, 100, 100);
+            [self.publisherView addSubview:self.communicator.publisherView];
+        }
+        else if (signal == OTSubscriberReady && !error) {
+            self.communicator.subscriberView.frame = CGRectMake(0, 0, 100, 100);
+            [self.subscriberView addSubview:self.communicator.subscriberView];
+        }
+    }];
+    ```
+
+- Multiparty
+
+    ```objc
+    self.communicator = [[OTMultiPartyCommunicator alloc] init];
+    self.communicator.dataSource = self;
+    [self.communicator connectWithHandler:^(OTCommunicationSignal signal, OTMultiPartyRemote *subscriber, NSError *error) {
+        if (signal == OTPublisherCreated && !error) {
+            self.communicator.publisherView.frame = CGRectMake(0, 0, 100, 100);
+            [self.publisherView addSubview:self.communicator.publisherView];
+        }
+        else if (signal == OTSubscriberReady && !error) {
+            subscriber.subscriberView.frame = <#your desired frame for this remote subscriberview#>;
+            // your logic to handle multiple remote subscriberview(s)
+        }
+    }];
+    ```
+
+- Screen Sharing
+
+    Use `- (instancetype)initWithView:` or `- (instancetype)initWithView:name:` like so
+    ```objc
+    self.screenSharer = [[OTOneToOneCommunicator alloc] initWithView:[UIApplication sharedApplication].keyWindow.rootViewController.view];
+    ```
+    or 
+    ```objc
+    self.screenSharer = [[OTMultiPartyCommunicator alloc] initWithView:[UIApplication sharedApplication].keyWindow.rootViewController.view];
+    ```
+    
 
 # Sample Apps that uses the Core
 
