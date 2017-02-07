@@ -30,11 +30,11 @@ script:
   fi
 
 - if [ $RUN_TESTS == "YES" ]; then
-    xcodebuild clean build test -workspace "$WORKSPACE" -scheme "$SCHEME" -sdk "$SDK" -destination "$DESTINATION" -configuration Debug ONLY_ACTIVE_ARCH=NO | xcpretty -c;
+    travis_retry xcodebuild clean build test -workspace "$WORKSPACE" -scheme "$SCHEME" -sdk "$SDK" -destination "$DESTINATION" -configuration Debug ONLY_ACTIVE_ARCH=NO | xcpretty -c;
   else
-    xcodebuild clean build -workspace "$WORKSPACE" -scheme "$SCHEME" -sdk "$SDK" -destination "$DESTINATION" -configuration Debug ONLY_ACTIVE_ARCH=NO | xcpretty -c;
+    travis_retry xcodebuild clean build -workspace "$WORKSPACE" -scheme "$SCHEME" -sdk "$SDK" -destination "$DESTINATION" -configuration Debug ONLY_ACTIVE_ARCH=NO | xcpretty -c;
   fi
-
 notifications:
   slack:
-    secure: ipGaZDivkGwHM5lFH0PKsHjORMTF4h6tF5Uq6axvXIWdxFUVhFLMrdWlrZrdNGnpPc3/TD4ZJ7HnC8K3cfzNp/nuQEDEpXxetGZXKx8QFJrHxneqVAVH+TWmSKHAGfBQvxPUSTYASKY+ghvTm2yTwjoVILfC3cx0U6nMgCUI03MSQvoYTTucX48zuF5/YP6P4DFyPgFAKldawZImz/Fjk/7wVZcsdHGii7dQlc4yd7JUZbZ2xMI8doVsDYN7CFV0clWzchkXLTEKrniN7ML6MpGeDPGMK2wN7fi/VBzMGzrsOfEATh3SEqlKKKzSiOXx1IoIC7r3qvSyeYtzMceFpkdYeVJq4+38EMpE7peFi0zkce1N1cDyYbL4PLMA4mp1PKzAe3lppIl1iEJsE9gqVsbRLWvn87Ie51vz83pE5bebGXFo84A8/FMq+PM9YnUrT9yeOKofQ3BRyI/VLf+UzVmbEgcdBOGTas0+gYw2NNQ//3bKJkbuetMSO8G7kegVdG01KV9pkvknlCVKNufGMEyIumVGOs7odlgry3+sdHDPm5rWcwuyM6OD6uZRIgrhb8BX1wTwT6oALzKgpLkqdoTJyPP9mr7xUx5w5OYS4udM/EBaf6h9OPePzJyjsarhqAZUAXubwAls7pmJelxoSxHVjsLOKMdM1hw3P+kYzGY=
+    rooms:
+      secure: ByutywWNWBQURMBuwkWwlOM2VuoAqBLQRm80LgXLl7+tpmCqhQtMdJ1msMpW0DqU/uwEymNEd/vi45+LBT9mBU5mmU/g0Dwgt6blIOAiFBEghO4tyb+EQDYrOhJLeacalcCdB/LaynTFn8KXGYOHK3nxlDORXfFEAv1vbvxVu8pJaEh9zXmyEDhIJ33A4zai5i/QI/EwSJq+9X1U2k6ss4H33ivigfZThZ99ors3X0aHJH2hL3ObLKtGqKZkGLagtZDAPWCiVeK+oKOMAjFMX4Cu+C3+5y4kLarca1bAddtU5ZwFJfWo2AUWw75NPgiwpjPdj0ORRm3zU1+eKBCzTMkJoA1D4EC9SMWWIquPP9Kv5jAR92nMFsRSA6J+/n7G982tDafFRJTwwreLNn2NHG8wqgPWNCCHjH+J7HBDfYuhPRMmaFNAkAsHcIzJVNnYPdkm0cGIpf0EFWApmY8qVp+RX1OfXcqQkC7ZlzjPfvoUzYEgmj//YMLAzX+A4Dz/NRMtHzeauPFH1gxsQ2PFPRKWPvRkSQQIhyKNBT1NfKfmvlchm2cGEj+zCWbo2wfQxx4kx/PHIHhLYNjJyUR9tUJcEdfuDEPh4/3y9oP+KkUVi7BF1gZA+YSuY2C8uiQnanFGkUFdUaSjx2ZN21F+0L1Irw2l+ogeL8qq6bH/FE8=
