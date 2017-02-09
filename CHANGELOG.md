@@ -4,6 +4,24 @@ The changelog for `Accelerator-Core` iOS.
 
 --------------------------------------
 
+1.0.3
+-----
+
+### Breaking Changes
+
+- The minimum OpenTok iOS SDK now is eqaul or above 2.10.0 which requires iOS SDK 9.0 or above
+
+### Enhancements
+
+- Add one more log entry to make sure that sessionId, connectionId and partnerId are logged
+
+### Fixes
+
+- Fix a crash that publisher is not cleaned up in OTVideoView upon deallocation
+- Fix a convenient initializer potential bug
+- Fix a minor publishOnly bug
+- Fix OpenTok iOS SDK deprecated warnings
+
 1.0.2
 -----
 

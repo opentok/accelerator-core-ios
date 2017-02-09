@@ -20,7 +20,7 @@ env:
 
 before_install:
   - gem install cocoapods --pre
-  - pod install
+  - pod update
 
 script:
 - set -o pipefail

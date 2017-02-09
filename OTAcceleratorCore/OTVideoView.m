@@ -239,13 +239,13 @@
         
         _publisher = publisher;
         [self addObserver:self
-                    forKeyPath:@"publisher.publishVideo"
-                       options:NSKeyValueObservingOptionNew|NSKeyValueObservingOptionOld
-                       context:nil];
+               forKeyPath:@"publisher.publishVideo"
+                  options:NSKeyValueObservingOptionNew|NSKeyValueObservingOptionOld
+                  context:nil];
         [self addObserver:self
-                    forKeyPath:@"publisher.publishAudio"
-                       options:NSKeyValueObservingOptionNew|NSKeyValueObservingOptionOld
-                       context:nil];
+               forKeyPath:@"publisher.publishAudio"
+                  options:NSKeyValueObservingOptionNew|NSKeyValueObservingOptionOld
+                  context:nil];
         
         [self updateUI:_publisher.publishVideo];
         
@@ -262,21 +262,21 @@
         
         _subscriber = subscriber;
         [self addObserver:self
-                    forKeyPath:@"subscriber.subscribeToVideo"
-                       options:NSKeyValueObservingOptionNew|NSKeyValueObservingOptionOld
-                       context:nil];
+               forKeyPath:@"subscriber.subscribeToVideo"
+                  options:NSKeyValueObservingOptionNew|NSKeyValueObservingOptionOld
+                  context:nil];
         [self addObserver:self
-                    forKeyPath:@"subscriber.stream.hasVideo"
-                       options:NSKeyValueObservingOptionNew|NSKeyValueObservingOptionOld
-                       context:nil];
+               forKeyPath:@"subscriber.stream.hasVideo"
+                  options:NSKeyValueObservingOptionNew|NSKeyValueObservingOptionOld
+                  context:nil];
         [self addObserver:self
                forKeyPath:@"subscriber.subscribeToAudio"
                   options:NSKeyValueObservingOptionNew|NSKeyValueObservingOptionOld
                   context:nil];
         [self addObserver:self
-                    forKeyPath:@"subscriber.stream.hasAudio"
-                       options:NSKeyValueObservingOptionNew|NSKeyValueObservingOptionOld
-                       context:nil];
+               forKeyPath:@"subscriber.stream.hasAudio"
+                  options:NSKeyValueObservingOptionNew|NSKeyValueObservingOptionOld
+                  context:nil];
         [self updateUI:_subscriber.subscribeToVideo && _subscriber.stream.hasVideo];
     }
     return self;
@@ -424,36 +424,39 @@
 
 - (void)clean {
     
-    if (self.publisher) {
-        [self removeObserver:self forKeyPath:@"publisher.publishVideo"];
-        [self removeObserver:self forKeyPath:@"publisher.publishAudio"];
-    }
-    
-    if (self.subscriber) {
-        [self removeObserver:self forKeyPath:@"subscriber.subscribeToVideo"];
-        [self removeObserver:self forKeyPath:@"subscriber.stream.hasVideo"];
-        [self removeObserver:self forKeyPath:@"subscriber.subscribeToAudio"];
-        [self removeObserver:self forKeyPath:@"subscriber.stream.hasAudio"];
-    }
+    [self removeObservers];
     
     [_controlView removeFromSuperview];
     _controlView = nil;
     _placeHolderImage = nil;
     [_placeHolderImageView removeFromSuperview];
     _placeHolderImageView = nil;
+    
+    _publisher = nil;
+    _subscriber = nil;
 }
 
 - (void)dealloc {
-    if (self.publisher) {
-        [self removeObserver:self forKeyPath:@"publisher.publishVideo"];
-        [self removeObserver:self forKeyPath:@"publisher.publishAudio"];
-    }
+    [self removeObservers];
+}
+
+- (void)removeObservers {
     
-    if (self.subscriber) {
-        [self removeObserver:self forKeyPath:@"subscriber.subscribeToVideo"];
-        [self removeObserver:self forKeyPath:@"subscriber.stream.hasVideo"];
-        [self removeObserver:self forKeyPath:@"subscriber.subscribeToAudio"];
-        [self removeObserver:self forKeyPath:@"subscriber.stream.hasAudio"];
+    @try {
+        if (self.publisher) {
+            [self removeObserver:self forKeyPath:@"publisher.publishVideo"];
+            [self removeObserver:self forKeyPath:@"publisher.publishAudio"];
+        }
+        
+        if (self.subscriber) {
+            [self removeObserver:self forKeyPath:@"subscriber.subscribeToVideo"];
+            [self removeObserver:self forKeyPath:@"subscriber.stream.hasVideo"];
+            [self removeObserver:self forKeyPath:@"subscriber.subscribeToAudio"];
+            [self removeObserver:self forKeyPath:@"subscriber.stream.hasAudio"];
+        }
+    }
+    @catch (id exception) {
+        // do nothing
     }
 }
 

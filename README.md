@@ -63,12 +63,12 @@ Each communicator instance will take the OpenTok session from OTOneToOneCommunic
     self.communicator.dataSource = self;
     [self.communicator connectWithHandler:^(OTCommunicationSignal signal, NSError *error) {
         if (signal == OTPublisherCreated && !error) {
-            self.communicator.publisherView.frame = CGRectMake(0, 0, 100, 100);
-            [self.publisherView addSubview:self.communicator.publisherView];
+            weakSelf.communicator.publisherView.frame = CGRectMake(0, 0, 100, 100);
+            [self.publisherView addSubview:weakSelf.communicator.publisherView];
         }
         else if (signal == OTSubscriberReady && !error) {
-            self.communicator.subscriberView.frame = CGRectMake(0, 0, 100, 100);
-            [self.subscriberView addSubview:self.communicator.subscriberView];
+            weakSelf.communicator.subscriberView.frame = CGRectMake(0, 0, 100, 100);
+            [self.subscriberView addSubview:weakSelf.communicator.subscriberView];
         }
     }];
     ```
@@ -80,8 +80,8 @@ Each communicator instance will take the OpenTok session from OTOneToOneCommunic
     self.communicator.dataSource = self;
     [self.communicator connectWithHandler:^(OTCommunicationSignal signal, OTMultiPartyRemote *subscriber, NSError *error) {
         if (signal == OTPublisherCreated && !error) {
-            self.communicator.publisherView.frame = CGRectMake(0, 0, 100, 100);
-            [self.publisherView addSubview:self.communicator.publisherView];
+            weakSelf.communicator.publisherView.frame = CGRectMake(0, 0, 100, 100);
+            [self.publisherView addSubview:weakSelf.communicator.publisherView];
         }
         else if (signal == OTSubscriberReady && !error) {
             subscriber.subscriberView.frame = <#your desired frame for this remote subscriberview#>;

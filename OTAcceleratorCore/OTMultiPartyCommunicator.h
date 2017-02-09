@@ -43,14 +43,14 @@ typedef void (^OTMultiPartyCommunicatorBlock)(OTCommunicationSignal signal, OTMu
 - (instancetype)init;
 
 /**
- *  Initialize a new `OTOneToOneCommunicator` instsance with a publisher name.
+ *  Initialize a new `OTOneToOneCommunicator` instsance with a given publisher name.
  *
  *  @return A new `OTOneToOneCommunicator` instsance.
  */
 - (instancetype)initWithName:(NSString *)name;
 
 /**
- *  Initialize a new `OTOneToOneCommunicator` instsance with a given publisher name and a given UIView instance.
+ *  Initialize a new `OTOneToOneCommunicator` instsance with a default publisher name and a given UIView instance.
  *  By using this initializer, the video will capture from the given UIView instance.
  *
  *  @return A new `OTOneToOneCommunicator` instsance.
