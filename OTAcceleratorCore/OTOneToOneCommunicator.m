@@ -161,12 +161,7 @@
     
     LoggingWrapper *loggingWrapper = [LoggingWrapper sharedInstance];
     NSError *disconnectError = [self.session deregisterWithAccePack:self];
-    if (!disconnectError) {
-        [loggingWrapper.logger logEventAction:KLogActionEndCommunication
-                                    variation:KLogVariationSuccess
-                                   completion:nil];
-    }
-    else {
+    if (disconnectError) {
         [loggingWrapper.logger logEventAction:KLogActionEndCommunication
                                     variation:KLogVariationFailure
                                    completion:nil];
@@ -190,17 +185,23 @@
                                             connectionId:session.connection.connectionId
                                                partnerId:@([self.session.apiKey integerValue])];
     
+    [[LoggingWrapper sharedInstance].logger logEventAction:KLogActionEndCommunication
+                                                 variation:KLogVariationSuccess
+                                                completion:nil];
+    
     if (!self.publisher) {
         
         if (!self.screenSharingView) {
-            self.publisher = [[OTPublisher alloc] initWithDelegate:self
-                                                              name:self.name];
+            OTPublisherSettings *setting = [[OTPublisherSettings alloc] init];
+            setting.name = self.name;
+            self.publisher = [[OTPublisher alloc] initWithDelegate:self settings:setting];
         }
         else {
-            self.publisher = [[OTPublisher alloc] initWithDelegate:self
-                                                              name:self.name
-                                                        audioTrack:YES
-                                                        videoTrack:YES];
+            OTPublisherSettings *setting = [[OTPublisherSettings alloc] init];
+            setting.name = self.name;
+            setting.audioTrack = YES;
+            setting.videoTrack = YES;
+            self.publisher = [[OTPublisher alloc] initWithDelegate:self settings:setting];
             
             [self.publisher setVideoType:OTPublisherKitVideoTypeScreen];
             self.publisher.audioFallbackEnabled = NO;

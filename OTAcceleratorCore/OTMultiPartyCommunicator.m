@@ -300,14 +300,16 @@
     
     if (!self.publisher) {
         if (!self.screenSharingView) {
-            self.publisher = [[OTPublisher alloc] initWithDelegate:self
-                                                              name:self.name];
+            OTPublisherSettings *setting = [[OTPublisherSettings alloc] init];
+            setting.name = self.name;
+            self.publisher = [[OTPublisher alloc] initWithDelegate:self settings:setting];
         }
         else {
-            self.publisher = [[OTPublisher alloc] initWithDelegate:self
-                                                              name:self.name
-                                                        audioTrack:YES
-                                                        videoTrack:YES];
+            OTPublisherSettings *setting = [[OTPublisherSettings alloc] init];
+            setting.name = self.name;
+            setting.audioTrack = YES;
+            setting.videoTrack = YES;
+            self.publisher = [[OTPublisher alloc] initWithDelegate:self settings:setting];
             
             [self.publisher setVideoType:OTPublisherKitVideoTypeScreen];
             self.publisher.audioFallbackEnabled = NO;
