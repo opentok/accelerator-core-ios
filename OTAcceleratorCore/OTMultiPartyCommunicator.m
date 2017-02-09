@@ -175,7 +175,9 @@
 - (instancetype)initWithView:(UIView *)view {
     
     if (!view || CGRectEqualToRect(view.frame, CGRectZero)) return nil;
-    if (self = [[OTMultiPartyCommunicator alloc] initWithName:[NSString stringWithFormat:@"%@-%@-ScreenShare", [UIDevice currentDevice].systemName, [UIDevice currentDevice].name]]) {
+    
+    if (self = [self initWithName:[NSString stringWithFormat:@"%@-%@-ScreenShare", [UIDevice currentDevice].systemName, [UIDevice currentDevice].name]]) {
+        
         _screenSharingView = view;
     }
     return self;
@@ -183,7 +185,7 @@
 
 - (instancetype)initWithView:(UIView *)view name:(NSString *)name {
     if (!view) return nil;
-    if (self = [[OTMultiPartyCommunicator alloc] initWithName:name]) {
+    if (self = [self initWithName:name]) {
         _screenSharingView = view;
     }
     return self;
@@ -295,21 +297,19 @@
 -(void)sessionDidConnect:(OTSession*)session {
     
     [[MultiPartyLoggingWrapper sharedInstance].logger setSessionId:session.sessionId
-                                            connectionId:session.connection.connectionId
-                                               partnerId:@([self.session.apiKey integerValue])];
+                                                      connectionId:session.connection.connectionId
+                                                         partnerId:@([self.session.apiKey integerValue])];
     
     if (!self.publisher) {
         if (!self.screenSharingView) {
-            OTPublisherSettings *setting = [[OTPublisherSettings alloc] init];
-            setting.name = self.name;
-            self.publisher = [[OTPublisher alloc] initWithDelegate:self settings:setting];
+            self.publisher = [[OTPublisher alloc] initWithDelegate:self
+                                                              name:self.name];
         }
         else {
-            OTPublisherSettings *setting = [[OTPublisherSettings alloc] init];
-            setting.name = self.name;
-            setting.audioTrack = YES;
-            setting.videoTrack = YES;
-            self.publisher = [[OTPublisher alloc] initWithDelegate:self settings:setting];
+            self.publisher = [[OTPublisher alloc] initWithDelegate:self
+                                                              name:self.name
+                                                        audioTrack:YES
+                                                        videoTrack:YES];
             
             [self.publisher setVideoType:OTPublisherKitVideoTypeScreen];
             self.publisher.audioFallbackEnabled = NO;
@@ -338,6 +338,9 @@
 }
 
 - (void)session:(OTSession *)session streamCreated:(OTStream *)stream {
+    
+    if (self.isPublishOnly) return;
+    
     OTError *subscrciberError;
     OTSubscriber *subscriber = [[OTSubscriber alloc] initWithStream:stream delegate:self];
     [self.session subscribe:subscriber error:&subscrciberError];
@@ -360,6 +363,9 @@
 }
 
 - (void)session:(OTSession *)session streamDestroyed:(OTStream *)stream {
+    
+    if (self.isPublishOnly) return;
+    
     for (OTMultiPartyRemote *subscriberObject in self.subscribers) {
         if (subscriberObject.subscriber.stream == stream) {
             OTSubscriber *subscriber = subscriberObject.subscriber;
