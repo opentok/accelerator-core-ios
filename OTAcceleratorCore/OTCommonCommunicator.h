@@ -24,8 +24,6 @@ static NSString* const KLogActionEnableLocalMedia = @"EnableLocalMedia";
 static NSString* const KLogActionIsReceivedMediaEnabled = @"IsReceivedMediaEnabled";
 static NSString* const KLogActionEnableReceivedMedia = @"EnableReceivedMedia";
 static NSString* const KLogActionCycleCamera = @"CycleCamera";
-
-
 static NSString* const KLogVariationAttempt = @"Attempt";
 static NSString* const KLogVariationSuccess = @"Success";
 static NSString* const KLogVariationFailure = @"Failure";
