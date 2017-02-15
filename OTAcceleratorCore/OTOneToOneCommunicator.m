@@ -95,27 +95,19 @@
 }
 
 - (NSError *)connect {
-    
     LoggingWrapper *loggingWrapper = [LoggingWrapper sharedInstance];
-    if (!_screenSharingView) {
-        [loggingWrapper.logger logEventAction:KLogActionStartCommunication
-                                    variation:KLogVariationAttempt
-                                   completion:nil];
-    }
-    else {
-        [loggingWrapper.logger logEventAction:KLogActionStartScreenCommunication
-                                    variation:KLogVariationAttempt
-                                   completion:nil];
-    }
+    [loggingWrapper.logger logEventAction:KLogActionConnect
+                                variation:KLogVariationAttempt
+                               completion:nil];
     
     NSError *connectError = [self.session registerWithAccePack:self];
     if (!connectError) {
-        [loggingWrapper.logger logEventAction:KLogActionStartCommunication
+        [loggingWrapper.logger logEventAction:KLogActionConnect
                                     variation:KLogVariationSuccess
                                    completion:nil];
     }
     else {
-        [loggingWrapper.logger logEventAction:KLogActionStartCommunication
+        [loggingWrapper.logger logEventAction:KLogActionConnect
                                     variation:KLogVariationFailure
                                    completion:nil];
     }
@@ -135,11 +127,22 @@
 }
 
 - (NSError *)disconnect {
+    LoggingWrapper *loggingWrapper = [LoggingWrapper sharedInstance];
     
+    [loggingWrapper.logger logEventAction:KLogActionDisconnect
+                                variation:KLogVariationAttempt
+                               completion:nil];
     // need to explicitly unpublish and unsubscriber if the communicator is the only accelerator to dismiss from the common session
     // when there are multiple accelerator packs, the common session will not call the disconnect method until the last delegate object is removed
     if (self.publisher) {
-        
+        [loggingWrapper.logger logEventAction:KLogActionStopPublishing
+                                    variation:KLogVariationAttempt
+                                   completion:nil];
+        if (self.screenSharingView) {
+            [loggingWrapper.logger logEventAction:KLogActionStopScreensharing
+                                        variation:KLogVariationAttempt
+                                       completion:nil];
+        }
         OTError *error = nil;
         [self.publisher.view removeFromSuperview];
         [self.session unpublish:self.publisher error:&error];
@@ -159,10 +162,9 @@
         [self cleaupSubscriber];
     }
     
-    LoggingWrapper *loggingWrapper = [LoggingWrapper sharedInstance];
     NSError *disconnectError = [self.session deregisterWithAccePack:self];
     if (disconnectError) {
-        [loggingWrapper.logger logEventAction:KLogActionEndCommunication
+        [loggingWrapper.logger logEventAction:KLogActionDisconnect
                                     variation:KLogVariationFailure
                                    completion:nil];
     }
@@ -180,23 +182,31 @@
 
 #pragma mark - OTSessionDelegate
 -(void)sessionDidConnect:(OTSession*)session {
-    
-    [[LoggingWrapper sharedInstance].logger setSessionId:session.sessionId
+    LoggingWrapper *loggingWrapper = [LoggingWrapper sharedInstance];
+    [loggingWrapper.logger setSessionId:session.sessionId
                                             connectionId:session.connection.connectionId
                                                partnerId:@([self.session.apiKey integerValue])];
+    [loggingWrapper.logger logEventAction:KLogActionConnect
+                                                 variation:KLogVariationSuccess
+                                                completion:nil];
     
     [[LoggingWrapper sharedInstance].logger logEventAction:KLogActionEndCommunication
                                                  variation:KLogVariationSuccess
                                                 completion:nil];
     
     if (!self.publisher) {
-        
+        [loggingWrapper.logger logEventAction:KLogActionStartPublishing
+                                                     variation:KLogVariationAttempt
+                                                    completion:nil];
         if (!self.screenSharingView) {
             OTPublisherSettings *setting = [[OTPublisherSettings alloc] init];
             setting.name = self.name;
             self.publisher = [[OTPublisher alloc] initWithDelegate:self settings:setting];
         }
         else {
+            [loggingWrapper.logger logEventAction:KLogActionStartScreensharing
+                                                         variation:KLogVariationAttempt
+                                                        completion:nil];
             OTPublisherSettings *setting = [[OTPublisherSettings alloc] init];
             setting.name = self.name;
             setting.audioTrack = YES;
@@ -213,6 +223,15 @@
     OTError *error;
     [self.session publish:self.publisher error:&error];
     if (error) {
+        [loggingWrapper.logger logEventAction:KLogActionStartPublishing
+                                                     variation:KLogVariationFailure
+                                                    completion:nil];
+        if (self.screenSharingView) {
+            [loggingWrapper.logger logEventAction:KLogActionStartScreensharing
+                                                         variation:KLogVariationFailure
+                                                        completion:nil];
+        }
+        
         [self notifiyAllWithSignal:OTCommunicationError
                              error:error];
     }
@@ -233,16 +252,25 @@
 }
 
 - (void)session:(OTSession *)session streamCreated:(OTStream *)stream {
-    
+    LoggingWrapper *loggingWrapper = [LoggingWrapper sharedInstance];
+
     // we always subscribe one stream for this acc pack
     // please see - subscribeToStreamWithName: to switch subscription
     if (self.subscriber) {
         [self cleaupSubscriber];
     }
     
+    [loggingWrapper.logger logEventAction:KLogActionAddRemote
+                                                 variation:KLogVariationAttempt
+                                                completion:nil];
     OTError *subscrciberError;
     self.subscriber = [[OTSubscriber alloc] initWithStream:stream delegate:self];
     [self.session subscribe:self.subscriber error:&subscrciberError];
+    if (subscrciberError) {
+        [loggingWrapper.logger logEventAction:KLogActionAddRemote
+                                    variation:KLogVariationFailure
+                                   completion:nil];
+    }
     [self notifiyAllWithSignal:OTSubscriberCreated error:subscrciberError];
 }
 
@@ -279,6 +307,27 @@
     }
 }
 
+- (void)publisher:(nonnull OTPublisherKit *)publisher streamCreated:(nonnull OTStream *)stream {
+    [[LoggingWrapper sharedInstance].logger logEventAction:KLogActionStartPublishing
+                                                 variation:KLogVariationSuccess
+                                                completion:nil];
+    if (stream.videoType == OTStreamVideoTypeScreen ) {
+        [[LoggingWrapper sharedInstance].logger logEventAction:KLogActionStartScreensharing
+                                                     variation:KLogVariationSuccess
+                                                    completion:nil];
+    }
+}
+
+- (void)publisher:(nonnull OTPublisherKit *)publisher streamDestroyed:(nonnull OTStream *)stream {
+    [[LoggingWrapper sharedInstance].logger logEventAction:KLogActionStopPublishing
+                                                 variation:KLogVariationSuccess
+                                                completion:nil];
+    if (stream.videoType == OTStreamVideoTypeScreen ) {
+        [[LoggingWrapper sharedInstance].logger logEventAction:KLogActionStopScreensharing
+                                                     variation:KLogVariationSuccess
+                                                    completion:nil];
+    }
+}
 #pragma mark - OTSubscriberKitDelegate
 - (void)subscriberDidConnectToStream:(OTSubscriberKit*)subscriber {
     
@@ -287,6 +336,9 @@
         _subscriberView.delegate = self;
         [self notifiyAllWithSignal:OTSubscriberReady
                              error:nil];
+        [[LoggingWrapper sharedInstance].logger logEventAction:KLogActionAddRemote
+                                    variation:KLogVariationSuccess
+                                   completion:nil];
     }
 }
 
@@ -348,22 +400,35 @@
 }
 
 - (void)cleaupSubscriber {
+    [[LoggingWrapper sharedInstance].logger logEventAction:KLogActionRemoveRemote
+                                                 variation:KLogVariationAttempt
+                                                completion:nil];
     [self.subscriber.view removeFromSuperview];
     [self.subscriberView clean];
     self.subscriber = nil;
     self.subscriberView = nil;
+    [[LoggingWrapper sharedInstance].logger logEventAction:KLogActionRemoveRemote
+                                                 variation:KLogVariationSuccess                                                completion:nil];
 }
 
 #pragma mark - advanced
 - (NSError *)subscribeToStreamWithName:(NSString *)name {
+    [[LoggingWrapper sharedInstance].logger logEventAction:KLogActionAddRemote
+                                                 variation:KLogVariationAttempt
+                                                completion:nil];
     for (OTStream *stream in self.session.streams.allValues) {
         if ([stream.name isEqualToString:name]) {
             
             [self cleaupSubscriber];
-            NSError *subscrciberError;
+            NSError *subscriberError;
             self.subscriber = [[OTSubscriber alloc] initWithStream:stream delegate:self];
-            [self.session subscribe:self.subscriber error:&subscrciberError];
-            return subscrciberError;
+            [self.session subscribe:self.subscriber error:&subscriberError];
+            if (subscriberError) {
+                [[LoggingWrapper sharedInstance].logger logEventAction:KLogActionAddRemote
+                                                             variation:KLogVariationFailure
+                                                            completion:nil];
+            }
+            return subscriberError;
         }
     }
     
@@ -371,14 +436,22 @@
 }
 
 - (NSError *)subscribeToStreamWithStreamId:(NSString *)streamId {
+    [[LoggingWrapper sharedInstance].logger logEventAction:KLogActionAddRemote
+                                                 variation:KLogVariationSuccess
+                                                completion:nil];
     for (OTStream *stream in self.session.streams.allValues) {
         if ([stream.streamId isEqualToString:streamId]) {
             
             [self cleaupSubscriber];
-            NSError *subscrciberError;
+            NSError *subscriberError;
             self.subscriber = [[OTSubscriber alloc] initWithStream:stream delegate:self];
-            [self.session subscribe:self.subscriber error:&subscrciberError];
-            return subscrciberError;
+            [self.session subscribe:self.subscriber error:&subscriberError];
+            if (subscriberError) {
+                [[LoggingWrapper sharedInstance].logger logEventAction:KLogActionAddRemote
+                                                             variation:KLogVariationFailure
+                                                            completion:nil];
+            }
+            return subscriberError;
         }
     }
     
@@ -414,52 +487,112 @@
 }
 
 - (BOOL)isRemoteAudioAvailable {
+    [[LoggingWrapper sharedInstance].logger logEventAction:KLogActionIsReceivedMediaEnabled
+                                                 variation:KLogVariationAttempt
+                                                completion:nil];
     if (!_subscriber) return NO;
+    [[LoggingWrapper sharedInstance].logger logEventAction:KLogActionIsReceivedMediaEnabled
+                                                 variation:KLogVariationSuccess                                                completion:nil];
     return _subscriber.stream.hasAudio;
 }
 
 - (BOOL)isRemoteVideoAvailable {
+    [[LoggingWrapper sharedInstance].logger logEventAction:KLogActionIsReceivedMediaEnabled
+                                                 variation:KLogVariationAttempt
+                                                completion:nil];
     if (!_subscriber) return NO;
+    [[LoggingWrapper sharedInstance].logger logEventAction:KLogActionIsReceivedMediaEnabled
+                                                 variation:KLogVariationSuccess
+                                                completion:nil];
     return _subscriber.stream.hasVideo;
 }
 
 - (void)setSubscribeToAudio:(BOOL)subscribeToAudio {
+    [[LoggingWrapper sharedInstance].logger logEventAction:KLogActionEnableReceivedMedia
+                                                 variation:KLogVariationAttempt
+                                                completion:nil];
     if (!_subscriber) return;
     _subscriber.subscribeToAudio = subscribeToAudio;
+    [[LoggingWrapper sharedInstance].logger logEventAction:KLogActionEnableReceivedMedia
+                                                 variation:KLogVariationSuccess
+                                                completion:nil];
 }
 
 - (BOOL)isSubscribeToAudio {
+    [[LoggingWrapper sharedInstance].logger logEventAction:KLogActionIsReceivedMediaEnabled
+                                                 variation:KLogVariationAttempt
+                                                completion:nil];
     if (!_subscriber) return NO;
+    [[LoggingWrapper sharedInstance].logger logEventAction:KLogActionIsReceivedMediaEnabled
+                                                 variation:KLogVariationSuccess
+                                                completion:nil];
     return _subscriber.subscribeToAudio;
 }
 
 - (void)setSubscribeToVideo:(BOOL)subscribeToVideo {
+    [[LoggingWrapper sharedInstance].logger logEventAction:KLogActionEnableReceivedMedia
+                                                 variation:KLogVariationAttempt
+                                                completion:nil];
     if (!_subscriber) return;
     _subscriber.subscribeToVideo = subscribeToVideo;
+    [[LoggingWrapper sharedInstance].logger logEventAction:KLogActionEnableReceivedMedia
+                                                 variation:KLogVariationSuccess
+                                                completion:nil];
+    
 }
 
 - (BOOL)isSubscribeToVideo {
+    [[LoggingWrapper sharedInstance].logger logEventAction:KLogActionIsReceivedMediaEnabled
+                                                 variation:KLogVariationAttempt
+                                                completion:nil];
     if (!_subscriber) return NO;
+    [[LoggingWrapper sharedInstance].logger logEventAction:KLogActionIsReceivedMediaEnabled
+                                                 variation:KLogVariationSuccess
+                                                completion:nil];
     return _subscriber.subscribeToVideo;
 }
 
 - (void)setPublishAudio:(BOOL)publishAudio {
+    [[LoggingWrapper sharedInstance].logger logEventAction:KLogActionEnableLocalMedia
+                                                 variation:KLogVariationAttempt
+                                                completion:nil];
     if (!_publisher) return;
     _publisher.publishAudio = publishAudio;
+    [[LoggingWrapper sharedInstance].logger logEventAction:KLogActionEnableLocalMedia
+                                                 variation:KLogVariationSuccess
+                                                completion:nil];
 }
 
 - (BOOL)isPublishAudio {
+    [[LoggingWrapper sharedInstance].logger logEventAction:KLogActionIsLocalMediaEnabled
+                                                 variation:KLogVariationAttempt
+                                                completion:nil];
     if (!_publisher) return NO;
+    [[LoggingWrapper sharedInstance].logger logEventAction:KLogActionIsLocalMediaEnabled
+                                                 variation:KLogVariationSuccess
+                                                completion:nil];
     return _publisher.publishAudio;
 }
 
 - (void)setPublishVideo:(BOOL)publishVideo {
+    [[LoggingWrapper sharedInstance].logger logEventAction:KLogActionEnableLocalMedia
+                                                 variation:KLogVariationAttempt
+                                                completion:nil];
     if (!_publisher) return;
     _publisher.publishVideo = publishVideo;
+    [[LoggingWrapper sharedInstance].logger logEventAction:KLogActionEnableLocalMedia
+                                                 variation:KLogVariationSuccess
+                                                completion:nil];
 }
 
 - (BOOL)isPublishVideo {
+    [[LoggingWrapper sharedInstance].logger logEventAction:KLogActionIsLocalMediaEnabled
+                                                 variation:KLogVariationAttempt
+                                                completion:nil];
     if (!_publisher) return NO;
+    [[LoggingWrapper sharedInstance].logger logEventAction:KLogActionIsLocalMediaEnabled
+                                                 variation:KLogVariationSuccess
+                                                completion:nil];
     return _publisher.publishVideo;
 }
 
@@ -468,8 +601,14 @@
 }
 
 - (void)setCameraPosition:(AVCaptureDevicePosition)cameraPosition {
+    [[LoggingWrapper sharedInstance].logger logEventAction:KLogActionCycleCamera
+                                                 variation:KLogVariationAttempt
+                                                completion:nil];
     if (self.screenSharingView) return;
     _publisher.cameraPosition = cameraPosition;
+    [[LoggingWrapper sharedInstance].logger logEventAction:KLogActionCycleCamera
+                                                 variation:KLogVariationSuccess
+                                                completion:nil];
 }
 
 @end
