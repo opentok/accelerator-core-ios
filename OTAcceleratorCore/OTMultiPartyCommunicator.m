@@ -122,7 +122,7 @@
         sharedInstance = [[MultiPartyLoggingWrapper alloc] init];
         sharedInstance.logger = [[OTKLogger alloc] initWithClientVersion:KLogClientVersion
                                                                   source:[[NSBundle mainBundle] bundleIdentifier]
-                                                             componentId:kLogComponentIdentifier
+                                                             componentId:KLogComponentIdentifier
                                                                     guid:[[NSUUID UUID] UUIDString]];
     });
     return sharedInstance;
@@ -258,13 +258,16 @@
                                        completion:nil];
             NSLog(@"%s: %@", __PRETTY_FUNCTION__, error);
         }
+        else {
+            [loggingWrapper.logger logEventAction:KLogActionRemoveRemote
+                                        variation:KLogVariationSuccess
+                                       completion:nil];
+        }
         [subscriberObject.subscriberView removeFromSuperview];
         [subscriberObject.subscriberView clean];
         subscriberObject.subscriber = nil;
         subscriberObject.subscriberView = nil;
-        [loggingWrapper.logger logEventAction:KLogActionRemoveRemote
-                                    variation:KLogVariationSuccess
-                                   completion:nil];
+      
     }
     [self.subscribers removeAllObjects];
 

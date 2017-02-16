@@ -25,7 +25,7 @@
         sharedInstance = [[LoggingWrapper alloc] init];
         sharedInstance.logger = [[OTKLogger alloc] initWithClientVersion:KLogClientVersion
                                                                   source:[[NSBundle mainBundle] bundleIdentifier]
-                                                             componentId:kLogComponentIdentifier
+                                                             componentId:KLogComponentIdentifier
                                                                     guid:[[NSUUID UUID] UUIDString]];
     });
     return sharedInstance;
@@ -101,17 +101,11 @@
                                completion:nil];
     
     NSError *connectError = [self.session registerWithAccePack:self];
-    if (!connectError) {
-        [loggingWrapper.logger logEventAction:KLogActionConnect
-                                    variation:KLogVariationSuccess
-                                   completion:nil];
-    }
-    else {
+    if (connectError) {
         [loggingWrapper.logger logEventAction:KLogActionConnect
                                     variation:KLogVariationFailure
                                    completion:nil];
     }
-    
     return connectError;
 }
 
@@ -187,10 +181,6 @@
                                             connectionId:session.connection.connectionId
                                                partnerId:@([self.session.apiKey integerValue])];
     [loggingWrapper.logger logEventAction:KLogActionConnect
-                                                 variation:KLogVariationSuccess
-                                                completion:nil];
-    
-    [[LoggingWrapper sharedInstance].logger logEventAction:KLogActionEndCommunication
                                                  variation:KLogVariationSuccess
                                                 completion:nil];
     
