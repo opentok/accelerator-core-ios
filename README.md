@@ -1,12 +1,11 @@
 ![logo](./tokbox-logo.png)
 
-[![Build Status](https://travis-ci.org/opentok/accelerator-core-ios.svg?branch=master)](https://travis-ci.org/opentok/accelerator-core-ios)
-[![Version Status](https://img.shields.io/cocoapods/v/OTAcceleratorCore.svg)](https://cocoapods.org/pods/OTAcceleratorCore)
-[![license MIT](https://img.shields.io/cocoapods/l/OTAcceleratorCore.svg)](https://cocoapods.org/pods/OTAcceleratorCore)
-[![Platform](https://img.shields.io/cocoapods/p/OTAcceleratorCore.svg)](https://cocoapods.org/pods/OTAcceleratorCore)
-[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](http://makeapullrequest.com)
-
 # Accelerator Core iOS <br/>
+
+[![Build Status](https://travis-ci.org/opentok/accelerator-core-ios.svg?branch=master)](https://travis-ci.org/opentok/accelerator-core-ios)
+[![GitHub release](https://img.shields.io/github/release/opentok/accelerator-core-ios.svg)](./README.md)
+[![license MIT](https://img.shields.io/cocoapods/l/OTAcceleratorCore.svg)](https://cocoapods.org/pods/OTAcceleratorCore)
+[![Version Status](https://img.shields.io/cocoapods/v/OTAcceleratorCore.svg)](https://cocoapods.org/pods/OTAcceleratorCore)
 
 The Accelerator Core is an easy manner to integrate audio/video communication to any iOS applications via OpenTok platform. Things you can easily do:
 
