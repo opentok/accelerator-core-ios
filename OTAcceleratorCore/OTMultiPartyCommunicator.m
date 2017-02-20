@@ -275,7 +275,7 @@
     }
     
     self.isCallEnabled = NO;
-    _internalConnectionCount=0;
+    _internalConnectionCount = 0;
     _selfConnection = nil;
     return disconnectError;
 }
@@ -394,7 +394,7 @@
     }
 }
 
-- (void)  session:(OTSession*) session
+- (void)session:(OTSession*) session
 connectionCreated:(OTConnection*) connection {
     _internalConnectionCount++;
     
@@ -414,7 +414,7 @@ connectionDestroyed:(OTConnection*) connection {
     [self notifyAllWithSignal:OTPublisherDestroyed
                    subscriber:nil
                         error:nil];
-    _internalConnectionCount=0;
+    _internalConnectionCount = 0;
 }
 
 - (void)session:(OTSession *)session didFailWithError:(OTError *)error {
