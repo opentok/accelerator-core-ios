@@ -37,6 +37,8 @@
 @property (nonatomic) BOOL isCallEnabled;
 @property (nonatomic) NSString *name;
 @property (nonatomic) NSUInteger internalConnectionCount;
+@property (readonly, nonatomic) NSUInteger connectionsOlderThanMe;
+@property (nonatomic) OTConnection * selfConnection;
 @property (nonatomic) OTSubscriber *subscriber;
 @property (nonatomic) OTPublisher *publisher;
 @property (weak, nonatomic) OTAcceleratorSession *session;
@@ -71,6 +73,7 @@
     if (self = [super init]) {
         _name = name;
         _internalConnectionCount = 0;
+        _connectionsOlderThanMe = 0;
         [[LoggingWrapper sharedInstance].logger logEventAction:KLogActionInitialize variation:KLogVariationSuccess completion:nil];
     }
     else {
@@ -171,6 +174,7 @@
     
     self.isCallEnabled = NO;
     _internalConnectionCount = 0;
+    _selfConnection = nil;
     return disconnectError;
 }
 
@@ -193,7 +197,8 @@
                                                 completion:nil];
     
     _internalConnectionCount++; //add my own connection to the count
-    
+    _selfConnection = session.connection;
+
     if (!self.publisher) {
         
         if (!self.screenSharingView) {
@@ -265,11 +270,17 @@
 - (void)  session:(OTSession*) session
 connectionCreated:(OTConnection*) connection {
     _internalConnectionCount++;
+    
+    //check creationtime of the connections
+    [self compareConnectionTimeWithConnection: connection];
 }
 
 - (void)session:(OTSession*) session
 connectionDestroyed:(OTConnection*) connection {
     _internalConnectionCount--;
+    
+    //check creationtime of the connections
+    [self compareConnectionTimeWithConnection: connection];
 }
 
 - (void)session:(OTSession *)session didFailWithError:(OTError *)error {
@@ -493,4 +504,33 @@ connectionDestroyed:(OTConnection*) connection {
     return _internalConnectionCount;
 }
 
+- (BOOL)isFirstConnection {
+    if (_connectionsOlderThanMe > 0) return false;
+    else {
+        return true;
+    }
+}
+
+- (NSString *)selfConnectionId {
+    return _selfConnection.connectionId;
+}
+
+#pragma mark - Private Methods
+-(void) compareConnectionTimeWithConnection: (OTConnection *)connection {
+    if (self.session.connection != NULL) {
+        NSComparisonResult result = [connection.creationTime compare:_selfConnection.creationTime];
+        
+        if (result==NSOrderedAscending) {
+            _connectionsOlderThanMe --;
+        }
+        else {
+            if (result==NSOrderedDescending) {
+                _connectionsOlderThanMe ++;
+            }
+            else
+                NSLog(@"Both dates are same");
+        }
+    }
+    
+}
 @end

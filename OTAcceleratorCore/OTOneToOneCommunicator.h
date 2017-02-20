@@ -142,6 +142,15 @@
  */
 @property (readonly, nonatomic) NSUInteger connectionCount;
 
+/**
+ *  A boolean value to indicate if the connection is the oldest.
+ */
+@property (readonly, nonatomic) BOOL isFirstConnection;
+
+/**
+ *  A string value to indicate the own connectionId.
+ */
+@property (readonly, nonatomic) NSString *selfConnectionId;
 
 /**
  *  The preferred camera position. When setting this property, if the change is possible, the publisher will use the camera with the specified position. 
