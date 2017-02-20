@@ -169,4 +169,9 @@ typedef void (^OTMultiPartyCommunicatorBlock)(OTCommunicationSignal signal, OTMu
  */
 @property (readonly, nonatomic) OTStreamVideoType videoType;
 
+/**
+ *  An integer to indicate the total connections.
+ */
+@property (readonly, nonatomic) NSUInteger connectionCount;
+
 @end

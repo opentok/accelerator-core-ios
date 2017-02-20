@@ -133,6 +133,7 @@
 @interface OTMultiPartyCommunicator() <OTSessionDelegate, OTSubscriberKitDelegate, OTPublisherDelegate, OTVideoViewProtocol>
 @property (nonatomic) BOOL isCallEnabled;
 @property (nonatomic) NSString *name;
+@property (nonatomic) NSUInteger internalConnectionCount;
 @property (nonatomic) OTPublisher *publisher;
 @property (nonatomic) NSMutableArray *subscribers;
 @property (weak, nonatomic) OTAcceleratorSession *session;
@@ -164,6 +165,7 @@
     
     if (self = [super init]) {
         _name = name;
+        _internalConnectionCount = 0;
         [[MultiPartyLoggingWrapper sharedInstance].logger logEventAction:KLogActionInitialize variation:KLogVariationSuccess completion:nil];
     }
     else {
@@ -270,6 +272,7 @@
     }
     
     self.isCallEnabled = NO;
+    _internalConnectionCount=0;
     return disconnectError;
 }
 
@@ -299,6 +302,8 @@
     [[MultiPartyLoggingWrapper sharedInstance].logger setSessionId:session.sessionId
                                                       connectionId:session.connection.connectionId
                                                          partnerId:@([self.session.apiKey integerValue])];
+ 
+    _internalConnectionCount++; //add my own connection to the count
     
     if (!self.publisher) {
         if (!self.screenSharingView) {
@@ -385,10 +390,21 @@
     }
 }
 
+- (void)  session:(OTSession*) session
+connectionCreated:(OTConnection*) connection {
+    _internalConnectionCount++;
+}
+
+- (void)session:(OTSession*) session
+connectionDestroyed:(OTConnection*) connection {
+    _internalConnectionCount--;
+}
+
 - (void)sessionDidDisconnect:(OTSession *)session {
     [self notifyAllWithSignal:OTPublisherDestroyed
                    subscriber:nil
                         error:nil];
+    _internalConnectionCount=0;
 }
 
 - (void)session:(OTSession *)session didFailWithError:(OTError *)error {
@@ -603,6 +619,10 @@
             }
         }
     }
+}
+
+- (NSUInteger)connectionCount {
+    return _internalConnectionCount;
 }
 
 @end

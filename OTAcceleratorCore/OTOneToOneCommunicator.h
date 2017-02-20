@@ -138,6 +138,12 @@
 @property (nonatomic, getter=isPublishVideo) BOOL publishVideo;
 
 /**
+ *  An integer to indicate the total connections.
+ */
+@property (readonly, nonatomic) NSUInteger connectionCount;
+
+
+/**
  *  The preferred camera position. When setting this property, if the change is possible, the publisher will use the camera with the specified position. 
  *  If the publisher has begun publishing, getting this property returns the current camera position; 
  *  if the publisher has not yet begun publishing, getting this property returns the preferred camera position.
@@ -158,5 +164,6 @@
  *  @return An error to indicate whether it subscribes successfully, non-nil if it fails.
  */
 - (NSError *)subscribeToStreamWithStreamId:(NSString *)streamId;
+
 
 @end

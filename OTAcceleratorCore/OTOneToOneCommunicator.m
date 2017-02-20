@@ -36,6 +36,7 @@
 @interface OTOneToOneCommunicator() <OTSessionDelegate, OTSubscriberKitDelegate, OTPublisherDelegate, OTVideoViewProtocol>
 @property (nonatomic) BOOL isCallEnabled;
 @property (nonatomic) NSString *name;
+@property (nonatomic) NSUInteger internalConnectionCount;
 @property (nonatomic) OTSubscriber *subscriber;
 @property (nonatomic) OTPublisher *publisher;
 @property (weak, nonatomic) OTAcceleratorSession *session;
@@ -69,6 +70,7 @@
     
     if (self = [super init]) {
         _name = name;
+        _internalConnectionCount = 0;
         [[LoggingWrapper sharedInstance].logger logEventAction:KLogActionInitialize variation:KLogVariationSuccess completion:nil];
     }
     else {
@@ -168,6 +170,7 @@
     }
     
     self.isCallEnabled = NO;
+    _internalConnectionCount = 0;
     return disconnectError;
 }
 
@@ -188,6 +191,8 @@
     [[LoggingWrapper sharedInstance].logger logEventAction:KLogActionEndCommunication
                                                  variation:KLogVariationSuccess
                                                 completion:nil];
+    
+    _internalConnectionCount++; //add my own connection to the count
     
     if (!self.publisher) {
         
@@ -230,6 +235,7 @@
 - (void)sessionDidDisconnect:(OTSession *)session {
     [self notifiyAllWithSignal:OTPublisherDestroyed
                          error:nil];
+    _internalConnectionCount--;
 }
 
 - (void)session:(OTSession *)session streamCreated:(OTStream *)stream {
@@ -256,9 +262,20 @@
     }
 }
 
+- (void)  session:(OTSession*) session
+connectionCreated:(OTConnection*) connection {
+    _internalConnectionCount++;
+}
+
+- (void)session:(OTSession*) session
+connectionDestroyed:(OTConnection*) connection {
+    _internalConnectionCount--;
+}
+
 - (void)session:(OTSession *)session didFailWithError:(OTError *)error {
     [self notifiyAllWithSignal:OTCommunicationError
                          error:error];
+    _internalConnectionCount=0;
 }
 
 - (void)sessionDidBeginReconnecting:(OTSession *)session {
@@ -470,6 +487,10 @@
 - (void)setCameraPosition:(AVCaptureDevicePosition)cameraPosition {
     if (self.screenSharingView) return;
     _publisher.cameraPosition = cameraPosition;
+}
+
+- (NSUInteger)connectionCount {
+    return _internalConnectionCount;
 }
 
 @end
