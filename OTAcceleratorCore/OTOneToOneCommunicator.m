@@ -129,11 +129,13 @@
     // need to explicitly unpublish and unsubscriber if the communicator is the only accelerator to dismiss from the common session
     // when there are multiple accelerator packs, the common session will not call the disconnect method until the last delegate object is removed
     if (self.publisher) {
-        [loggingWrapper.logger logEventAction:KLogActionStopPublishing
-                                    variation:KLogVariationAttempt
-                                   completion:nil];
         if (self.screenSharingView) {
             [loggingWrapper.logger logEventAction:KLogActionStopScreensharing
+                                        variation:KLogVariationAttempt
+                                       completion:nil];
+        }
+        else {
+            [loggingWrapper.logger logEventAction:KLogActionStopPublishing
                                         variation:KLogVariationAttempt
                                        completion:nil];
         }
@@ -185,10 +187,10 @@
                                                 completion:nil];
     
     if (!self.publisher) {
-        [loggingWrapper.logger logEventAction:KLogActionStartPublishing
-                                                     variation:KLogVariationAttempt
-                                                    completion:nil];
         if (!self.screenSharingView) {
+            [loggingWrapper.logger logEventAction:KLogActionStartPublishing
+                                        variation:KLogVariationAttempt
+                                       completion:nil];
             OTPublisherSettings *setting = [[OTPublisherSettings alloc] init];
             setting.name = self.name;
             self.publisher = [[OTPublisher alloc] initWithDelegate:self settings:setting];
@@ -213,15 +215,16 @@
     OTError *error;
     [self.session publish:self.publisher error:&error];
     if (error) {
-        [loggingWrapper.logger logEventAction:KLogActionStartPublishing
-                                                     variation:KLogVariationFailure
-                                                    completion:nil];
-        if (self.screenSharingView) {
+         if (self.screenSharingView) {
             [loggingWrapper.logger logEventAction:KLogActionStartScreensharing
                                                          variation:KLogVariationFailure
                                                         completion:nil];
         }
-        
+        else {
+             [loggingWrapper.logger logEventAction:KLogActionStartPublishing
+                                         variation:KLogVariationFailure
+                                        completion:nil];
+        }
         [self notifiyAllWithSignal:OTCommunicationError
                              error:error];
     }
@@ -298,22 +301,26 @@
 }
 
 - (void)publisher:(nonnull OTPublisherKit *)publisher streamCreated:(nonnull OTStream *)stream {
-    [[LoggingWrapper sharedInstance].logger logEventAction:KLogActionStartPublishing
-                                                 variation:KLogVariationSuccess
-                                                completion:nil];
-    if (stream.videoType == OTStreamVideoTypeScreen ) {
+     if (stream.videoType == OTStreamVideoTypeScreen ) {
         [[LoggingWrapper sharedInstance].logger logEventAction:KLogActionStartScreensharing
                                                      variation:KLogVariationSuccess
                                                     completion:nil];
     }
+     else {
+         [[LoggingWrapper sharedInstance].logger logEventAction:KLogActionStartPublishing
+                                                      variation:KLogVariationSuccess
+                                                     completion:nil];
+     }
 }
 
 - (void)publisher:(nonnull OTPublisherKit *)publisher streamDestroyed:(nonnull OTStream *)stream {
-    [[LoggingWrapper sharedInstance].logger logEventAction:KLogActionStopPublishing
-                                                 variation:KLogVariationSuccess
-                                                completion:nil];
     if (stream.videoType == OTStreamVideoTypeScreen ) {
         [[LoggingWrapper sharedInstance].logger logEventAction:KLogActionStopScreensharing
+                                                     variation:KLogVariationSuccess
+                                                    completion:nil];
+    }
+    else {
+        [[LoggingWrapper sharedInstance].logger logEventAction:KLogActionStopPublishing
                                                      variation:KLogVariationSuccess
                                                     completion:nil];
     }
