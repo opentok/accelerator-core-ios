@@ -116,6 +116,16 @@ typedef void (^OTMultiPartyCommunicatorBlock)(OTCommunicationSignal signal, OTMu
  */
 @property (nonatomic) AVCaptureDevicePosition cameraPosition;
 
+/**
+ *  An integer to indicate the total connections.
+ */
+@property (readonly, nonatomic) NSUInteger connectionCount;
+
+/**
+ *  A boolean value to indicate if the connection is the oldest.
+ */
+@property (readonly, nonatomic) BOOL isFirstConnection;
+
 @end
 
 @interface OTMultiPartyRemote : NSObject
@@ -168,20 +178,5 @@ typedef void (^OTMultiPartyCommunicatorBlock)(OTCommunicationSignal signal, OTMu
  *  A enum value to indicate whether the feed is captured from the camera or the screen.
  */
 @property (readonly, nonatomic) OTStreamVideoType videoType;
-
-/**
- *  An integer value to indicate the total connections.
- */
-@property (readonly, nonatomic) NSUInteger connectionCount;
-
-/**
- *  A boolean value to indicate if the connection is the oldest.
- */
-@property (readonly, nonatomic) BOOL isFirstConnection;
-
-/**
- *  A string value to indicate the own connectionId.
- */
-@property (readonly, nonatomic) NSString *selfConnectionId;
 
 @end

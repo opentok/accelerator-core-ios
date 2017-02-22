@@ -36,9 +36,8 @@
 @interface OTOneToOneCommunicator() <OTSessionDelegate, OTSubscriberKitDelegate, OTPublisherDelegate, OTVideoViewProtocol>
 @property (nonatomic) BOOL isCallEnabled;
 @property (nonatomic) NSString *name;
-@property (nonatomic) NSUInteger internalConnectionCount;
+@property (nonatomic) NSUInteger connectionCount;
 @property (readonly, nonatomic) NSUInteger connectionsOlderThanMe;
-@property (nonatomic) OTConnection * selfConnection;
 @property (nonatomic) OTSubscriber *subscriber;
 @property (nonatomic) OTPublisher *publisher;
 @property (weak, nonatomic) OTAcceleratorSession *session;
@@ -72,8 +71,6 @@
     
     if (self = [super init]) {
         _name = name;
-        _internalConnectionCount = 0;
-        _connectionsOlderThanMe = 0;
         [[LoggingWrapper sharedInstance].logger logEventAction:KLogActionInitialize variation:KLogVariationSuccess completion:nil];
     }
     else {
@@ -173,8 +170,7 @@
     }
     
     self.isCallEnabled = NO;
-    _internalConnectionCount = 0;
-    _selfConnection = nil;
+    _connectionCount = 0;
     return disconnectError;
 }
 
@@ -196,8 +192,7 @@
                                                  variation:KLogVariationSuccess
                                                 completion:nil];
     
-    _internalConnectionCount++; //add my own connection to the count
-    _selfConnection = session.connection;
+    _connectionCount++;
 
     if (!self.publisher) {
         
@@ -240,7 +235,7 @@
 - (void)sessionDidDisconnect:(OTSession *)session {
     [self notifiyAllWithSignal:OTPublisherDestroyed
                          error:nil];
-    _internalConnectionCount--;
+    _connectionCount--;
 }
 
 - (void)session:(OTSession *)session streamCreated:(OTStream *)stream {
@@ -269,7 +264,7 @@
 
 - (void)  session:(OTSession*) session
 connectionCreated:(OTConnection*) connection {
-    _internalConnectionCount++;
+    _connectionCount++;
     
     //check creationtime of the connections
     [self compareConnectionTimeWithConnection: connection];
@@ -277,7 +272,7 @@ connectionCreated:(OTConnection*) connection {
 
 - (void)session:(OTSession*) session
 connectionDestroyed:(OTConnection*) connection {
-    _internalConnectionCount--;
+    _connectionCount--;
     
     //check creationtime of the connections
     [self compareConnectionTimeWithConnection: connection];
@@ -286,7 +281,7 @@ connectionDestroyed:(OTConnection*) connection {
 - (void)session:(OTSession *)session didFailWithError:(OTError *)error {
     [self notifiyAllWithSignal:OTCommunicationError
                          error:error];
-    _internalConnectionCount=0;
+    _connectionCount=0;
 }
 
 - (void)sessionDidBeginReconnecting:(OTSession *)session {
@@ -500,10 +495,6 @@ connectionDestroyed:(OTConnection*) connection {
     _publisher.cameraPosition = cameraPosition;
 }
 
-- (NSUInteger)connectionCount {
-    return _internalConnectionCount;
-}
-
 - (BOOL)isFirstConnection {
     if (_connectionsOlderThanMe > 0) return false;
     else {
@@ -511,14 +502,10 @@ connectionDestroyed:(OTConnection*) connection {
     }
 }
 
-- (NSString *)selfConnectionId {
-    return _selfConnection.connectionId;
-}
-
 #pragma mark - Private Methods
 -(void) compareConnectionTimeWithConnection: (OTConnection *)connection {
     if (self.session.connection != NULL) {
-        NSComparisonResult result = [connection.creationTime compare:_selfConnection.creationTime];
+        NSComparisonResult result = [connection.creationTime compare:_session.connection.creationTime];
         
         if (result==NSOrderedAscending) {
             _connectionsOlderThanMe --;
