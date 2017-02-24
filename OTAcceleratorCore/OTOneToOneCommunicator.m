@@ -36,6 +36,8 @@
 @interface OTOneToOneCommunicator() <OTSessionDelegate, OTSubscriberKitDelegate, OTPublisherDelegate, OTVideoViewProtocol>
 @property (nonatomic) BOOL isCallEnabled;
 @property (nonatomic) NSString *name;
+@property (nonatomic) NSUInteger connectionCount;
+@property (nonatomic) NSUInteger connectionCountOlderThanMe;
 @property (nonatomic) OTSubscriber *subscriber;
 @property (nonatomic) OTPublisher *publisher;
 @property (weak, nonatomic) OTAcceleratorSession *session;
@@ -168,6 +170,7 @@
     }
     
     self.isCallEnabled = NO;
+    _connectionCount = 0;
     return disconnectError;
 }
 
@@ -189,6 +192,8 @@
                                                  variation:KLogVariationSuccess
                                                 completion:nil];
     
+    _connectionCount++;
+
     if (!self.publisher) {
         
         if (!self.screenSharingView) {
@@ -230,6 +235,7 @@
 - (void)sessionDidDisconnect:(OTSession *)session {
     [self notifiyAllWithSignal:OTPublisherDestroyed
                          error:nil];
+    _connectionCount = 0;
 }
 
 - (void)session:(OTSession *)session streamCreated:(OTStream *)stream {
@@ -256,9 +262,26 @@
     }
 }
 
+- (void)  session:(OTSession*) session
+connectionCreated:(OTConnection*) connection {
+    _connectionCount++;
+    
+    //check creationtime of the connections
+    [self compareConnectionTimeWithConnection: connection];
+}
+
+- (void)session:(OTSession*) session
+connectionDestroyed:(OTConnection*) connection {
+    _connectionCount--;
+    
+    //check creationtime of the connections
+    [self compareConnectionTimeWithConnection: connection];
+}
+
 - (void)session:(OTSession *)session didFailWithError:(OTError *)error {
     [self notifiyAllWithSignal:OTCommunicationError
                          error:error];
+    _connectionCount=0;
 }
 
 - (void)sessionDidBeginReconnecting:(OTSession *)session {
@@ -472,4 +495,15 @@
     _publisher.cameraPosition = cameraPosition;
 }
 
+- (BOOL)isFirstConnection {
+    return _connectionCountOlderThanMe > 0 ? false : true;
+}
+
+#pragma mark - Private Methods
+-(void)compareConnectionTimeWithConnection: (OTConnection *)connection {
+    if (self.session.connection) {
+        NSComparisonResult result = [connection.creationTime compare:_session.connection.creationTime];
+        result == NSOrderedDescending ? _connectionCountOlderThanMe++ : _connectionCountOlderThanMe--;
+    }
+}
 @end

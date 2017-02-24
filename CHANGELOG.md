@@ -7,6 +7,14 @@ The changelog for `Accelerator-Core` iOS.
 1.0.3
 -----
 
+### Enhancements
+
+- Introduce a new property to access connection count
+- Introduce a new property to indicate whether it's the first connection
+
+1.0.3
+-----
+
 ### Breaking Changes
 
 - The minimum OpenTok iOS SDK now is eqaul or above 2.10.0 which requires iOS SDK 9.0 or above
