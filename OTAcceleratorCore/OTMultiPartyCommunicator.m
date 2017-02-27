@@ -133,6 +133,8 @@
 @interface OTMultiPartyCommunicator() <OTSessionDelegate, OTSubscriberKitDelegate, OTPublisherDelegate, OTVideoViewProtocol>
 @property (nonatomic) BOOL isCallEnabled;
 @property (nonatomic) NSString *name;
+@property (nonatomic) NSUInteger connectionCount;
+@property (nonatomic) NSUInteger connectionCountOlderThanMe;
 @property (nonatomic) OTPublisher *publisher;
 @property (nonatomic) NSMutableArray *subscribers;
 @property (weak, nonatomic) OTAcceleratorSession *session;
@@ -286,6 +288,7 @@
     }
     
     self.isCallEnabled = NO;
+    _connectionCount = 0;
     return disconnectError;
 }
 
@@ -427,10 +430,27 @@
     }
 }
 
+- (void)session:(OTSession*) session
+connectionCreated:(OTConnection*) connection {
+    _connectionCount++;
+    
+    //check creationtime of the connections
+    [self compareConnectionTimeWithConnection: connection];
+}
+
+- (void)session:(OTSession*) session
+connectionDestroyed:(OTConnection*) connection {
+    _connectionCount--;
+    
+    //check creationtime of the connections
+    [self compareConnectionTimeWithConnection: connection];
+}
+
 - (void)sessionDidDisconnect:(OTSession *)session {
     [self notifyAllWithSignal:OTPublisherDestroyed
                    subscriber:nil
                         error:nil];
+    _connectionCount = 0;
 }
 
 - (void)session:(OTSession *)session didFailWithError:(OTError *)error {
@@ -706,4 +726,15 @@
     }
 }
 
+- (BOOL)isFirstConnection {
+    return _connectionCountOlderThanMe > 0 ? false : true;
+}
+
+#pragma mark - Private Methods
+-(void)compareConnectionTimeWithConnection: (OTConnection *)connection {
+    if (self.session.connection) {
+        NSComparisonResult result = [connection.creationTime compare:_session.connection.creationTime];
+        result == NSOrderedDescending ? _connectionCountOlderThanMe++ : _connectionCountOlderThanMe--;
+    }
+}
 @end
