@@ -8,12 +8,15 @@
 
 #import <Foundation/Foundation.h>
 
-static NSString* const KLogClientVersion = @"ios-vsol-2.0.0";
-static NSString* const kLogComponentIdentifier = @"OTAcceleratorCore";
+static NSString* const KLogClientVersion = @"ios-vsol-1.0.4";
+static NSString* const kLogComponentIdentifier = @"acceleratorCore";
 static NSString* const KLogActionInitialize = @"Init";
 static NSString* const KLogActionStartCommunication = @"StartComm";
-static NSString* const KLogActionStartScreenCommunication = @"StartScreenComm";
 static NSString* const KLogActionEndCommunication = @"EndComm";
+static NSString* const KLogActionStartScreenCommunication = @"StartScreenComm";
+static NSString* const KLogActionEndScreenCommunication = @"EndScreenComm";
+static NSString* const KLogActionAddRemote = @"AddRemote";
+static NSString* const KLogActionRemoveRemote = @"RemoveRemote";
 static NSString* const KLogVariationAttempt = @"Attempt";
 static NSString* const KLogVariationSuccess = @"Success";
 static NSString* const KLogVariationFailure = @"Failure";

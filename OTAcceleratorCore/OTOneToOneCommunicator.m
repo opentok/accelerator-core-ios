@@ -111,15 +111,17 @@
     }
     
     NSError *connectError = [self.session registerWithAccePack:self];
-    if (!connectError) {
-        [loggingWrapper.logger logEventAction:KLogActionStartCommunication
-                                    variation:KLogVariationSuccess
-                                   completion:nil];
-    }
-    else {
-        [loggingWrapper.logger logEventAction:KLogActionStartCommunication
-                                    variation:KLogVariationFailure
-                                   completion:nil];
+    if (connectError) {
+        if (!_screenSharingView) {
+            [loggingWrapper.logger logEventAction:KLogActionStartCommunication
+                                        variation:KLogVariationFailure
+                                       completion:nil];
+        }
+        else {
+            [loggingWrapper.logger logEventAction:KLogActionStartScreenCommunication
+                                        variation:KLogVariationFailure
+                                       completion:nil];
+        }
     }
     
     return connectError;
@@ -140,6 +142,17 @@
     
     // need to explicitly unpublish and unsubscriber if the communicator is the only accelerator to dismiss from the common session
     // when there are multiple accelerator packs, the common session will not call the disconnect method until the last delegate object is removed
+    LoggingWrapper *loggingWrapper = [LoggingWrapper sharedInstance];
+    if (!_screenSharingView) {
+        [loggingWrapper.logger logEventAction:KLogActionEndCommunication
+                                    variation:KLogVariationAttempt
+                                   completion:nil];
+    }
+    else {
+        [loggingWrapper.logger logEventAction:KLogActionEndScreenCommunication
+                                    variation:KLogVariationAttempt
+                                   completion:nil];
+    }
     if (self.publisher) {
         
         OTError *error = nil;
@@ -161,12 +174,18 @@
         [self cleaupSubscriber];
     }
     
-    LoggingWrapper *loggingWrapper = [LoggingWrapper sharedInstance];
     NSError *disconnectError = [self.session deregisterWithAccePack:self];
     if (disconnectError) {
-        [loggingWrapper.logger logEventAction:KLogActionEndCommunication
-                                    variation:KLogVariationFailure
-                                   completion:nil];
+        
+        if (!_screenSharingView) {
+            [loggingWrapper.logger logEventAction:KLogActionEndCommunication
+                                        variation:KLogVariationFailure
+                                       completion:nil];        }
+        else {
+            [loggingWrapper.logger logEventAction:KLogActionEndScreenCommunication
+                                        variation:KLogVariationFailure
+                                       completion:nil];
+        }
     }
     
     self.isCallEnabled = NO;
@@ -187,11 +206,6 @@
     [[LoggingWrapper sharedInstance].logger setSessionId:session.sessionId
                                             connectionId:session.connection.connectionId
                                                partnerId:@([self.session.apiKey integerValue])];
-    
-    [[LoggingWrapper sharedInstance].logger logEventAction:KLogActionEndCommunication
-                                                 variation:KLogVariationSuccess
-                                                completion:nil];
-    
     _connectionCount++;
 
     if (!self.publisher) {
@@ -245,11 +259,22 @@
     if (self.subscriber) {
         [self cleaupSubscriber];
     }
+   
+    LoggingWrapper *loggingWrapper = [LoggingWrapper sharedInstance];
+    OTError *subscriberError;
     
-    OTError *subscrciberError;
+    [loggingWrapper.logger logEventAction:KLogActionAddRemote
+                                variation:KLogVariationAttempt
+                               completion:nil];
+    
     self.subscriber = [[OTSubscriber alloc] initWithStream:stream delegate:self];
-    [self.session subscribe:self.subscriber error:&subscrciberError];
-    [self notifiyAllWithSignal:OTSubscriberCreated error:subscrciberError];
+    [self.session subscribe:self.subscriber error:&subscriberError];
+    if (subscriberError) {
+        [loggingWrapper.logger logEventAction:KLogActionAddRemote
+                                    variation:KLogVariationFailure
+                                        completion:nil];
+    }
+    [self notifiyAllWithSignal:OTSubscriberCreated error:subscriberError];
 }
 
 - (void)session:(OTSession *)session streamDestroyed:(OTStream *)stream {
@@ -262,7 +287,7 @@
     }
 }
 
-- (void)  session:(OTSession*) session
+- (void)session:(OTSession*) session
 connectionCreated:(OTConnection*) connection {
     _connectionCount++;
     
@@ -302,12 +327,41 @@ connectionDestroyed:(OTConnection*) connection {
     }
 }
 
+- (void)publisher:(nonnull OTPublisherKit *)publisher streamCreated:(nonnull OTStream *)stream {
+    if (stream.videoType == OTStreamVideoTypeScreen ) {
+        [[LoggingWrapper sharedInstance].logger logEventAction:KLogActionStartScreenCommunication
+                                                     variation:KLogVariationSuccess
+                                                    completion:nil];
+    }
+    else {
+        [[LoggingWrapper sharedInstance].logger logEventAction:KLogActionStartCommunication
+                                                     variation:KLogVariationSuccess
+                                                    completion:nil];
+    }
+}
+
+- (void)publisher:(nonnull OTPublisherKit *)publisher streamDestroyed:(nonnull OTStream *)stream {
+    if (stream.videoType == OTStreamVideoTypeScreen ) {
+        [[LoggingWrapper sharedInstance].logger logEventAction:KLogActionEndScreenCommunication
+                                                     variation:KLogVariationSuccess
+                                                    completion:nil];
+    }
+    else {
+        [[LoggingWrapper sharedInstance].logger logEventAction:KLogActionEndCommunication
+                                                     variation:KLogVariationSuccess
+                                                    completion:nil];
+    }
+}
+
 #pragma mark - OTSubscriberKitDelegate
 - (void)subscriberDidConnectToStream:(OTSubscriberKit*)subscriber {
     
     if (subscriber == self.subscriber) {
         _subscriberView = [[OTVideoView alloc] initWithSubscriber:self.subscriber];
         _subscriberView.delegate = self;
+        [[LoggingWrapper sharedInstance].logger logEventAction:KLogActionAddRemote
+                                                     variation:KLogVariationSuccess
+                                                    completion:nil];
         [self notifiyAllWithSignal:OTSubscriberReady
                              error:nil];
     }
@@ -371,22 +425,37 @@ connectionDestroyed:(OTConnection*) connection {
 }
 
 - (void)cleaupSubscriber {
+    [[LoggingWrapper sharedInstance].logger logEventAction:KLogActionRemoveRemote
+                                                     variation:KLogVariationAttempt
+                                                    completion:nil];
     [self.subscriber.view removeFromSuperview];
     [self.subscriberView clean];
     self.subscriber = nil;
     self.subscriberView = nil;
+    [[LoggingWrapper sharedInstance].logger logEventAction:KLogActionRemoveRemote
+                                                 variation:KLogVariationSuccess
+                                                completion:nil];
 }
 
 #pragma mark - advanced
 - (NSError *)subscribeToStreamWithName:(NSString *)name {
+    [[LoggingWrapper sharedInstance].logger logEventAction:KLogActionAddRemote
+                                variation:KLogVariationAttempt
+                               completion:nil];
+    
     for (OTStream *stream in self.session.streams.allValues) {
         if ([stream.name isEqualToString:name]) {
             
             [self cleaupSubscriber];
-            NSError *subscrciberError;
+            NSError *subscriberError;
             self.subscriber = [[OTSubscriber alloc] initWithStream:stream delegate:self];
-            [self.session subscribe:self.subscriber error:&subscrciberError];
-            return subscrciberError;
+            [self.session subscribe:self.subscriber error:&subscriberError];
+            if (subscriberError) {
+                [[LoggingWrapper sharedInstance].logger logEventAction:KLogActionAddRemote
+                                                             variation:KLogVariationFailure
+                                                            completion:nil];
+            }
+            return subscriberError;
         }
     }
     
@@ -394,14 +463,23 @@ connectionDestroyed:(OTConnection*) connection {
 }
 
 - (NSError *)subscribeToStreamWithStreamId:(NSString *)streamId {
+    [[LoggingWrapper sharedInstance].logger logEventAction:KLogActionAddRemote
+                                variation:KLogVariationAttempt
+                               completion:nil];
+    
     for (OTStream *stream in self.session.streams.allValues) {
         if ([stream.streamId isEqualToString:streamId]) {
             
             [self cleaupSubscriber];
-            NSError *subscrciberError;
+            NSError *subscriberError;
             self.subscriber = [[OTSubscriber alloc] initWithStream:stream delegate:self];
-            [self.session subscribe:self.subscriber error:&subscrciberError];
-            return subscrciberError;
+            [self.session subscribe:self.subscriber error:&subscriberError];
+            if (subscriberError) {
+                [[LoggingWrapper sharedInstance].logger logEventAction:KLogActionAddRemote
+                                            variation:KLogVariationFailure
+                                           completion:nil];
+            }
+            return subscriberError;
         }
     }
     

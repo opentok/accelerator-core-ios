@@ -209,16 +209,19 @@
     
     
     NSError *connectError = [self.session registerWithAccePack:self];
-    if (!connectError) {
-        [loggingWrapper.logger logEventAction:KLogActionStartCommunication
-                                    variation:KLogVariationSuccess
-                                   completion:nil];
+    if (connectError) {
+        if (!_screenSharingView) {
+            [loggingWrapper.logger logEventAction:KLogActionStartCommunication
+                                        variation:KLogVariationFailure
+                                       completion:nil];
+        }
+        else {
+            [loggingWrapper.logger logEventAction:KLogActionStartScreenCommunication
+                                        variation:KLogVariationFailure
+                                       completion:nil];
+        }
     }
-    else {
-        [loggingWrapper.logger logEventAction:KLogActionStartCommunication
-                                    variation:KLogVariationFailure
-                                   completion:nil];
-    }
+
     
     return connectError;
 }
@@ -227,6 +230,17 @@
     
     // need to explicitly unpublish and unsubscriber if the communicator is the only accelerator to dismiss from the common session
     // when there are multiple accelerator packs, the common session will not call the disconnect method until the last delegate object is removed
+    MultiPartyLoggingWrapper *loggingWrapper = [MultiPartyLoggingWrapper sharedInstance];
+    if (!_screenSharingView) {
+        [loggingWrapper.logger logEventAction:KLogActionEndCommunication
+                                    variation:KLogVariationAttempt
+                                   completion:nil];
+    }
+    else {
+        [loggingWrapper.logger logEventAction:KLogActionEndScreenCommunication
+                                    variation:KLogVariationAttempt
+                                   completion:nil];
+    }
     if (self.publisher) {
         
         OTError *error = nil;
@@ -244,12 +258,18 @@
     }
 
     for (OTMultiPartyRemote *subscriberObject in self.subscribers) {
+        [[MultiPartyLoggingWrapper sharedInstance].logger logEventAction:KLogActionRemoveRemote
+                                                               variation:KLogVariationAttempt
+                                                              completion:nil];
         OTError *error = nil;
         OTSubscriber *subscriber = subscriberObject.subscriber;
         [subscriber.view removeFromSuperview];
         [self.session unsubscribe:subscriber error:&error];
         if (error) {
             NSLog(@"%s: %@", __PRETTY_FUNCTION__, error);
+            [[MultiPartyLoggingWrapper sharedInstance].logger logEventAction:KLogActionRemoveRemote
+                                                                   variation:KLogVariationFailure
+                                                                  completion:nil];
         }
         [subscriberObject.subscriberView removeFromSuperview];
         [subscriberObject.subscriberView clean];
@@ -258,17 +278,18 @@
     }
     [self.subscribers removeAllObjects];
 
-    MultiPartyLoggingWrapper *loggingWrapper = [MultiPartyLoggingWrapper sharedInstance];
     NSError *disconnectError = [self.session deregisterWithAccePack:self];
-    if (!disconnectError) {
-        [loggingWrapper.logger logEventAction:KLogActionEndCommunication
-                                    variation:KLogVariationSuccess
-                                   completion:nil];
-    }
-    else {
-        [loggingWrapper.logger logEventAction:KLogActionEndCommunication
-                                    variation:KLogVariationFailure
-                                   completion:nil];
+    if (disconnectError) {
+        
+        if (!_screenSharingView) {
+            [loggingWrapper.logger logEventAction:KLogActionEndCommunication
+                                        variation:KLogVariationFailure
+                                       completion:nil];        }
+        else {
+            [loggingWrapper.logger logEventAction:KLogActionEndScreenCommunication
+                                        variation:KLogVariationFailure
+                                       completion:nil];
+        }
     }
     
     self.isCallEnabled = NO;
@@ -347,11 +368,17 @@
     
     if (self.isPublishOnly) return;
     
-    OTError *subscrciberError;
-    OTSubscriber *subscriber = [[OTSubscriber alloc] initWithStream:stream delegate:self];
-    [self.session subscribe:subscriber error:&subscrciberError];
+    MultiPartyLoggingWrapper *loggingWrapper = [MultiPartyLoggingWrapper sharedInstance];
+    OTError *subscriberError;
+  
+    [loggingWrapper.logger logEventAction:KLogActionAddRemote
+                                variation:KLogVariationAttempt
+                               completion:nil];
     
-    if (!subscrciberError) {
+    OTSubscriber *subscriber = [[OTSubscriber alloc] initWithStream:stream delegate:self];
+    [self.session subscribe:subscriber error:&subscriberError];
+    
+    if (!subscriberError) {
         OTMultiPartyRemote *subscriberObject = [[OTMultiPartyRemote alloc] initWithSubscriber:subscriber];
         if (!self.subscribers) {
             self.subscribers = [[NSMutableArray alloc] init];
@@ -362,9 +389,12 @@
                             error:nil];
     }
     else {
+        [loggingWrapper.logger logEventAction:KLogActionAddRemote
+                                    variation:KLogVariationFailure
+                                   completion:nil];
         [self notifyAllWithSignal:OTCommunicationError
                        subscriber:nil
-                            error:subscrciberError];
+                            error:subscriberError];
     }
 }
 
@@ -439,7 +469,39 @@ connectionDestroyed:(OTConnection*) connection {
     }
 }
 
+- (void)publisher:(nonnull OTPublisherKit *)publisher streamCreated:(nonnull OTStream *)stream {
+    if (stream.videoType == OTStreamVideoTypeScreen ) {
+        [[MultiPartyLoggingWrapper sharedInstance].logger logEventAction:KLogActionStartScreenCommunication
+                                                     variation:KLogVariationSuccess
+                                                    completion:nil];
+    }
+    else {
+        [[MultiPartyLoggingWrapper sharedInstance].logger logEventAction:KLogActionStartCommunication
+                                                     variation:KLogVariationSuccess
+                                                    completion:nil];
+    }
+}
+
+- (void)publisher:(nonnull OTPublisherKit *)publisher streamDestroyed:(nonnull OTStream *)stream {
+    if (stream.videoType == OTStreamVideoTypeScreen ) {
+        [[MultiPartyLoggingWrapper sharedInstance].logger logEventAction:KLogActionEndScreenCommunication
+                                                     variation:KLogVariationSuccess
+                                                    completion:nil];
+    }
+    else {
+        [[MultiPartyLoggingWrapper sharedInstance].logger logEventAction:KLogActionEndCommunication
+                                                     variation:KLogVariationSuccess
+                                                    completion:nil];
+    }
+}
+
+
+#pragma mark - OTSubscriberDelegate
 - (void)subscriberDidConnectToStream:(OTSubscriber *)subscriber {
+    [[MultiPartyLoggingWrapper sharedInstance].logger logEventAction:KLogActionAddRemote
+                                                           variation:KLogVariationSuccess
+                                                          completion:nil];
+    
     for (OTMultiPartyRemote *subscriberObject in self.subscribers) {
         if (subscriberObject.subscriber == subscriber) {
             [self notifyAllWithSignal:OTSubscriberReady
@@ -451,6 +513,10 @@ connectionDestroyed:(OTConnection*) connection {
 }
 
 - (void)subscriberDidDisconnectFromStream:(OTSubscriber *)subscriber {
+    [[MultiPartyLoggingWrapper sharedInstance].logger logEventAction:KLogActionRemoveRemote
+                                                           variation:KLogVariationSuccess
+                                                          completion:nil];
+    
     OTMultiPartyRemote *subscriberObject = [[OTMultiPartyRemote alloc] initWithSubscriber:subscriber];
     if ([self.subscribers containsObject:subscriberObject]) {
         [self notifyAllWithSignal:OTSubscriberDestroyed
