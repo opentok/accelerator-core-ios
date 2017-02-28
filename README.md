@@ -18,6 +18,8 @@ The Accelerator Core is an easy manner to integrate audio/video communication to
 
 # Configure, build and run the sample app <br/>
 
+You can get the sample app [here](https://github.com/opentok/one-to-one-screen-annotations-sample-apps/tree/develop/ios) 
+
 1. Get values for **API Key**, **Session ID**, and **Token**. See [Obtaining OpenTok Credentials](#obtaining-opentok-credentials) for important information.
 
 1. Install CocoaPods as described in [CocoaPods Getting Started](https://guides.cocoapods.org/using/getting-started.html#getting-started).
