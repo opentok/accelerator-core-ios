@@ -31,25 +31,27 @@
     
     self.screenSharer = [[OTMultiPartyCommunicator alloc] initWithView:self.webView];
     self.screenSharer.dataSource = self;
+    
+    __weak ShareWholeScreenMultipartyViewController *weakSelf = self;
     [self.screenSharer connectWithHandler:^(OTCommunicationSignal signal, OTMultiPartyRemote *subscriber, NSError *error) {
                                    
                                    if (signal == OTPublisherCreated) {
-                                       self.screenSharer.publisherView.frame = CGRectMake(10, 200, 100, 100);
-                                       [self.view addSubview:self.screenSharer.publisherView];
+                                       weakSelf.screenSharer.publisherView.frame = CGRectMake(10, 200, 100, 100);
+                                       [weakSelf.view addSubview:self.screenSharer.publisherView];
                                    }
                                    else if (signal == OTSubscriberCreated) {
                                        subscriber.subscriberView.frame = self.subscriberView1.bounds;
-                                       if (self.subscriberView1.subviews.count == 0) {
-                                           [self.subscriberView1 addSubview:subscriber.subscriberView];
+                                       if (weakSelf.subscriberView1.subviews.count == 0) {
+                                           [weakSelf.subscriberView1 addSubview:subscriber.subscriberView];
                                        }
-                                       else if (self.subscriberView2.subviews.count == 0) {
-                                           [self.subscriberView2 addSubview:subscriber.subscriberView];
+                                       else if (weakSelf.subscriberView2.subviews.count == 0) {
+                                           [weakSelf.subscriberView2 addSubview:subscriber.subscriberView];
                                        }
-                                       else if (self.subscriberView3.subviews.count == 0) {
-                                           [self.subscriberView3 addSubview:subscriber.subscriberView];
+                                       else if (weakSelf.subscriberView3.subviews.count == 0) {
+                                           [weakSelf.subscriberView3 addSubview:subscriber.subscriberView];
                                        }
-                                       else if (self.subscriberView4.subviews.count == 0) {
-                                           [self.subscriberView4 addSubview:subscriber.subscriberView];
+                                       else if (weakSelf.subscriberView4.subviews.count == 0) {
+                                           [weakSelf.subscriberView4 addSubview:subscriber.subscriberView];
                                        }
                                    }
                                }];
@@ -59,6 +61,7 @@
 - (void)viewWillDisappear:(BOOL)animated {
     [super viewWillDisappear:animated];
     [self.screenSharer disconnect];
+    self.screenSharer = nil;
 }
 
 - (UIBarButtonItem *)subscribeButton {

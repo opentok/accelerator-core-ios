@@ -101,13 +101,30 @@ Each communicator instance will take the OpenTok session from OTOneToOneCommunic
     self.screenSharer = [[OTMultiPartyCommunicator alloc] initWithView:[UIApplication sharedApplication].keyWindow.rootViewController.view];
     ```
     
+- Pre-defined UI
+
+    Enable audio&video control
+    ```objc
+    self.communicator.publisherView.controlView.isVerticalAlignment = YES;
+    self.communicator.publisherView.controlView.frame = CGRectMake(10, 10, CGRectGetWidth(self.publisherView.frame) * 0.1, CGRectGetHeight(self.publisherView.frame) * 0.3);
+    ```
+
+    Handle video enable/disable control
+    ```objc
+    // default
+    // enable handleAudioVideo property, the publisherView will be covered by a silhouette automatically.
+    self.communicator.publisherView.handleAudioVideo = YES; 
+
+    // disable handleAudioVideo property, the publisherView will do nothing for enabling/disabling publishVideo.
+    self.communicator.publisherView.handleAudioVideo = NO; 
+    ```
 
 # Sample Apps that uses the Core
 
 The following sample apps use `Accelerator Core`:
 
-- [OpenTok One-to-One Communication Sample Apps](https://github.com/opentok/one-to-one-sample-apps) 
-
+- [OpenTok One-to-One Communication Sample App](https://github.com/opentok/one-to-one-sample-apps) 
+- [Accelerator Sample App](https://github.com/opentok/accelerator-sample-apps-ios)
 
 
 ####Obtaining OpenTok Credentials

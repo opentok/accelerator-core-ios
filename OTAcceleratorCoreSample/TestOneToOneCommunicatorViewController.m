@@ -25,17 +25,19 @@
     
     self.communicator = [[OTOneToOneCommunicator alloc] init];
     self.communicator.dataSource = self;
+    
+    __weak TestOneToOneCommunicatorViewController *weakSelf = self;
     [self.communicator connectWithHandler:^(OTCommunicationSignal signal, NSError *error) {
         if (signal == OTPublisherCreated && !error) {
-            self.communicator.publisherView.frame = self.publisherView.bounds;
-            self.communicator.publisherView.controlView.alpha = 0.8;
-            self.communicator.publisherView.controlView.frame = CGRectMake(10, 10, 50, 100);
-            [self.publisherView addSubview:self.communicator.publisherView];
+            weakSelf.communicator.publisherView.frame = weakSelf.publisherView.bounds;
+            weakSelf.communicator.publisherView.controlView.alpha = 0.8;
+            weakSelf.communicator.publisherView.controlView.frame = CGRectMake(10, 10, 50, 100);
+            [weakSelf.publisherView addSubview:weakSelf.communicator.publisherView];
         }
         else if (signal == OTSubscriberReady && !error) {
-            self.communicator.subscriberView.frame = self.subscriberView.bounds;
-            self.communicator.subscriberView.controlView.backgroundColor = [UIColor blackColor];
-            [self.subscriberView addSubview:self.communicator.subscriberView];
+            weakSelf.communicator.subscriberView.frame = weakSelf.subscriberView.bounds;
+            weakSelf.communicator.subscriberView.controlView.backgroundColor = [UIColor blackColor];
+            [weakSelf.subscriberView addSubview:weakSelf.communicator.subscriberView];
         }
     }];
 }
@@ -51,33 +53,35 @@
                                                                    message:nil
                                                             preferredStyle:UIAlertControllerStyleActionSheet];
     
+    __weak TestOneToOneCommunicatorViewController *weakSelf = self;
+    
     [alert addAction:[UIAlertAction actionWithTitle:@"SWITCH PUBLISHER VIDEO ON/OFF" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
         
-        self.communicator.publishVideo = !self.communicator.publishVideo;
+        weakSelf.communicator.publishVideo = !weakSelf.communicator.publishVideo;
     }]];
     
     [alert addAction:[UIAlertAction actionWithTitle:@"SWITCH SUBSCRIBER VIDEO ON/OFF" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
         
-        self.communicator.subscribeToVideo = !self.communicator.subscribeToVideo;
+        weakSelf.communicator.subscribeToVideo = !weakSelf.communicator.subscribeToVideo;
     }]];
     
     [alert addAction:[UIAlertAction actionWithTitle:@"SWITCH A/V CONTROLS MODE" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
         
-        if (!self.communicator.isCallEnabled) return;
+        if (!weakSelf.communicator.isCallEnabled) return;
         
-        if (self.communicator.publisherView.controlView.isVerticalAlignment) {
-            self.communicator.publisherView.controlView.isVerticalAlignment = NO;
-            self.communicator.publisherView.controlView.frame = CGRectMake(10, 10, CGRectGetWidth(self.publisherView.frame) * 0.3, CGRectGetHeight(self.publisherView.frame) * 0.1);
+        if (weakSelf.communicator.publisherView.controlView.isVerticalAlignment) {
+            weakSelf.communicator.publisherView.controlView.isVerticalAlignment = NO;
+            weakSelf.communicator.publisherView.controlView.frame = CGRectMake(10, 10, CGRectGetWidth(weakSelf.publisherView.frame) * 0.3, CGRectGetHeight(self.publisherView.frame) * 0.1);
         }
         else {
-            self.communicator.publisherView.controlView.isVerticalAlignment = YES;
-            self.communicator.publisherView.controlView.frame = CGRectMake(10, 10, CGRectGetWidth(self.publisherView.frame) * 0.1, CGRectGetHeight(self.publisherView.frame) * 0.3);
+            weakSelf.communicator.publisherView.controlView.isVerticalAlignment = YES;
+            weakSelf.communicator.publisherView.controlView.frame = CGRectMake(10, 10, CGRectGetWidth(weakSelf.publisherView.frame) * 0.1, CGRectGetHeight(self.publisherView.frame) * 0.3);
         }
     }]];
     
     [alert addAction:[UIAlertAction actionWithTitle:@"CANCEL" style:UIAlertActionStyleDestructive handler:^(UIAlertAction *action) {
         
-        [alert dismissViewControllerAnimated:YES completion:nil];
+        [weakSelf dismissViewControllerAnimated:YES completion:nil];
     }]];
     
     [self presentViewController:alert animated:YES completion:nil];
