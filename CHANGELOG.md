@@ -4,7 +4,16 @@ The changelog for `Accelerator-Core` iOS.
 
 --------------------------------------
 
-1.0.3
+1.0.5
+-----
+
+### Enhancements
+
+- Enable preferred resolution so OpenTok cloud will send desired resolution
+- Enhancements on the sample app
+- Enhancements on the docs about pre-defined UI
+
+1.0.4
 -----
 
 ### Enhancements
