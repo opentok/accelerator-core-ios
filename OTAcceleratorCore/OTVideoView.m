@@ -230,6 +230,14 @@
 @implementation OTVideoView
 @synthesize placeHolderImage = _placeHolderImage;
 
+- (void)setFrame:(CGRect)frame {
+    super.frame = frame;
+    
+    if (_subscriber) {
+        _subscriber.preferredResolution = CGSizeMake(CGRectGetWidth(frame), CGRectGetHeight(frame));
+    }
+}
+
 - (instancetype)initWithPublisher:(OTPublisher *)publisher {
     
     if (!publisher || ![publisher isKindOfClass:[OTPublisher class]]) return nil;

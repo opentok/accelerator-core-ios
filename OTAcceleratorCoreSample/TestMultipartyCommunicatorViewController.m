@@ -23,23 +23,25 @@
     
     self.communicator = [[OTMultiPartyCommunicator alloc] init];
     self.communicator.dataSource = self;
+    
+    __weak TestMultipartyCommunicatorViewController *weakSelf = self;
     [self.communicator connectWithHandler:^(OTCommunicationSignal signal, OTMultiPartyRemote *subscriber, NSError *error) {
         if (signal == OTPublisherCreated && !error) {
-            self.communicator.publisherView.frame = self.publisherView.bounds;
-            self.communicator.publisherView.controlView.frame = CGRectMake(10, 10, 50, 100);
-            [self.publisherView addSubview:self.communicator.publisherView];
+            weakSelf.communicator.publisherView.frame = self.publisherView.bounds;
+            weakSelf.communicator.publisherView.controlView.frame = CGRectMake(10, 10, 50, 100);
+            [weakSelf.publisherView addSubview:self.communicator.publisherView];
         }
         else if (signal == OTSubscriberReady && !error) {
             
-            subscriber.subscriberView.frame = self.communicator.publisherView.frame;
-            if (self.subscriberView1.subviews.count == 0) {
-                [self.subscriberView1 addSubview:subscriber.subscriberView];
+            subscriber.subscriberView.frame = weakSelf.communicator.publisherView.frame;
+            if (weakSelf.subscriberView1.subviews.count == 0) {
+                [weakSelf.subscriberView1 addSubview:subscriber.subscriberView];
             }
-            else if (self.subscriberView2.subviews.count == 0) {
-                [self.subscriberView2 addSubview:subscriber.subscriberView];
+            else if (weakSelf.subscriberView2.subviews.count == 0) {
+                [weakSelf.subscriberView2 addSubview:subscriber.subscriberView];
             }
-            else if (self.subscriberView3.subviews.count == 0) {
-                [self.subscriberView3 addSubview:subscriber.subscriberView];
+            else if (weakSelf.subscriberView3.subviews.count == 0) {
+                [weakSelf.subscriberView3 addSubview:subscriber.subscriberView];
             }
             
             subscriber.subscriberView.controlView.frame = CGRectMake(10, 10, 50, 100);
@@ -49,6 +51,7 @@
 - (void)viewWillDisappear:(BOOL)animated {
     [super viewWillDisappear:animated];
     [self.communicator disconnect];
+    self.communicator = nil;
 }
 
 #pragma mark - OTMultiPartyCommunciatorDataSource

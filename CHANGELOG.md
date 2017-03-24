@@ -4,6 +4,23 @@ The changelog for `Accelerator-Core` iOS.
 
 --------------------------------------
 
+1.0.5
+-----
+
+### Enhancements
+
+- Enable preferred resolution so OpenTok cloud will send desired resolution
+- Enhancements on the sample app
+- Enhancements on the docs about pre-defined UI
+
+1.0.4
+-----
+
+### Enhancements
+
+- Introduce a new property to access connection count
+- Introduce a new property to indicate whether it's the first connection
+
 1.0.3
 -----
 
