@@ -127,7 +127,7 @@ The following sample apps use `Accelerator Core`:
 - [Accelerator Sample App](https://github.com/opentok/accelerator-sample-apps-ios)
 
 
-####Obtaining OpenTok Credentials
+#### Obtaining OpenTok Credentials
 
 To use OpenTok's framework you need a Session ID, Token, and API Key you can get these values at the [OpenTok Developer Dashboard](https://dashboard.tokbox.com/) . For production deployment, you must generate the Session ID and Token values using one of the [OpenTok Server SDKs](https://tokbox.com/developer/sdks/server/).
 
