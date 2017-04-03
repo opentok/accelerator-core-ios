@@ -377,6 +377,11 @@
 
 - (void)controlViewAudioButtonClicked:(UIButton *)button {
     if (button == _controlView.audioButton) {
+        if (self.controlView.delegate && [self.controlView.delegate respondsToSelector:@selector(didTapAudioButtonOnVideoControlView:)]) {
+            
+            [self.controlView.delegate didTapAudioButtonOnVideoControlView:self.controlView];
+        }
+        
         if (_publisher) {
             self.publisher.publishAudio = !self.publisher.publishAudio;
         }
@@ -388,6 +393,11 @@
 
 - (void)controlViewVideoButtonClicked:(UIButton *)button {
     if (button == _controlView.videoButton) {
+        if (self.controlView.delegate && [self.controlView.delegate respondsToSelector:@selector(didTapVideoButtonOnVideoControlView:)]) {
+            
+            [self.controlView.delegate didTapVideoButtonOnVideoControlView:self.controlView];
+        }
+        
         if (_publisher) {
             self.publisher.publishVideo = !self.publisher.publishVideo;
         }

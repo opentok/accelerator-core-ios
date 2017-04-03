@@ -7,6 +7,17 @@
 #import <UIKit/UIKit.h>
 #import <OpenTok/OpenTok.h>
 
+@class OTVideoView;
+@class OTAudioVideoControlView;
+
+@protocol OTVideoControlViewDelegate <NSObject>
+
+- (void)didTapAudioButtonOnVideoControlView:(OTAudioVideoControlView *)videoControlView;
+
+- (void)didTapVideoButtonOnVideoControlView:(OTAudioVideoControlView *)videoControlView;
+
+@end
+
 @interface OTAudioVideoControlView : UIView
 
 @property (readonly, nonatomic) UIButton *audioButton;
@@ -15,9 +26,10 @@
 
 @property (nonatomic) BOOL isVerticalAlignment;
 
+@property (weak, nonatomic) id<OTVideoControlViewDelegate> delegate;
+
 @end
 
-@class OTVideoView;
 @protocol OTVideoViewProtocol <NSObject>
 
 @optional
@@ -25,10 +37,6 @@
 - (void)placeHolderImageViewDidShowOnVideoView:(OTVideoView *)videoView;
 
 - (void)placeHolderImageViewDidDismissOnVideoView:(OTVideoView *)videoView;
-
-- (void)videoView:(OTVideoView *)videoView didTapToChangeAudioTo:(BOOL)enabled;
-
-- (void)videoView:(OTVideoView *)videoView didTapToChangeVideoTo:(BOOL)enabled;
 
 @end
 
