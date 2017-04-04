@@ -6,30 +6,9 @@
 
 #import <UIKit/UIKit.h>
 #import <OpenTok/OpenTok.h>
+#import "OTAudioVideoControlView.h"
 
 @class OTVideoView;
-@class OTAudioVideoControlView;
-
-@protocol OTVideoControlViewDelegate <NSObject>
-
-- (void)didTapAudioButtonOnVideoControlView:(OTAudioVideoControlView *)videoControlView;
-
-- (void)didTapVideoButtonOnVideoControlView:(OTAudioVideoControlView *)videoControlView;
-
-@end
-
-@interface OTAudioVideoControlView : UIView
-
-@property (readonly, nonatomic) UIButton *audioButton;
-
-@property (readonly, nonatomic) UIButton *videoButton;
-
-@property (nonatomic) BOOL isVerticalAlignment;
-
-@property (weak, nonatomic) id<OTVideoControlViewDelegate> delegate;
-
-@end
-
 @protocol OTVideoViewProtocol <NSObject>
 
 @optional

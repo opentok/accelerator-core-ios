@@ -13,13 +13,14 @@
 		A0127A9B1D34651B00CDA3F5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A0127A9A1D34651B00CDA3F5 /* Assets.xcassets */; };
 		A0127A9E1D34651B00CDA3F5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A0127A9C1D34651B00CDA3F5 /* LaunchScreen.storyboard */; };
 		A0127ACC1D34675A00CDA3F5 /* TestOneToOneCommunicatorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A0127ACB1D34675A00CDA3F5 /* TestOneToOneCommunicatorViewController.m */; };
+		A05259351E9435DA000F9E88 /* OTVideoView.m in Sources */ = {isa = PBXBuildFile; fileRef = A05259321E9435DA000F9E88 /* OTVideoView.m */; };
+		A05259361E9435DA000F9E88 /* UIView+Helper.m in Sources */ = {isa = PBXBuildFile; fileRef = A05259341E9435DA000F9E88 /* UIView+Helper.m */; };
+		A05259391E9435EA000F9E88 /* OTAudioVideoControlView.m in Sources */ = {isa = PBXBuildFile; fileRef = A05259381E9435EA000F9E88 /* OTAudioVideoControlView.m */; };
 		A0565F1A1DF63ACB001F9032 /* TestMultipartyCommunicatorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A0565F191DF63ACB001F9032 /* TestMultipartyCommunicatorViewController.m */; };
 		A0565F301DF63F62001F9032 /* OTAcceleratorCoreBundle.m in Sources */ = {isa = PBXBuildFile; fileRef = A0565F241DF63F62001F9032 /* OTAcceleratorCoreBundle.m */; };
 		A0565F311DF63F62001F9032 /* OTAcceleratorSession.m in Sources */ = {isa = PBXBuildFile; fileRef = A0565F261DF63F62001F9032 /* OTAcceleratorSession.m */; };
 		A0565F321DF63F62001F9032 /* OTMultiPartyCommunicator.m in Sources */ = {isa = PBXBuildFile; fileRef = A0565F281DF63F62001F9032 /* OTMultiPartyCommunicator.m */; };
 		A0565F331DF63F62001F9032 /* OTOneToOneCommunicator.m in Sources */ = {isa = PBXBuildFile; fileRef = A0565F2A1DF63F62001F9032 /* OTOneToOneCommunicator.m */; };
-		A0565F341DF63F62001F9032 /* OTVideoView.m in Sources */ = {isa = PBXBuildFile; fileRef = A0565F2C1DF63F62001F9032 /* OTVideoView.m */; };
-		A0565F351DF63F62001F9032 /* UIView+Helper.m in Sources */ = {isa = PBXBuildFile; fileRef = A0565F2E1DF63F62001F9032 /* UIView+Helper.m */; };
 		A0565F371DF640CD001F9032 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = A0565F361DF640CD001F9032 /* Podfile */; };
 		A07C06171DEBC32200BB4FD9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A07C06161DEBC32200BB4FD9 /* Assets.xcassets */; };
 		A08831221DF24A3D00F4D866 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A0CDA0981DF23F060018A2BA /* Assets.xcassets */; };
@@ -71,6 +72,12 @@
 		A0127A9F1D34651B00CDA3F5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A0127ACA1D34675A00CDA3F5 /* TestOneToOneCommunicatorViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestOneToOneCommunicatorViewController.h; sourceTree = "<group>"; };
 		A0127ACB1D34675A00CDA3F5 /* TestOneToOneCommunicatorViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestOneToOneCommunicatorViewController.m; sourceTree = "<group>"; };
+		A05259311E9435DA000F9E88 /* OTVideoView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OTVideoView.h; sourceTree = "<group>"; };
+		A05259321E9435DA000F9E88 /* OTVideoView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OTVideoView.m; sourceTree = "<group>"; };
+		A05259331E9435DA000F9E88 /* UIView+Helper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Helper.h"; sourceTree = "<group>"; };
+		A05259341E9435DA000F9E88 /* UIView+Helper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Helper.m"; sourceTree = "<group>"; };
+		A05259371E9435EA000F9E88 /* OTAudioVideoControlView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OTAudioVideoControlView.h; sourceTree = "<group>"; };
+		A05259381E9435EA000F9E88 /* OTAudioVideoControlView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OTAudioVideoControlView.m; sourceTree = "<group>"; };
 		A0565F181DF63ACB001F9032 /* TestMultipartyCommunicatorViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestMultipartyCommunicatorViewController.h; sourceTree = "<group>"; };
 		A0565F191DF63ACB001F9032 /* TestMultipartyCommunicatorViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestMultipartyCommunicatorViewController.m; sourceTree = "<group>"; };
 		A0565F221DF63F62001F9032 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -82,10 +89,6 @@
 		A0565F281DF63F62001F9032 /* OTMultiPartyCommunicator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OTMultiPartyCommunicator.m; sourceTree = "<group>"; };
 		A0565F291DF63F62001F9032 /* OTOneToOneCommunicator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OTOneToOneCommunicator.h; sourceTree = "<group>"; };
 		A0565F2A1DF63F62001F9032 /* OTOneToOneCommunicator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OTOneToOneCommunicator.m; sourceTree = "<group>"; };
-		A0565F2B1DF63F62001F9032 /* OTVideoView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OTVideoView.h; sourceTree = "<group>"; };
-		A0565F2C1DF63F62001F9032 /* OTVideoView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OTVideoView.m; sourceTree = "<group>"; };
-		A0565F2D1DF63F62001F9032 /* UIView+Helper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Helper.h"; sourceTree = "<group>"; };
-		A0565F2E1DF63F62001F9032 /* UIView+Helper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Helper.m"; sourceTree = "<group>"; };
 		A0565F361DF640CD001F9032 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		A07C06101DEBC2B500BB4FD9 /* OTAcceleratorCoreBundle.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OTAcceleratorCoreBundle.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
 		A07C06161DEBC32200BB4FD9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -195,10 +198,23 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		A05259301E9435DA000F9E88 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				A05259311E9435DA000F9E88 /* OTVideoView.h */,
+				A05259321E9435DA000F9E88 /* OTVideoView.m */,
+				A05259371E9435EA000F9E88 /* OTAudioVideoControlView.h */,
+				A05259381E9435EA000F9E88 /* OTAudioVideoControlView.m */,
+				A05259331E9435DA000F9E88 /* UIView+Helper.h */,
+				A05259341E9435DA000F9E88 /* UIView+Helper.m */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
 		A0565F211DF63F62001F9032 /* OTAcceleratorCore */ = {
 			isa = PBXGroup;
 			children = (
-				A0565F221DF63F62001F9032 /* Info.plist */,
+				A05259301E9435DA000F9E88 /* UI */,
 				A0565F231DF63F62001F9032 /* OTAcceleratorCoreBundle.h */,
 				A0565F241DF63F62001F9032 /* OTAcceleratorCoreBundle.m */,
 				A0565F251DF63F62001F9032 /* OTAcceleratorSession.h */,
@@ -207,13 +223,10 @@
 				A0565F281DF63F62001F9032 /* OTMultiPartyCommunicator.m */,
 				A0565F291DF63F62001F9032 /* OTOneToOneCommunicator.h */,
 				A0565F2A1DF63F62001F9032 /* OTOneToOneCommunicator.m */,
-				A0565F2B1DF63F62001F9032 /* OTVideoView.h */,
-				A0565F2C1DF63F62001F9032 /* OTVideoView.m */,
-				A0565F2D1DF63F62001F9032 /* UIView+Helper.h */,
-				A0565F2E1DF63F62001F9032 /* UIView+Helper.m */,
 				A080E47C1E244CFA007972D8 /* OTCommonCommunicator.h */,
 				A0AB9F0E1E3AC2D50068E20F /* OTScreenCapture.h */,
 				A0AB9F0F1E3AC2D50068E20F /* OTScreenCapture.m */,
+				A0565F221DF63F62001F9032 /* Info.plist */,
 			);
 			path = OTAcceleratorCore;
 			sourceTree = "<group>";
@@ -386,10 +399,11 @@
 				A0127A901D34651B00CDA3F5 /* main.m in Sources */,
 				A0565F331DF63F62001F9032 /* OTOneToOneCommunicator.m in Sources */,
 				A0AB9F0D1E3AC11F0068E20F /* ShareWholeScreenViewController.m in Sources */,
-				A0565F341DF63F62001F9032 /* OTVideoView.m in Sources */,
+				A05259361E9435DA000F9E88 /* UIView+Helper.m in Sources */,
 				A0AB9F101E3AC2D50068E20F /* OTScreenCapture.m in Sources */,
+				A05259351E9435DA000F9E88 /* OTVideoView.m in Sources */,
 				A0565F321DF63F62001F9032 /* OTMultiPartyCommunicator.m in Sources */,
-				A0565F351DF63F62001F9032 /* UIView+Helper.m in Sources */,
+				A05259391E9435EA000F9E88 /* OTAudioVideoControlView.m in Sources */,
 				A0127ACC1D34675A00CDA3F5 /* TestOneToOneCommunicatorViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
