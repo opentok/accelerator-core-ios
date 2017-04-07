@@ -35,6 +35,7 @@
 		A0AB9FF01E3ED0020068E20F /* OTAcceleratorCoreMultipartyCommunicatorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A0AB9FEF1E3ED0020068E20F /* OTAcceleratorCoreMultipartyCommunicatorTests.m */; };
 		A0AB9FF21E3ED08B0068E20F /* OTViewHelperTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A0AB9FF11E3ED08B0068E20F /* OTViewHelperTests.m */; };
 		A0AB9FF41E3ED2060068E20F /* OTVideoViewTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A0AB9FF31E3ED2060068E20F /* OTVideoViewTests.m */; };
+		A0C142BD1E95992B000120E4 /* OTAudioVideoControlViewTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A0C142BC1E95992B000120E4 /* OTAudioVideoControlViewTests.m */; };
 		A0FEAC001D73B3BF000BDDA4 /* OTAcceleratorCore.podspec in Resources */ = {isa = PBXBuildFile; fileRef = A0FEABFD1D73B3BF000BDDA4 /* OTAcceleratorCore.podspec */; };
 /* End PBXBuildFile section */
 
@@ -110,6 +111,7 @@
 		A0AB9FEF1E3ED0020068E20F /* OTAcceleratorCoreMultipartyCommunicatorTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OTAcceleratorCoreMultipartyCommunicatorTests.m; sourceTree = "<group>"; };
 		A0AB9FF11E3ED08B0068E20F /* OTViewHelperTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OTViewHelperTests.m; sourceTree = "<group>"; };
 		A0AB9FF31E3ED2060068E20F /* OTVideoViewTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OTVideoViewTests.m; sourceTree = "<group>"; };
+		A0C142BC1E95992B000120E4 /* OTAudioVideoControlViewTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OTAudioVideoControlViewTests.m; sourceTree = "<group>"; };
 		A0CDA0981DF23F060018A2BA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A0CDA09E1DF23F060018A2BA /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A0FEABFC1D73B3BF000BDDA4 /* CHANGELOG.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = CHANGELOG.md; sourceTree = "<group>"; };
@@ -239,6 +241,7 @@
 				A0AB9F2A1E3ADE2D0068E20F /* OTAcceleratorCoreOneToOneCommunicatorTests.m */,
 				A0AB9FEF1E3ED0020068E20F /* OTAcceleratorCoreMultipartyCommunicatorTests.m */,
 				A0AB9FF31E3ED2060068E20F /* OTVideoViewTests.m */,
+				A0C142BC1E95992B000120E4 /* OTAudioVideoControlViewTests.m */,
 				A0AB9FF11E3ED08B0068E20F /* OTViewHelperTests.m */,
 				A0AB9F201E3AD9F20068E20F /* Info.plist */,
 			);
@@ -419,6 +422,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A0C142BD1E95992B000120E4 /* OTAudioVideoControlViewTests.m in Sources */,
 				A0AB9F1F1E3AD9F20068E20F /* OTAcceleratorCoreTests.m in Sources */,
 				A0AB9F2B1E3ADE2D0068E20F /* OTAcceleratorCoreOneToOneCommunicatorTests.m in Sources */,
 				A0AB9FF01E3ED0020068E20F /* OTAcceleratorCoreMultipartyCommunicatorTests.m in Sources */,

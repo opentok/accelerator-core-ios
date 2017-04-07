@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @class OTAudioVideoControlView;
-@protocol OTVideoControlViewDelegate <NSObject>
+@protocol OTAudioVideoControlViewDelegate <NSObject>
 
 - (void)didTapAudioButtonOnVideoControlView:(OTAudioVideoControlView *)videoControlView;
 
@@ -19,13 +19,27 @@
 
 @interface OTAudioVideoControlView : UIView
 
+/**
+ *  The audio button in the control view
+ */
 @property (readonly, nonatomic) UIButton *audioButton;
 
+/**
+ *  The video button in the control view
+ */
 @property (readonly, nonatomic) UIButton *videoButton;
 
+/**
+ *  A boolean value to indicate whether audio and video button is vertical aligned.
+ */
 @property (nonatomic) BOOL isVerticalAlignment;
 
-@property (weak, nonatomic) id<OTVideoControlViewDelegate> delegate;
+/**
+ *  The object that acts as the delegate of the OTAudioVideoControlView.
+ *
+ *  The delegate must adopt the OTAudioVideoControlViewDelegate protocol. The delegate is not retained.
+ */
+@property (weak, nonatomic) id<OTAudioVideoControlViewDelegate> delegate;
 
 - (void)updateAudioButton:(BOOL)enabled;
 
