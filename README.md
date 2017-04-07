@@ -119,6 +119,15 @@ Each communicator instance will take the OpenTok session from OTOneToOneCommunic
     self.communicator.publisherView.handleAudioVideo = NO; 
     ```
 
+# Ready-in-Use components
+
+- One-to-One communication
+
+    ```objc
+    OTOneToOneCommunicationController *vc = [OTOneToOneCommunicationController oneToOneCommunicationControllerWithSession:<#OTAcceleratorSession#>];
+    [self.navigationController pushViewController:vc animated:YES];
+    ```
+
 # Sample Apps that uses the Core
 
 The following sample apps use `Accelerator Core`:
