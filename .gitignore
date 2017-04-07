@@ -34,6 +34,7 @@ xcuserdata/
 # https://guides.cocoapods.org/using/using-cocoapods.html#should-i-check-the-pods-directory-into-source-control
 #
 # Pods/
+Podfile.lock
 
 # Carthage
 #
@@ -57,4 +58,5 @@ fastlane/screenshots
 # After new code Injection tools there's a generated folder /iOSInjectionProject
 # https://github.com/johnno1962/injectionforxcode
 
+OTAcceleratorCore.xcworkspace
 iOSInjectionProject/

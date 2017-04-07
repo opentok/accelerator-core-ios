@@ -16,16 +16,6 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "A0AB9F1B1E3AD9F20068E20F"
-               BuildableName = "OTAcceleratorCoreTests.xctest"
-               BlueprintName = "OTAcceleratorCoreTests"
-               ReferencedContainer = "container:OTAcceleratorCore.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
                BlueprintIdentifier = "A05CC9F21E984AD700A1459F"
                BuildableName = "OTAcceleratorCoreUITests.xctest"
                BlueprintName = "OTAcceleratorCoreUITests"

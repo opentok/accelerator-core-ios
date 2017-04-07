@@ -23,7 +23,7 @@
 @implementation OTOneToOneCommunicationController
 
 + (instancetype)oneToOneCommunicationControllerWithSession:(OTAcceleratorSession *)session {
-    if (!session) return nil;
+
     OTOneToOneCommunicationController *vc = [[OTOneToOneCommunicationController alloc] initWithNibName:NSStringFromClass([OTOneToOneCommunicationController class]) bundle:[OTAcceleratorCoreBundle acceleratorCoreBundle]];
     vc.session = session;
     return vc;
