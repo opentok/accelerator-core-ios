@@ -4,44 +4,59 @@
 <dict>
 	<key>files</key>
 	<dict>
-		<key>Resources/Assets.car</key>
+		<key>Assets.car</key>
 		<data>
-		7yRUoxL9w4vtHzVnD3p+xyritU8=
+		KCfeY7BIs+fnTHf9ScPI1BfoBuk=
+		</data>
+		<key>OTOneToOneCommunicationController.nib</key>
+		<data>
+		lLL7kWcYTzqNz4nSGTK8Mt5zYaM=
 		</data>
 	</dict>
 	<key>files2</key>
 	<dict>
-		<key>Resources/Assets.car</key>
+		<key>Assets.car</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			7yRUoxL9w4vtHzVnD3p+xyritU8=
+			KCfeY7BIs+fnTHf9ScPI1BfoBuk=
 			</data>
 			<key>hash2</key>
 			<data>
-			5VO7ru1yLTutsAKL2pTVic9cGwCNMFt87sTTxvL9+ho=
+			35V5+0L9GBofDWuU3Vu2PPa34BoX+6h8NGtDrmciP4M=
+			</data>
+		</dict>
+		<key>OTOneToOneCommunicationController.nib</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			lLL7kWcYTzqNz4nSGTK8Mt5zYaM=
+			</data>
+			<key>hash2</key>
+			<data>
+			kAlq+xzTggm/6MxBPFTYoaaDcxaI0hL5ihmrrjHp/r8=
 			</data>
 		</dict>
 	</dict>
 	<key>rules</key>
 	<dict>
-		<key>^Resources/</key>
+		<key>^</key>
 		<true/>
-		<key>^Resources/.*\.lproj/</key>
+		<key>^.*\.lproj/</key>
 		<dict>
 			<key>optional</key>
 			<true/>
 			<key>weight</key>
 			<real>1000</real>
 		</dict>
-		<key>^Resources/.*\.lproj/locversion.plist$</key>
+		<key>^.*\.lproj/locversion.plist$</key>
 		<dict>
 			<key>omit</key>
 			<true/>
 			<key>weight</key>
 			<real>1100</real>
 		</dict>
-		<key>^Resources/Base\.lproj/</key>
+		<key>^Base\.lproj/</key>
 		<dict>
 			<key>weight</key>
 			<real>1010</real>
@@ -55,6 +70,11 @@
 		<dict>
 			<key>weight</key>
 			<real>11</real>
+		</dict>
+		<key>^</key>
+		<dict>
+			<key>weight</key>
+			<real>20</real>
 		</dict>
 		<key>^(.*/)?\.DS_Store$</key>
 		<dict>
@@ -72,6 +92,25 @@
 		</dict>
 		<key>^.*</key>
 		<true/>
+		<key>^.*\.lproj/</key>
+		<dict>
+			<key>optional</key>
+			<true/>
+			<key>weight</key>
+			<real>1000</real>
+		</dict>
+		<key>^.*\.lproj/locversion.plist$</key>
+		<dict>
+			<key>omit</key>
+			<true/>
+			<key>weight</key>
+			<real>1100</real>
+		</dict>
+		<key>^Base\.lproj/</key>
+		<dict>
+			<key>weight</key>
+			<real>1010</real>
+		</dict>
 		<key>^Info\.plist$</key>
 		<dict>
 			<key>omit</key>
@@ -85,30 +124,6 @@
 			<true/>
 			<key>weight</key>
 			<real>20</real>
-		</dict>
-		<key>^Resources/</key>
-		<dict>
-			<key>weight</key>
-			<real>20</real>
-		</dict>
-		<key>^Resources/.*\.lproj/</key>
-		<dict>
-			<key>optional</key>
-			<true/>
-			<key>weight</key>
-			<real>1000</real>
-		</dict>
-		<key>^Resources/.*\.lproj/locversion.plist$</key>
-		<dict>
-			<key>omit</key>
-			<true/>
-			<key>weight</key>
-			<real>1100</real>
-		</dict>
-		<key>^Resources/Base\.lproj/</key>
-		<dict>
-			<key>weight</key>
-			<real>1010</real>
 		</dict>
 		<key>^[^/]+$</key>
 		<dict>

@@ -25,4 +25,5 @@ On the Android and iOS mobile platforms, when you try to set a listener (Android
   s.public_header_files = 'OTAcceleratorCore/**/*.{h}'
   s.dependency 'OTKAnalytics'
   s.dependency 'OpenTok', '~> 2.10.0'
+  s.dependency 'SVProgressHUD'
 end

@@ -22,6 +22,10 @@
 		A0565F321DF63F62001F9032 /* OTMultiPartyCommunicator.m in Sources */ = {isa = PBXBuildFile; fileRef = A0565F281DF63F62001F9032 /* OTMultiPartyCommunicator.m */; };
 		A0565F331DF63F62001F9032 /* OTOneToOneCommunicator.m in Sources */ = {isa = PBXBuildFile; fileRef = A0565F2A1DF63F62001F9032 /* OTOneToOneCommunicator.m */; };
 		A0565F371DF640CD001F9032 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = A0565F361DF640CD001F9032 /* Podfile */; };
+		A05CC9E41E9839BC00A1459F /* OTOneToOneCommunicationView.m in Sources */ = {isa = PBXBuildFile; fileRef = A05CC9E11E9839BC00A1459F /* OTOneToOneCommunicationView.m */; };
+		A05CC9E51E9839BC00A1459F /* OTOneToOneCommunicationController.m in Sources */ = {isa = PBXBuildFile; fileRef = A05CC9E31E9839BC00A1459F /* OTOneToOneCommunicationController.m */; };
+		A05CC9EA1E98415200A1459F /* OTOneToOneCommunicationController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A05CC9E91E98415200A1459F /* OTOneToOneCommunicationController.xib */; };
+		A05CC9EE1E98491500A1459F /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A05CC9EC1E9847F600A1459F /* MainViewController.m */; };
 		A07C06171DEBC32200BB4FD9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A07C06161DEBC32200BB4FD9 /* Assets.xcassets */; };
 		A08831221DF24A3D00F4D866 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A0CDA0981DF23F060018A2BA /* Assets.xcassets */; };
 		A0AB9F0D1E3AC11F0068E20F /* ShareWholeScreenViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A0AB9F0C1E3AC11F0068E20F /* ShareWholeScreenViewController.m */; };
@@ -91,6 +95,13 @@
 		A0565F291DF63F62001F9032 /* OTOneToOneCommunicator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OTOneToOneCommunicator.h; sourceTree = "<group>"; };
 		A0565F2A1DF63F62001F9032 /* OTOneToOneCommunicator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OTOneToOneCommunicator.m; sourceTree = "<group>"; };
 		A0565F361DF640CD001F9032 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		A05CC9E01E9839BC00A1459F /* OTOneToOneCommunicationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OTOneToOneCommunicationView.h; sourceTree = "<group>"; };
+		A05CC9E11E9839BC00A1459F /* OTOneToOneCommunicationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OTOneToOneCommunicationView.m; sourceTree = "<group>"; };
+		A05CC9E21E9839BC00A1459F /* OTOneToOneCommunicationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OTOneToOneCommunicationController.h; sourceTree = "<group>"; };
+		A05CC9E31E9839BC00A1459F /* OTOneToOneCommunicationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OTOneToOneCommunicationController.m; sourceTree = "<group>"; };
+		A05CC9E91E98415200A1459F /* OTOneToOneCommunicationController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OTOneToOneCommunicationController.xib; sourceTree = "<group>"; };
+		A05CC9EB1E9847F600A1459F /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
+		A05CC9EC1E9847F600A1459F /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
 		A07C06101DEBC2B500BB4FD9 /* OTAcceleratorCoreBundle.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OTAcceleratorCoreBundle.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
 		A07C06161DEBC32200BB4FD9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A080E47C1E244CFA007972D8 /* OTCommonCommunicator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OTCommonCommunicator.h; sourceTree = "<group>"; };
@@ -175,6 +186,8 @@
 				A0AB9F141E3AD0A00068E20F /* OTAcceleratorCoreBundle.bundle */,
 				A0127A911D34651B00CDA3F5 /* AppDelegate.h */,
 				A0127A921D34651B00CDA3F5 /* AppDelegate.m */,
+				A05CC9EB1E9847F600A1459F /* MainViewController.h */,
+				A05CC9EC1E9847F600A1459F /* MainViewController.m */,
 				A0127ACA1D34675A00CDA3F5 /* TestOneToOneCommunicatorViewController.h */,
 				A0127ACB1D34675A00CDA3F5 /* TestOneToOneCommunicatorViewController.m */,
 				A0565F181DF63ACB001F9032 /* TestMultipartyCommunicatorViewController.h */,
@@ -203,6 +216,10 @@
 		A05259301E9435DA000F9E88 /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				A05CC9E01E9839BC00A1459F /* OTOneToOneCommunicationView.h */,
+				A05CC9E11E9839BC00A1459F /* OTOneToOneCommunicationView.m */,
+				A05CC9E21E9839BC00A1459F /* OTOneToOneCommunicationController.h */,
+				A05CC9E31E9839BC00A1459F /* OTOneToOneCommunicationController.m */,
 				A05259311E9435DA000F9E88 /* OTVideoView.h */,
 				A05259321E9435DA000F9E88 /* OTVideoView.m */,
 				A05259371E9435EA000F9E88 /* OTAudioVideoControlView.h */,
@@ -251,6 +268,7 @@
 		A0CDA0971DF23F060018A2BA /* OTAcceleratorCoreBundle */ = {
 			isa = PBXGroup;
 			children = (
+				A05CC9E91E98415200A1459F /* OTOneToOneCommunicationController.xib */,
 				A0CDA0981DF23F060018A2BA /* Assets.xcassets */,
 				A0CDA09E1DF23F060018A2BA /* Info.plist */,
 			);
@@ -376,6 +394,7 @@
 			files = (
 				A08831221DF24A3D00F4D866 /* Assets.xcassets in Resources */,
 				A07C06171DEBC32200BB4FD9 /* Assets.xcassets in Resources */,
+				A05CC9EA1E98415200A1459F /* OTOneToOneCommunicationController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -397,8 +416,11 @@
 				A0AB9F131E3AC70E0068E20F /* ShareWholeScreenMultipartyViewController.m in Sources */,
 				A0127A931D34651B00CDA3F5 /* AppDelegate.m in Sources */,
 				A0565F301DF63F62001F9032 /* OTAcceleratorCoreBundle.m in Sources */,
+				A05CC9E51E9839BC00A1459F /* OTOneToOneCommunicationController.m in Sources */,
 				A0565F311DF63F62001F9032 /* OTAcceleratorSession.m in Sources */,
 				A0565F1A1DF63ACB001F9032 /* TestMultipartyCommunicatorViewController.m in Sources */,
+				A05CC9E41E9839BC00A1459F /* OTOneToOneCommunicationView.m in Sources */,
+				A05CC9EE1E98491500A1459F /* MainViewController.m in Sources */,
 				A0127A901D34651B00CDA3F5 /* main.m in Sources */,
 				A0565F331DF63F62001F9032 /* OTOneToOneCommunicator.m in Sources */,
 				A0AB9F0D1E3AC11F0068E20F /* ShareWholeScreenViewController.m in Sources */,
@@ -586,7 +608,7 @@
 				MACOSX_DEPLOYMENT_TARGET = 10.12;
 				PRODUCT_BUNDLE_IDENTIFIER = com.tokbox.OTAcceleratorCoreBundle;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = macosx;
+				SDKROOT = iphoneos10.2;
 				SKIP_INSTALL = YES;
 				WRAPPER_EXTENSION = bundle;
 			};
@@ -605,7 +627,7 @@
 				MACOSX_DEPLOYMENT_TARGET = 10.12;
 				PRODUCT_BUNDLE_IDENTIFIER = com.tokbox.OTAcceleratorCoreBundle;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = macosx;
+				SDKROOT = iphoneos10.2;
 				SKIP_INSTALL = YES;
 				WRAPPER_EXTENSION = bundle;
 			};

@@ -9,8 +9,10 @@ The changelog for `Accelerator-Core` iOS.
 
 ### Enhancements
 
+- Add a Ready-in-Use for one-to-one communication: `OTOneToOneCommunicationController` 
 - Add two callback methods `didTapAudioButtonOnVideoControlView:` and `didTapVideoButtonOnVideoControlView:` on OTAudioVideoControlView
 - Seperate OTAudioVideoControlView from OTVideoView to be an independent class
+- Add a basic UI testing
 
 1.0.5
 -----
