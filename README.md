@@ -119,6 +119,15 @@ Each communicator instance will take the OpenTok session from OTOneToOneCommunic
     self.communicator.publisherView.handleAudioVideo = NO; 
     ```
 
+# Ready-in-Use components
+
+- One-to-One communication
+
+    ```objc
+    OTOneToOneCommunicationController *vc = [OTOneToOneCommunicationController oneToOneCommunicationControllerWithSession:<#OTAcceleratorSession#>];
+    [self.navigationController pushViewController:vc animated:YES];
+    ```
+
 # Sample Apps that uses the Core
 
 The following sample apps use `Accelerator Core`:
@@ -127,7 +136,7 @@ The following sample apps use `Accelerator Core`:
 - [Accelerator Sample App](https://github.com/opentok/accelerator-sample-apps-ios)
 
 
-####Obtaining OpenTok Credentials
+#### Obtaining OpenTok Credentials
 
 To use OpenTok's framework you need a Session ID, Token, and API Key you can get these values at the [OpenTok Developer Dashboard](https://dashboard.tokbox.com/) . For production deployment, you must generate the Session ID and Token values using one of the [OpenTok Server SDKs](https://tokbox.com/developer/sdks/server/).
 

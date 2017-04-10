@@ -16,14 +16,12 @@
 
 @implementation OTVideoViewTests
 
-- (void)setUp {
-    [super setUp];
-    // Put setup code here. This method is called before the invocation of each test method in the class.
-}
-
-- (void)tearDown {
-    // Put teardown code here. This method is called after the invocation of each test method in the class.
-    [super tearDown];
+- (void)testInit {
+    OTVideoView *videoView = [[OTVideoView alloc] init];
+    XCTAssertNil(videoView.delegate);
+    XCTAssertFalse(videoView.showAudioVideoControl);
+    XCTAssertFalse(videoView.handleAudioVideo);
+    XCTAssertNotNil(videoView.placeHolderImage);
 }
 
 - (void)testPublisherInitWithNil {
@@ -31,14 +29,14 @@
 }
 
 - (void)testPublisherInitWithNotPublisherKind {
-    XCTAssertNil([[OTVideoView alloc] initWithPublisher:[[NSObject alloc] init]]);
+    XCTAssertNil([[OTVideoView alloc] initWithPublisher:[[OTPublisher alloc] init]]);
 }
 - (void)testSubscriberInitWithNil {
     XCTAssertNil([[OTVideoView alloc] initWithSubscriber:nil]);
 }
 
-- (void)testSubscriberInitWithNotPublisherKind {
-    XCTAssertNil([[OTVideoView alloc] initWithPublisher:[[UIView alloc] init]]);
+- (void)testSubscriberInit {
+    XCTAssertNil([[OTVideoView alloc] initWithSubscriber:[[OTSubscriber alloc] init]]);
 }
 
 @end

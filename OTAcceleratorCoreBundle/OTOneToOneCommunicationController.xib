@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="OTOneToOneCommunicationController">
+            <connections>
+                <outlet property="view" destination="pIS-Vt-OyM" id="yeK-0N-w90"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="pIS-Vt-OyM" customClass="OTOneToOneCommunicationView">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Wnp-x6-gBI">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                </view>
+                <view contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="dns-kb-ezw">
+                    <rect key="frame" x="265" y="471" width="90" height="90"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="90" id="7b3-4n-9jE"/>
+                        <constraint firstAttribute="width" secondItem="dns-kb-ezw" secondAttribute="height" multiplier="1:1" id="if9-8K-pvY"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ewS-NA-etg">
+                    <rect key="frame" x="85" y="581" width="206" height="66"/>
+                    <subviews>
+                        <button opaque="NO" alpha="0.5" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7sP-qd-hwq" userLabel="publisherVideoButton">
+                            <rect key="frame" x="8" y="8" width="50" height="50"/>
+                            <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="width" secondItem="7sP-qd-hwq" secondAttribute="height" multiplier="1:1" id="N9d-He-Kzd"/>
+                                <constraint firstAttribute="width" constant="50" id="S6G-Is-9XP"/>
+                            </constraints>
+                            <state key="normal" image="video"/>
+                            <connections>
+                                <action selector="publisherVideoButtonPressed:" destination="-1" eventType="touchUpInside" id="gVt-4N-SW4"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vgq-sx-AGM" userLabel="publisherCallButton">
+                            <rect key="frame" x="78" y="8" width="50" height="50"/>
+                            <color key="backgroundColor" red="0.41568627450000001" green="0.67843137249999996" blue="0.74901960779999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="width" secondItem="vgq-sx-AGM" secondAttribute="height" multiplier="1:1" id="UZb-OG-CCn"/>
+                                <constraint firstAttribute="width" constant="50" id="axS-dG-PcN"/>
+                            </constraints>
+                            <state key="normal" image="startCall"/>
+                            <connections>
+                                <action selector="publisherCallButtonPressed:" destination="-1" eventType="touchUpInside" id="tI6-tQ-g9D"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" alpha="0.5" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3QZ-w9-jvn" userLabel="publisherMicButton">
+                            <rect key="frame" x="148" y="8" width="50" height="50"/>
+                            <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="50" id="I3w-5U-AFV"/>
+                                <constraint firstAttribute="width" secondItem="3QZ-w9-jvn" secondAttribute="height" multiplier="1:1" id="O1X-Hn-FfA"/>
+                            </constraints>
+                            <state key="normal" image="mic"/>
+                            <connections>
+                                <action selector="publisherAudioButtonPressed:" destination="-1" eventType="touchUpInside" id="9hz-fN-a9S"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <constraints>
+                        <constraint firstItem="vgq-sx-AGM" firstAttribute="centerY" secondItem="ewS-NA-etg" secondAttribute="centerY" id="1kg-t4-3WZ"/>
+                        <constraint firstAttribute="trailing" secondItem="3QZ-w9-jvn" secondAttribute="trailing" constant="8" id="BjZ-qt-gKG"/>
+                        <constraint firstItem="vgq-sx-AGM" firstAttribute="centerX" secondItem="ewS-NA-etg" secondAttribute="centerX" id="Daa-7h-Ioj"/>
+                        <constraint firstItem="vgq-sx-AGM" firstAttribute="leading" secondItem="7sP-qd-hwq" secondAttribute="trailing" constant="20" id="JGr-z5-WO6"/>
+                        <constraint firstItem="3QZ-w9-jvn" firstAttribute="leading" secondItem="vgq-sx-AGM" secondAttribute="trailing" constant="20" id="VtJ-vm-4JK"/>
+                        <constraint firstAttribute="bottom" secondItem="3QZ-w9-jvn" secondAttribute="bottom" constant="8" id="X3x-Uk-fs8"/>
+                        <constraint firstItem="7sP-qd-hwq" firstAttribute="leading" secondItem="ewS-NA-etg" secondAttribute="leading" constant="8" id="ibW-SS-UUn"/>
+                        <constraint firstItem="3QZ-w9-jvn" firstAttribute="top" secondItem="ewS-NA-etg" secondAttribute="top" constant="8" id="jrM-lE-6dG"/>
+                        <constraint firstItem="7sP-qd-hwq" firstAttribute="top" secondItem="ewS-NA-etg" secondAttribute="top" constant="8" id="kVa-pa-b60"/>
+                        <constraint firstAttribute="bottom" secondItem="7sP-qd-hwq" secondAttribute="bottom" constant="8" id="lOx-jj-jye"/>
+                    </constraints>
+                </view>
+                <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UC0-3U-ii1" userLabel="subscriberAudioButton">
+                    <rect key="frame" x="20" y="60" width="25" height="25"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="UC0-3U-ii1" secondAttribute="height" multiplier="1:1" id="154-hW-lN9"/>
+                    </constraints>
+                    <state key="normal" image="audio"/>
+                    <connections>
+                        <action selector="subscriberAudioButtonPressed:" destination="-1" eventType="touchUpInside" id="7lC-CT-fRR"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="V7M-EH-cae" userLabel="subscriberVideoButton">
+                    <rect key="frame" x="20" y="105" width="24" height="24"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="V7M-EH-cae" secondAttribute="height" multiplier="1:1" id="G1I-IW-Gyc"/>
+                    </constraints>
+                    <state key="normal" image="video"/>
+                    <connections>
+                        <action selector="subscriberVideoButtonPressed:" destination="-1" eventType="touchUpInside" id="fPw-FL-Oy1"/>
+                    </connections>
+                </button>
+                <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z6F-Bv-lXV" userLabel="publisherCameraButton">
+                    <rect key="frame" x="325" y="60" width="30" height="21"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="z6F-Bv-lXV" secondAttribute="height" multiplier="55:39" id="NnK-Un-2ip"/>
+                        <constraint firstAttribute="width" constant="30" id="RS6-Lj-1sv"/>
+                    </constraints>
+                    <state key="normal" image="reverse cameras"/>
+                    <connections>
+                        <action selector="publisherCameraButtonPressed:" destination="-1" eventType="touchUpInside" id="pqK-YW-YW0"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" red="0.66666666669999997" green="0.66666666669999997" blue="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="Wnp-x6-gBI" secondAttribute="bottom" id="0gT-m5-pU6"/>
+                <constraint firstItem="z6F-Bv-lXV" firstAttribute="top" secondItem="pIS-Vt-OyM" secondAttribute="top" constant="60" id="41d-SX-093"/>
+                <constraint firstItem="V7M-EH-cae" firstAttribute="top" secondItem="UC0-3U-ii1" secondAttribute="bottom" constant="20" id="7gL-x6-R8S"/>
+                <constraint firstAttribute="trailing" secondItem="dns-kb-ezw" secondAttribute="trailing" constant="20" id="An4-hT-u9D"/>
+                <constraint firstAttribute="bottom" secondItem="ewS-NA-etg" secondAttribute="bottom" constant="20" id="Eg4-EH-KLu"/>
+                <constraint firstItem="ewS-NA-etg" firstAttribute="top" secondItem="dns-kb-ezw" secondAttribute="bottom" constant="20" id="GQS-IP-bAz"/>
+                <constraint firstItem="UC0-3U-ii1" firstAttribute="top" secondItem="pIS-Vt-OyM" secondAttribute="top" constant="60" id="Rfu-6B-ZRx"/>
+                <constraint firstAttribute="trailing" secondItem="z6F-Bv-lXV" secondAttribute="trailing" constant="20" id="ZGn-4E-YYg"/>
+                <constraint firstAttribute="trailing" secondItem="Wnp-x6-gBI" secondAttribute="trailing" id="cr1-AU-CDO"/>
+                <constraint firstItem="UC0-3U-ii1" firstAttribute="leading" secondItem="pIS-Vt-OyM" secondAttribute="leading" constant="20" id="hmL-C8-SZL"/>
+                <constraint firstItem="Wnp-x6-gBI" firstAttribute="top" secondItem="pIS-Vt-OyM" secondAttribute="top" id="nU1-89-cij"/>
+                <constraint firstItem="Wnp-x6-gBI" firstAttribute="leading" secondItem="pIS-Vt-OyM" secondAttribute="leading" id="oMH-bn-l03"/>
+                <constraint firstItem="ewS-NA-etg" firstAttribute="centerX" secondItem="pIS-Vt-OyM" secondAttribute="centerX" id="wL1-2q-Lje"/>
+                <constraint firstItem="V7M-EH-cae" firstAttribute="leading" secondItem="pIS-Vt-OyM" secondAttribute="leading" constant="20" id="z9I-9F-xHV"/>
+            </constraints>
+            <connections>
+                <outlet property="callButton" destination="vgq-sx-AGM" id="bqc-52-hMz"/>
+                <outlet property="publisherAudioButton" destination="3QZ-w9-jvn" id="pj6-rq-wg3"/>
+                <outlet property="publisherVideoButton" destination="7sP-qd-hwq" id="hgw-LI-JLs"/>
+                <outlet property="publisherView" destination="dns-kb-ezw" id="eVc-jN-pf1"/>
+                <outlet property="reverseCameraButton" destination="z6F-Bv-lXV" id="DEc-Pl-HfX"/>
+                <outlet property="subscriberAudioButton" destination="UC0-3U-ii1" id="yb4-8E-OYU"/>
+                <outlet property="subscriberVideoButton" destination="V7M-EH-cae" id="px9-MW-5fo"/>
+                <outlet property="subscriberView" destination="Wnp-x6-gBI" id="hCE-GR-Dn0"/>
+            </connections>
+        </view>
+    </objects>
+    <resources>
+        <image name="audio" width="24" height="25"/>
+        <image name="mic" width="21" height="26"/>
+        <image name="reverse cameras" width="55" height="39"/>
+        <image name="startCall" width="15" height="30"/>
+        <image name="video" width="24" height="14"/>
+    </resources>
+</document>

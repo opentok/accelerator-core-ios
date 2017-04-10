@@ -39,6 +39,16 @@
                ReferencedContainer = "container:OTAcceleratorCore.xcodeproj">
             </BuildableReference>
          </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "A05CC9F21E984AD700A1459F"
+               BuildableName = "OTAcceleratorCoreUITests.xctest"
+               BlueprintName = "OTAcceleratorCoreUITests"
+               ReferencedContainer = "container:OTAcceleratorCore.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
       <MacroExpansion>
          <BuildableReference

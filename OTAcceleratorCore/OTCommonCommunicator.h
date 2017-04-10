@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-static NSString* const KLogClientVersion = @"ios-vsol-2.0.0";
+static NSString* const KLogClientVersion = @"ios-accelerator-core-1.1.0";
 static NSString* const kLogComponentIdentifier = @"OTAcceleratorCore";
 static NSString* const KLogActionInitialize = @"Init";
 static NSString* const KLogActionStartCommunication = @"StartComm";
