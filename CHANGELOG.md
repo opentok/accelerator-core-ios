@@ -4,6 +4,13 @@ The changelog for `Accelerator-Core` iOS.
 
 --------------------------------------
 
+1.1.1
+-----
+
+### Fixes
+
+- Fix an issue that `OTOneToOneCommunicationController` won't disconnect automatically
+
 1.1.0
 -----
 
