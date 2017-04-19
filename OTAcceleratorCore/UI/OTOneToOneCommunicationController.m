@@ -66,6 +66,11 @@
     }
 }
 
+- (void)viewWillDisappear:(BOOL)animated {
+    [super viewWillDisappear:animated];
+    [self.oneToOneCommunicator disconnect];
+}
+
 - (void)handleCommunicationSignal:(OTCommunicationSignal)signal {
     
     switch (signal) {
