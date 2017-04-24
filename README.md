@@ -127,10 +127,10 @@ Each communicator instance will take the OpenTok session from OTOneToOneCommunic
 ![ready-in-use-2](./ready-in-use-2.png)
 ![ready-in-use-3](./ready-in-use-3.png)
 
-    ```objc
-    OTOneToOneCommunicationController *vc = [OTOneToOneCommunicationController oneToOneCommunicationControllerWithSession:<#OTAcceleratorSession#>];
-    [self.navigationController pushViewController:vc animated:YES];
-    ```
+```objc
+OTOneToOneCommunicationController *vc = [OTOneToOneCommunicationController oneToOneCommunicationControllerWithSession:<#OTAcceleratorSession#>];
+[self.navigationController pushViewController:vc animated:YES];
+```
 
 # Sample Apps that uses the Core
 
