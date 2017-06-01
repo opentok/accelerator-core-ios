@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
   s.name             = "OTAcceleratorCore"
 
-  s.version          = "1.1.1"
+  s.version          = "1.1.2"
 
   s.summary          = "A painless way to integrate WebRTC audio/video(screen sharing) to any iOS applications via OpenTok."
 
@@ -26,6 +26,6 @@ On the Android and iOS mobile platforms, when you try to set a listener (Android
 
   s.public_header_files = 'OTAcceleratorCore/**/*.{h}'
   s.dependency 'OTKAnalytics'
-  s.dependency 'OpenTok', '~> 2.10.0'
+  s.dependency 'OpenTok', '>= 2.11.0'
   s.dependency 'SVProgressHUD'
 end
