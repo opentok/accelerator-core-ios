@@ -240,7 +240,9 @@
     [_placeHolderImageView removeFromSuperview];
     _placeHolderImageView = nil;
     
+    _publisher.audioLevelDelegate = nil;
     _publisher = nil;
+    _subscriber.audioLevelDelegate = nil;
     _subscriber = nil;
 }
 

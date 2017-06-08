@@ -4,6 +4,13 @@ The changelog for `Accelerator-Core` iOS.
 
 --------------------------------------
 
+1.1.3
+-----
+
+### Fixes
+
+- Fix a crash during releasing subscribers on `audioLevelDelegate`
+
 1.1.2
 -----
 
