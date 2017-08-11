@@ -4,6 +4,13 @@ The changelog for `Accelerator-Core` iOS.
 
 --------------------------------------
 
+1.1.4
+-----
+
+### Enhancements
+
+- Ensure session is bind to dataSource to avoid invalidity.
+
 1.1.3
 -----
 

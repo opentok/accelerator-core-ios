@@ -150,9 +150,13 @@
 
 @implementation OTMultiPartyCommunicator
 
+- (OTAcceleratorSession *)session {
+    return [_dataSource sessionOfOTMultiPartyCommunicator:self];
+}
+
 - (void)setDataSource:(id<OTMultiPartyCommunicatorDataSource>)dataSource {
     _dataSource = dataSource;
-    _session = [_dataSource sessionOfOTMultiPartyCommunicator:self];
+    [self session];
 }
 
 - (instancetype)init {

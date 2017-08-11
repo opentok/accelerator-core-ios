@@ -55,9 +55,13 @@
 
 @implementation OTOneToOneCommunicator
 
+- (OTAcceleratorSession *)session {
+    return [_dataSource sessionOfOTOneToOneCommunicator:self];
+}
+
 - (void)setDataSource:(id<OTOneToOneCommunicatorDataSource>)dataSource {
     _dataSource = dataSource;
-    _session = [_dataSource sessionOfOTOneToOneCommunicator:self];
+    [self session];
 }
 
 - (instancetype)init {
