@@ -156,7 +156,6 @@
 
 - (void)setDataSource:(id<OTMultiPartyCommunicatorDataSource>)dataSource {
     _dataSource = dataSource;
-    [self session];
 }
 
 - (instancetype)init {
@@ -637,7 +636,7 @@ connectionDestroyed:(OTConnection*) connection {
 #pragma mark - Private Methods
 -(void)compareConnectionTimeWithConnection: (OTConnection *)connection {
     if (self.session.connection) {
-        NSComparisonResult result = [connection.creationTime compare:_session.connection.creationTime];
+        NSComparisonResult result = [connection.creationTime compare:self.session.connection.creationTime];
         result == NSOrderedDescending ? _connectionCountOlderThanMe++ : _connectionCountOlderThanMe--;
     }
 }
