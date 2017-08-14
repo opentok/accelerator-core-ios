@@ -55,9 +55,12 @@
 
 @implementation OTOneToOneCommunicator
 
+- (OTAcceleratorSession *)session {
+    return [_dataSource sessionOfOTOneToOneCommunicator:self];
+}
+
 - (void)setDataSource:(id<OTOneToOneCommunicatorDataSource>)dataSource {
     _dataSource = dataSource;
-    _session = [_dataSource sessionOfOTOneToOneCommunicator:self];
 }
 
 - (instancetype)init {
@@ -502,7 +505,7 @@ connectionDestroyed:(OTConnection*) connection {
 #pragma mark - Private Methods
 -(void)compareConnectionTimeWithConnection: (OTConnection *)connection {
     if (self.session.connection) {
-        NSComparisonResult result = [connection.creationTime compare:_session.connection.creationTime];
+        NSComparisonResult result = [connection.creationTime compare:self.session.connection.creationTime];
         result == NSOrderedDescending ? _connectionCountOlderThanMe++ : _connectionCountOlderThanMe--;
     }
 }
