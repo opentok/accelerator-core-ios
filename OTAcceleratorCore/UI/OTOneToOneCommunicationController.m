@@ -60,7 +60,7 @@
         }];
     }
     else {
-        [SVProgressHUD popActivity];
+        [SVProgressHUD dismiss];
         [self.oneToOneCommunicator disconnect];
         [self.mainView resetAllControl];
     }
@@ -75,7 +75,7 @@
     
     switch (signal) {
         case OTPublisherCreated: {
-            [SVProgressHUD popActivity];
+            [SVProgressHUD dismiss];
             [self.mainView connectCallHolder:self.oneToOneCommunicator.isCallEnabled];
             [self.mainView enableControlButtonsForCall:YES];
             [self.mainView addPublisherView:self.oneToOneCommunicator.publisherView];
@@ -90,7 +90,7 @@
             [SVProgressHUD show];
         }
         case OTSubscriberReady: {
-            [SVProgressHUD popActivity];
+            [SVProgressHUD dismiss];
             [self.mainView addSubscribeView:self.oneToOneCommunicator.subscriberView];
             break;
         }
@@ -103,7 +103,7 @@
             break;
         }
         case OTSessionDidReconnect: {
-            [SVProgressHUD popActivity];
+            [SVProgressHUD dismiss];
             break;
         }
         case OTSubscriberVideoDisabledByBadQuality:
