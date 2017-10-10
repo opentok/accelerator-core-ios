@@ -4,6 +4,15 @@ The changelog for `Accelerator-Core` iOS.
 
 --------------------------------------
 
+1.1.5
+-----
+
+### Enhancements
+
+- Point OpenTok iOS SDK to at least 2.12.0
+- Fix SVProgress on the sample app
+
+
 1.1.4
 -----
 
