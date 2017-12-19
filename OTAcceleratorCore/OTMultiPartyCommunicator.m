@@ -145,6 +145,8 @@
 // property for screen sharing
 @property (nonatomic) UIView *screenSharingView;
 @property (nonatomic) OTScreenCapture *screenCapture;
+    
+- (void)cleanupSubscriber:(OTMultiPartyRemote *)subscriberObject;
 
 @end
 
@@ -254,10 +256,7 @@
         if (error) {
             NSLog(@"%s: %@", __PRETTY_FUNCTION__, error);
         }
-        [subscriberObject.subscriberView removeFromSuperview];
-        [subscriberObject.subscriberView clean];
-        subscriberObject.subscriber = nil;
-        subscriberObject.subscriberView = nil;
+        [self cleanupSubscriber:subscriberObject];        
     }
     [self.subscribers removeAllObjects];
 
@@ -381,12 +380,9 @@
             [self notifyAllWithSignal:OTSubscriberDestroyed
                            subscriber:subscriberObject
                                 error:nil];
-            [subscriber.view removeFromSuperview];
-            [subscriberObject.subscriberView removeFromSuperview];
-            [subscriberObject.subscriberView clean];
-            subscriberObject.subscriber = nil;
-            subscriberObject.subscriberView = nil;
             [self.subscribers removeObject:subscriberObject];
+            [self cleanupSubscriber:subscriberObject];
+            
             break;
         }
     }
@@ -459,6 +455,7 @@ connectionDestroyed:(OTConnection*) connection {
         [self notifyAllWithSignal:OTSubscriberDestroyed
                        subscriber:subscriberObject
                             error:nil];
+        [self cleanupSubscriber:subscriberObject];
         [self.subscribers removeObject:subscriberObject];
     }
 }
@@ -594,10 +591,7 @@ connectionDestroyed:(OTConnection*) connection {
             if (error) {
                 NSLog(@"%s: %@", __PRETTY_FUNCTION__, error);
             }
-            [subscriberObject.subscriberView removeFromSuperview];
-            [subscriberObject.subscriberView clean];
-            subscriberObject.subscriber = nil;
-            subscriberObject.subscriberView = nil;
+            [self cleanupSubscriber:subscriberObject];
         }
         [self.subscribers removeAllObjects];
     }
@@ -639,5 +633,13 @@ connectionDestroyed:(OTConnection*) connection {
         NSComparisonResult result = [connection.creationTime compare:self.session.connection.creationTime];
         result == NSOrderedDescending ? _connectionCountOlderThanMe++ : _connectionCountOlderThanMe--;
     }
+}
+    
+- (void)cleanupSubscriber:(OTMultiPartyRemote *)subscriberObject {
+    [subscriberObject.subscriber.view removeFromSuperview];
+    [subscriberObject.subscriberView removeFromSuperview];
+    [subscriberObject.subscriberView clean];
+    subscriberObject.subscriber = nil;
+    subscriberObject.subscriberView = nil;
 }
 @end
