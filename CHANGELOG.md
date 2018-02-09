@@ -4,6 +4,11 @@ The changelog for `Accelerator-Core` iOS.
 
 --------------------------------------
 
+1.1.7
+-----
+
+Cocoapods release
+
 1.1.6
 -----
 
