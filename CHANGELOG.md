@@ -4,6 +4,13 @@ The changelog for `Accelerator-Core` iOS.
 
 --------------------------------------
 
+1.1.8
+-----
+
+### Fixes
+
+- Fix a crash on un-subscribing
+
 1.1.7
 -----
 
