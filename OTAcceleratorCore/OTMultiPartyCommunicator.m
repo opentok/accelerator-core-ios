@@ -375,14 +375,12 @@
     if (self.isPublishOnly) return;
     
     for (OTMultiPartyRemote *subscriberObject in self.subscribers) {
-        if (subscriberObject.subscriber.stream == stream) {
-            OTSubscriber *subscriber = subscriberObject.subscriber;
+        if (subscriberObject.subscriber && subscriberObject.subscriber.stream == stream) {
             [self notifyAllWithSignal:OTSubscriberDestroyed
                            subscriber:subscriberObject
                                 error:nil];
-            [self.subscribers removeObject:subscriberObject];
             [self cleanupSubscriber:subscriberObject];
-            
+            [self.subscribers removeObject:subscriberObject];
             break;
         }
     }
