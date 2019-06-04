@@ -1,6 +1,6 @@
 project 'OTAcceleratorCore.xcodeproj'
 
-platform :ios, '9.0'
+platform :ios, '10.0'
 
 target 'OTAcceleratorCore' do 
   pod 'OpenTok', '~>2.16'
