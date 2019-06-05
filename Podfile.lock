@@ -1,10 +1,10 @@
 PODS:
-  - OpenTok (2.16.0)
+  - OpenTok (2.16.1)
   - OTKAnalytics (2.1.0)
   - SVProgressHUD (2.2.1)
 
 DEPENDENCIES:
-  - OpenTok (= 2.16.0)
+  - OpenTok (= 2.16.1)
   - OTKAnalytics (= 2.1.0)
   - SVProgressHUD (= 2.2.1)
 
