@@ -87,7 +87,8 @@
         CVPixelBufferRelease(_pixelBuffer);
     }
     
-    CVReturn status = CVPixelBufferCreate(kCFAllocatorDefault,
+    CVReturn status;
+    status = CVPixelBufferCreate(kCFAllocatorDefault,
                                           frameSize.width,
                                           frameSize.height,
                                           kCVPixelFormatType_32ARGB,
@@ -140,8 +141,8 @@
     _capturing = NO;
     
     dispatch_sync(_queue, ^{
-        if (_timer) {
-            dispatch_source_cancel(_timer);
+        if (self->_timer) {
+            dispatch_source_cancel(self->_timer);
         }
     });
     
