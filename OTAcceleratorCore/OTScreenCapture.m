@@ -139,10 +139,11 @@
 - (int32_t)stopCapture
 {
     _capturing = NO;
-    
+    __weak __typeof__(self) *weakSelf = self;
     dispatch_sync(_queue, ^{
-        if (self->_timer) {
-            dispatch_source_cancel(self->_timer);
+        __strong __typeof__(self) *strongSelf = weakSelf;
+        if (strongSelf->_timer) {
+            dispatch_source_cancel(strongSelf->_timer);
         }
     });
     
