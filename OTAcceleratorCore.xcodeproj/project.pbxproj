@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		31A59EC23A4457EB1D5E15A2 /* libPods-OTAcceleratorCore.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 247333113D0BB6137F5FC26B /* libPods-OTAcceleratorCore.a */; };
 		A0127A901D34651B00CDA3F5 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A0127A8F1D34651B00CDA3F5 /* main.m */; };
 		A0127A931D34651B00CDA3F5 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A0127A921D34651B00CDA3F5 /* AppDelegate.m */; };
 		A0127A991D34651B00CDA3F5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A0127A971D34651B00CDA3F5 /* Main.storyboard */; };
@@ -43,7 +42,6 @@
 		A0AB9FF41E3ED2060068E20F /* OTVideoViewTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A0AB9FF31E3ED2060068E20F /* OTVideoViewTests.m */; };
 		A0C142BD1E95992B000120E4 /* OTAudioVideoControlViewTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A0C142BC1E95992B000120E4 /* OTAudioVideoControlViewTests.m */; };
 		A0FEAC001D73B3BF000BDDA4 /* OTAcceleratorCore.podspec in Resources */ = {isa = PBXBuildFile; fileRef = A0FEABFD1D73B3BF000BDDA4 /* OTAcceleratorCore.podspec */; };
-		E33A3600D0F40630ED4C88C9 /* libPods-OTAcceleratorCoreTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 52ED7CB25C916969BE63446B /* libPods-OTAcceleratorCoreTests.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -77,10 +75,6 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		247333113D0BB6137F5FC26B /* libPods-OTAcceleratorCore.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-OTAcceleratorCore.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		2A0B2D3213B68AA645392736 /* Pods-OTAcceleratorCoreTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OTAcceleratorCoreTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-OTAcceleratorCoreTests/Pods-OTAcceleratorCoreTests.debug.xcconfig"; sourceTree = "<group>"; };
-		52ED7CB25C916969BE63446B /* libPods-OTAcceleratorCoreTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-OTAcceleratorCoreTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		58411F739957B5E03F194004 /* Pods-OTAcceleratorCoreTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OTAcceleratorCoreTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-OTAcceleratorCoreTests/Pods-OTAcceleratorCoreTests.release.xcconfig"; sourceTree = "<group>"; };
 		A0127A8B1D34651B00CDA3F5 /* OTAcceleratorCore.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OTAcceleratorCore.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A0127A8F1D34651B00CDA3F5 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		A0127A911D34651B00CDA3F5 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -144,8 +138,6 @@
 		A0CDA09E1DF23F060018A2BA /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A0FEABFC1D73B3BF000BDDA4 /* CHANGELOG.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = CHANGELOG.md; sourceTree = "<group>"; };
 		A0FEABFD1D73B3BF000BDDA4 /* OTAcceleratorCore.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = OTAcceleratorCore.podspec; sourceTree = "<group>"; };
-		B283CB100D40FDA542B59305 /* Pods-OTAcceleratorCore.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OTAcceleratorCore.release.xcconfig"; path = "Pods/Target Support Files/Pods-OTAcceleratorCore/Pods-OTAcceleratorCore.release.xcconfig"; sourceTree = "<group>"; };
-		DAAF64823F2190DD3F35B333 /* Pods-OTAcceleratorCore.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OTAcceleratorCore.debug.xcconfig"; path = "Pods/Target Support Files/Pods-OTAcceleratorCore/Pods-OTAcceleratorCore.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -160,7 +152,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				31A59EC23A4457EB1D5E15A2 /* libPods-OTAcceleratorCore.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -175,33 +166,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E33A3600D0F40630ED4C88C9 /* libPods-OTAcceleratorCoreTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		1573869F8E0EFD738693F2C6 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				247333113D0BB6137F5FC26B /* libPods-OTAcceleratorCore.a */,
-				52ED7CB25C916969BE63446B /* libPods-OTAcceleratorCoreTests.a */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		65F64E85DE58E7C479F81A2F /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				DAAF64823F2190DD3F35B333 /* Pods-OTAcceleratorCore.debug.xcconfig */,
-				B283CB100D40FDA542B59305 /* Pods-OTAcceleratorCore.release.xcconfig */,
-				2A0B2D3213B68AA645392736 /* Pods-OTAcceleratorCoreTests.debug.xcconfig */,
-				58411F739957B5E03F194004 /* Pods-OTAcceleratorCoreTests.release.xcconfig */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
 		A0127A821D34651B00CDA3F5 = {
 			isa = PBXGroup;
 			children = (
@@ -216,8 +186,6 @@
 				A0AB9F1D1E3AD9F20068E20F /* OTAcceleratorCoreTests */,
 				A05CC9F41E984AD700A1459F /* OTAcceleratorCoreUITests */,
 				A0127A8C1D34651B00CDA3F5 /* Products */,
-				65F64E85DE58E7C479F81A2F /* Pods */,
-				1573869F8E0EFD738693F2C6 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -343,12 +311,10 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A0127AA21D34651B00CDA3F5 /* Build configuration list for PBXNativeTarget "OTAcceleratorCore" */;
 			buildPhases = (
-				08D736924C4CBE5050F0EBE4 /* [CP] Check Pods Manifest.lock */,
 				A0127A871D34651B00CDA3F5 /* Sources */,
 				A0127A881D34651B00CDA3F5 /* Frameworks */,
 				A0127A891D34651B00CDA3F5 /* Resources */,
 				A0127AB61D34652500CDA3F5 /* Embed Frameworks */,
-				C086AE42659A11C2E74BDE65 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -398,7 +364,6 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A0AB9F251E3AD9F20068E20F /* Build configuration list for PBXNativeTarget "OTAcceleratorCoreTests" */;
 			buildPhases = (
-				627733252996DCD4316EF943 /* [CP] Check Pods Manifest.lock */,
 				A0AB9F181E3AD9F20068E20F /* Sources */,
 				A0AB9F191E3AD9F20068E20F /* Frameworks */,
 				A0AB9F1A1E3AD9F20068E20F /* Resources */,
@@ -502,75 +467,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		08D736924C4CBE5050F0EBE4 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-OTAcceleratorCore-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		627733252996DCD4316EF943 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-OTAcceleratorCoreTests-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		C086AE42659A11C2E74BDE65 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-OTAcceleratorCore/Pods-OTAcceleratorCore-resources.sh",
-				"${PODS_ROOT}/SVProgressHUD/SVProgressHUD/SVProgressHUD.bundle",
-			);
-			name = "[CP] Copy Pods Resources";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/SVProgressHUD.bundle",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-OTAcceleratorCore/Pods-OTAcceleratorCore-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		A0127A871D34651B00CDA3F5 /* Sources */ = {
@@ -750,7 +646,6 @@
 		};
 		A0127AA31D34651B00CDA3F5 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = DAAF64823F2190DD3F35B333 /* Pods-OTAcceleratorCore.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = OTAcceleratorCore/Info.plist;
@@ -763,7 +658,6 @@
 		};
 		A0127AA41D34651B00CDA3F5 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = B283CB100D40FDA542B59305 /* Pods-OTAcceleratorCore.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = OTAcceleratorCore/Info.plist;
@@ -842,7 +736,6 @@
 		};
 		A0AB9F231E3AD9F20068E20F /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 2A0B2D3213B68AA645392736 /* Pods-OTAcceleratorCoreTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
@@ -858,7 +751,6 @@
 		};
 		A0AB9F241E3AD9F20068E20F /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 58411F739957B5E03F194004 /* Pods-OTAcceleratorCoreTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
