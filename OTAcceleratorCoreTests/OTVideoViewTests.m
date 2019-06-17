@@ -45,4 +45,16 @@
     XCTAssertNotNil([[OTVideoView alloc] initWithSubscriber:_subscriber]);
 }
 
+- (void)publisher:(nonnull OTPublisherKit *)publisher didFailWithError:(nonnull OTError *)error {
+    <#code#>
+}
+
+- (void)subscriber:(nonnull OTSubscriberKit *)subscriber didFailWithError:(nonnull OTError *)error {
+    <#code#>
+}
+
+- (void)subscriberDidConnectToStream:(nonnull OTSubscriberKit *)subscriber {
+    <#code#>
+}
+
 @end
