@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		96D1A01A22B85DDF00744ABC /* OTVideoViewTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A0AB9FF31E3ED2060068E20F /* OTVideoViewTests.m */; };
+		96DE392C22B8979400A41369 /* OTVideoView.m in Sources */ = {isa = PBXBuildFile; fileRef = A05259321E9435DA000F9E88 /* OTVideoView.m */; };
 		A0127A901D34651B00CDA3F5 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A0127A8F1D34651B00CDA3F5 /* main.m */; };
 		A0127A931D34651B00CDA3F5 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A0127A921D34651B00CDA3F5 /* AppDelegate.m */; };
 		A0127A991D34651B00CDA3F5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A0127A971D34651B00CDA3F5 /* Main.storyboard */; };
@@ -530,6 +531,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A0C142BD1E95992B000120E4 /* OTAudioVideoControlViewTests.m in Sources */,
+				96DE392C22B8979400A41369 /* OTVideoView.m in Sources */,
 				96D1A01A22B85DDF00744ABC /* OTVideoViewTests.m in Sources */,
 				A0AB9F1F1E3AD9F20068E20F /* OTAcceleratorCoreTests.m in Sources */,
 				A0AB9F2B1E3ADE2D0068E20F /* OTAcceleratorCoreOneToOneCommunicatorTests.m in Sources */,
