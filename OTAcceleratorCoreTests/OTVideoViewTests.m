@@ -10,8 +10,9 @@
 #import <OpenTok/OpenTok.h>
 #import "OTVideoView.h"
 
-@interface OTVideoViewTests : XCTestCase
-
+@interface OTVideoViewTests : XCTestCase <OTPublisherDelegate, OTSubscriberDelegate>
+@property (nonatomic) OTPublisher *publisher;
+@property (nonatomic) OTSubscriber *subscriber;
 @end
 
 @implementation OTVideoViewTests
@@ -28,15 +29,20 @@
     XCTAssertNil([[OTVideoView alloc] initWithPublisher:nil]);
 }
 
-- (void)testPublisherInitWithNotPublisherKind {
-    XCTAssertNil([[OTVideoView alloc] initWithPublisher:[[OTPublisher alloc] init]]);
+- (void)testPublisherInitWithPublisherNotNil {
+
+    _publisher = [[OTPublisher alloc]
+         initWithDelegate:self
+         settings:[[OTPublisherSettings alloc] init]];
+    XCTAssertNotNil([[OTVideoView alloc] initWithPublisher:_publisher]);
 }
 - (void)testSubscriberInitWithNil {
     XCTAssertNil([[OTVideoView alloc] initWithSubscriber:nil]);
 }
 
-- (void)testSubscriberInit {
-    XCTAssertNil([[OTVideoView alloc] initWithSubscriber:[[OTSubscriber alloc] init]]);
+- (void)testSubscriberInitWithSubscriberNotNil {
+    _subscriber = [OTSubscriber alloc];
+    XCTAssertNotNil([[OTVideoView alloc] initWithSubscriber:_subscriber]);
 }
 
 @end

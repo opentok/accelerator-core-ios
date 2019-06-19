@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		96D1A01A22B85DDF00744ABC /* OTVideoViewTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A0AB9FF31E3ED2060068E20F /* OTVideoViewTests.m */; };
+		96DE392C22B8979400A41369 /* OTVideoView.m in Sources */ = {isa = PBXBuildFile; fileRef = A05259321E9435DA000F9E88 /* OTVideoView.m */; };
 		A0127A901D34651B00CDA3F5 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A0127A8F1D34651B00CDA3F5 /* main.m */; };
 		A0127A931D34651B00CDA3F5 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A0127A921D34651B00CDA3F5 /* AppDelegate.m */; };
 		A0127A991D34651B00CDA3F5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A0127A971D34651B00CDA3F5 /* Main.storyboard */; };
@@ -39,7 +41,6 @@
 		A0AB9F2B1E3ADE2D0068E20F /* OTAcceleratorCoreOneToOneCommunicatorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A0AB9F2A1E3ADE2D0068E20F /* OTAcceleratorCoreOneToOneCommunicatorTests.m */; };
 		A0AB9FF01E3ED0020068E20F /* OTAcceleratorCoreMultipartyCommunicatorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A0AB9FEF1E3ED0020068E20F /* OTAcceleratorCoreMultipartyCommunicatorTests.m */; };
 		A0AB9FF21E3ED08B0068E20F /* OTViewHelperTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A0AB9FF11E3ED08B0068E20F /* OTViewHelperTests.m */; };
-		A0AB9FF41E3ED2060068E20F /* OTVideoViewTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A0AB9FF31E3ED2060068E20F /* OTVideoViewTests.m */; };
 		A0C142BD1E95992B000120E4 /* OTAudioVideoControlViewTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A0C142BC1E95992B000120E4 /* OTAudioVideoControlViewTests.m */; };
 		A0FEAC001D73B3BF000BDDA4 /* OTAcceleratorCore.podspec in Resources */ = {isa = PBXBuildFile; fileRef = A0FEABFD1D73B3BF000BDDA4 /* OTAcceleratorCore.podspec */; };
 /* End PBXBuildFile section */
@@ -172,6 +173,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		96D1A01922B85DC200744ABC /* Recovered References */ = {
+			isa = PBXGroup;
+			children = (
+				A07C06161DEBC32200BB4FD9 /* Assets.xcassets */,
+			);
+			name = "Recovered References";
+			sourceTree = "<group>";
+		};
 		A0127A821D34651B00CDA3F5 = {
 			isa = PBXGroup;
 			children = (
@@ -186,6 +195,8 @@
 				A0AB9F1D1E3AD9F20068E20F /* OTAcceleratorCoreTests */,
 				A05CC9F41E984AD700A1459F /* OTAcceleratorCoreUITests */,
 				A0127A8C1D34651B00CDA3F5 /* Products */,
+				D3534160ECF98265C12CC505 /* Pods */,
+				96D1A01922B85DC200744ABC /* Recovered References */,
 			);
 			sourceTree = "<group>";
 		};
@@ -302,6 +313,13 @@
 				A0CDA09E1DF23F060018A2BA /* Info.plist */,
 			);
 			path = OTAcceleratorCoreBundle;
+			sourceTree = "<group>";
+		};
+		D3534160ECF98265C12CC505 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -513,10 +531,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				A0C142BD1E95992B000120E4 /* OTAudioVideoControlViewTests.m in Sources */,
+				96DE392C22B8979400A41369 /* OTVideoView.m in Sources */,
+				96D1A01A22B85DDF00744ABC /* OTVideoViewTests.m in Sources */,
 				A0AB9F1F1E3AD9F20068E20F /* OTAcceleratorCoreTests.m in Sources */,
 				A0AB9F2B1E3ADE2D0068E20F /* OTAcceleratorCoreOneToOneCommunicatorTests.m in Sources */,
 				A0AB9FF01E3ED0020068E20F /* OTAcceleratorCoreMultipartyCommunicatorTests.m in Sources */,
-				A0AB9FF41E3ED2060068E20F /* OTVideoViewTests.m in Sources */,
 				A0AB9FF21E3ED08B0068E20F /* OTViewHelperTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -792,6 +811,7 @@
 				A05CC9FB1E984AD700A1459F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		A07C06151DEBC2B500BB4FD9 /* Build configuration list for PBXNativeTarget "OTAcceleratorCoreBundle" */ = {
 			isa = XCConfigurationList;
