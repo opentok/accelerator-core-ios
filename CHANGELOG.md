@@ -4,6 +4,16 @@ The changelog for `Accelerator-Core` iOS.
 
 --------------------------------------
 
+1.1.10
+------
+
+### Update OpenTok SDK version to 2.16.5
+
+1.1.9
+-----
+
+### Fixes a crashing issue with iOS 13
+
 1.1.8
 -----
 
