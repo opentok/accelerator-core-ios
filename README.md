@@ -1,4 +1,4 @@
-![logo](./tokbox-logo.png)
+# Accelerator Core iOS
 
 [![Build Status](https://travis-ci.org/opentok/accelerator-core-ios.svg?branch=master)](https://travis-ci.org/opentok/accelerator-core-ios)
 [![Version Status](https://img.shields.io/cocoapods/v/OTAcceleratorCore.svg)](https://cocoapods.org/pods/OTAcceleratorCore)
@@ -6,7 +6,7 @@
 [![Platform](https://img.shields.io/cocoapods/p/OTAcceleratorCore.svg)](https://cocoapods.org/pods/OTAcceleratorCore)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](http://makeapullrequest.com)
 
-# Accelerator Core iOS <br/>
+<img src="https://assets.tokbox.com/img/vonage/Vonage_VideoAPI_black.svg" height="48px" alt="Tokbox is now known as Vonage" />
 
 The Accelerator Core is an easy manner to integrate audio/video communication to any iOS applications via OpenTok platform. Things you can easily do:
 
@@ -16,7 +16,7 @@ The Accelerator Core is an easy manner to integrate audio/video communication to
 - multiparty screen sharing
 - UI components for handling audio/video enable&disable
 
-# Configure, build and run the sample app <br/>
+# Configure, build and run the sample app
 
 1. Get values for **API Key**, **Session ID**, and **Token**. See [Obtaining OpenTok Credentials](#obtaining-opentok-credentials) for important information.
 
@@ -42,10 +42,11 @@ The Accelerator Core is an easy manner to integrate audio/video communication to
 
 1. You might want to run on other platforms:
 
-[Accelerator Core Javascript](https://github.com/opentok/accelerator-core-js) <br />
+[Accelerator Core Javascript](https://github.com/opentok/accelerator-core-js)
+
 [Accelerator Core Android](https://github.com/opentok/accelerator-core-android)
 
-# Sample Codes
+## Sample Codes
 
 Each communicator instance will take the OpenTok session from OTOneToOneCommunicatorDataSource, so this applies to each communicator instance:
 
@@ -93,33 +94,38 @@ Each communicator instance will take the OpenTok session from OTOneToOneCommunic
 - Screen Sharing
 
     Use `- (instancetype)initWithView:` or `- (instancetype)initWithView:name:` like so
+
     ```objc
     self.screenSharer = [[OTOneToOneCommunicator alloc] initWithView:[UIApplication sharedApplication].keyWindow.rootViewController.view];
     ```
-    or 
+
+    or
+
     ```objc
     self.screenSharer = [[OTMultiPartyCommunicator alloc] initWithView:[UIApplication sharedApplication].keyWindow.rootViewController.view];
     ```
-    
+
 - Pre-defined UI
 
     Enable audio&video control
+
     ```objc
     self.communicator.publisherView.controlView.isVerticalAlignment = YES;
     self.communicator.publisherView.controlView.frame = CGRectMake(10, 10, CGRectGetWidth(self.publisherView.frame) * 0.1, CGRectGetHeight(self.publisherView.frame) * 0.3);
     ```
 
     Handle video enable/disable control
+
     ```objc
     // default
     // enable handleAudioVideo property, the publisherView will be covered by a silhouette automatically.
-    self.communicator.publisherView.handleAudioVideo = YES; 
+    self.communicator.publisherView.handleAudioVideo = YES;
 
     // disable handleAudioVideo property, the publisherView will do nothing for enabling/disabling publishVideo.
-    self.communicator.publisherView.handleAudioVideo = NO; 
+    self.communicator.publisherView.handleAudioVideo = NO;
     ```
 
-# Ready-in-Use components
+## Ready-in-Use Components
 
 - One-to-One communication
 
@@ -131,21 +137,39 @@ OTOneToOneCommunicationController *vc = [OTOneToOneCommunicationController oneTo
 [self.navigationController pushViewController:vc animated:YES];
 ```
 
-# Sample Apps that uses the Core
+## Sample Apps that uses the Core
 
 The following sample apps use `Accelerator Core`:
 
 - [OpenTok One-to-One Communication Sample App](https://github.com/opentok/one-to-one-sample-apps) 
 - [Accelerator Sample App](https://github.com/opentok/accelerator-sample-apps-ios)
 
-
-#### Obtaining OpenTok Credentials
+### Obtaining OpenTok Credentials
 
 To use OpenTok's framework you need a Session ID, Token, and API Key you can get these values at the [OpenTok Developer Dashboard](https://dashboard.tokbox.com/) . For production deployment, you must generate the Session ID and Token values using one of the [OpenTok Server SDKs](https://tokbox.com/developer/sdks/server/).
 
-# Accelerator Core as a dependency <br/>
+## Accelerator Core as a dependency
+
 The Accelerator Core is required whenever you use any of the OpenTok accelerators. The Accelerator Core is a common layer that includes the audio-video communication logic contained in all [OpenTok One-to-One Communication Sample Apps](https://github.com/opentok/one-to-one-sample-apps), and permits all accelerators and samples to share the same OpenTok session. The accelerator packs and sample app access the OpenTok session through the Common Accelerator Session Pack layer, which allows them to share a single OpenTok session:
 
 ![architecture](./accpackarch.png)
 
-On the Android and iOS mobile platforms, when you try to set a listener (Android) or delegate (iOS), it is not normally possible to set multiple listeners or delegates for the same event. For example, on these mobile platforms you can only set one OpenTok signal listener. The Common Accelerator Session Pack, however, allows you to set up several listeners for the same event. 
+On the Android and iOS mobile platforms, when you try to set a listener (Android) or delegate (iOS), it is not normally possible to set multiple listeners or delegates for the same event. For example, on these mobile platforms you can only set one OpenTok signal listener. The Common Accelerator Session Pack, however, allows you to set up several listeners for the same event.
+
+## Development and Contributing
+
+Interested in contributing? We :heart: pull requests! See the [Contribution](CONTRIBUTING.md) guidelines.
+
+## Getting Help
+
+We love to hear from you so if you have questions, comments or find a bug in the project, let us know! You can either:
+
+- Open an issue on this repository
+- See <https://support.tokbox.com/> for support options
+- Tweet at us! We're [@VonageDev](https://twitter.com/VonageDev) on Twitter
+- Or [join the Vonage Developer Community Slack](https://developer.nexmo.com/community/slack)
+
+## Further Reading
+
+- Check out the Developer Documentation at <https://tokbox.com/developer/>
+  
