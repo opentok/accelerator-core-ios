@@ -262,26 +262,30 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="elB-75-8GB">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="862"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                            </webView>
+                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rnt-Zo-4eG">
+                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <wkWebViewConfiguration key="configuration">
+                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                    <wkPreferences key="preferences"/>
+                                </wkWebViewConfiguration>
+                            </wkWebView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="elB-75-8GB" firstAttribute="top" secondItem="dUZ-Pa-Zfa" secondAttribute="top" id="Cdc-hV-AJA"/>
-                            <constraint firstItem="GAk-ow-qDu" firstAttribute="top" secondItem="elB-75-8GB" secondAttribute="bottom" id="cwR-uM-7rd"/>
-                            <constraint firstAttribute="trailing" secondItem="elB-75-8GB" secondAttribute="trailing" id="pQk-fd-5oK"/>
-                            <constraint firstItem="elB-75-8GB" firstAttribute="leading" secondItem="dUZ-Pa-Zfa" secondAttribute="leading" id="rou-ST-eej"/>
+                            <constraint firstItem="GAk-ow-qDu" firstAttribute="top" secondItem="rnt-Zo-4eG" secondAttribute="bottom" id="Oc5-6B-Yak"/>
+                            <constraint firstAttribute="trailing" secondItem="rnt-Zo-4eG" secondAttribute="trailing" id="YAQ-lP-nRz"/>
+                            <constraint firstItem="rnt-Zo-4eG" firstAttribute="leading" secondItem="dUZ-Pa-Zfa" secondAttribute="leading" id="cP3-YO-UuA"/>
+                            <constraint firstItem="rnt-Zo-4eG" firstAttribute="top" secondItem="h5z-o2-OIn" secondAttribute="bottom" id="veZ-xd-utm"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="webView" destination="elB-75-8GB" id="xpJ-5o-nwB"/>
+                        <outlet property="webView" destination="rnt-Zo-4eG" id="wdV-yP-KRf"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tXd-9f-1rg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1929" y="1540"/>
+            <point key="canvasLocation" x="1928.985507246377" y="1539.5089285714284"/>
         </scene>
         <!--Share Whole Screen Multiparty View Controller-->
         <scene sceneID="Rpf-tR-aYK">
@@ -335,20 +339,24 @@
                                     <constraint firstAttribute="trailing" secondItem="ddY-X3-rQ1" secondAttribute="trailing" id="wZ3-86-b1F"/>
                                 </constraints>
                             </view>
-                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Li4-pE-IoI">
+                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="slU-ag-ZV4">
                                 <rect key="frame" x="0.0" y="88" width="414" height="268.66666666666669"/>
                                 <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            </webView>
+                                <wkWebViewConfiguration key="configuration">
+                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                    <wkPreferences key="preferences"/>
+                                </wkWebViewConfiguration>
+                            </wkWebView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
+                            <constraint firstItem="mLQ-lu-lzj" firstAttribute="top" secondItem="slU-ag-ZV4" secondAttribute="bottom" id="0cS-kt-ge5"/>
+                            <constraint firstItem="slU-ag-ZV4" firstAttribute="height" secondItem="vcY-rd-JpE" secondAttribute="height" multiplier="0.3" id="DqH-dJ-sWh"/>
+                            <constraint firstItem="slU-ag-ZV4" firstAttribute="leading" secondItem="vcY-rd-JpE" secondAttribute="leading" id="LQB-6v-oe6"/>
                             <constraint firstItem="Mzn-av-5wa" firstAttribute="top" secondItem="mLQ-lu-lzj" secondAttribute="bottom" id="OJS-GA-H4H"/>
-                            <constraint firstItem="mLQ-lu-lzj" firstAttribute="top" secondItem="Li4-pE-IoI" secondAttribute="bottom" id="QI4-km-LIA"/>
-                            <constraint firstItem="Li4-pE-IoI" firstAttribute="leading" secondItem="vcY-rd-JpE" secondAttribute="leading" id="QgE-i8-LSp"/>
-                            <constraint firstItem="Li4-pE-IoI" firstAttribute="top" secondItem="Yx6-mv-jLL" secondAttribute="bottom" id="S6E-eJ-wj3"/>
-                            <constraint firstItem="Li4-pE-IoI" firstAttribute="height" secondItem="vcY-rd-JpE" secondAttribute="height" multiplier="0.3" id="Zjk-p3-lZv"/>
-                            <constraint firstAttribute="trailing" secondItem="Li4-pE-IoI" secondAttribute="trailing" id="bnF-ry-g2t"/>
                             <constraint firstAttribute="trailing" secondItem="mLQ-lu-lzj" secondAttribute="trailing" id="dRe-fD-KIK"/>
+                            <constraint firstAttribute="trailing" secondItem="slU-ag-ZV4" secondAttribute="trailing" id="i6j-kK-oYu"/>
+                            <constraint firstItem="slU-ag-ZV4" firstAttribute="top" secondItem="Yx6-mv-jLL" secondAttribute="bottom" id="iPI-Ck-BSV"/>
                             <constraint firstItem="mLQ-lu-lzj" firstAttribute="leading" secondItem="vcY-rd-JpE" secondAttribute="leading" id="qLf-06-S61"/>
                         </constraints>
                     </view>
@@ -357,12 +365,12 @@
                         <outlet property="subscriberView2" destination="YSb-M7-ymD" id="wqn-jA-QRX"/>
                         <outlet property="subscriberView3" destination="GDq-Gl-3vn" id="3bg-WT-44Y"/>
                         <outlet property="subscriberView4" destination="ddY-X3-rQ1" id="97y-Wm-4iz"/>
-                        <outlet property="webView" destination="Li4-pE-IoI" id="Kyk-N5-5Pn"/>
+                        <outlet property="webView" destination="slU-ag-ZV4" id="Xpx-rA-tub"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="753-WY-G5f" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1163" y="1204"/>
+            <point key="canvasLocation" x="1162.3188405797102" y="1203.3482142857142"/>
         </scene>
     </scenes>
 </document>

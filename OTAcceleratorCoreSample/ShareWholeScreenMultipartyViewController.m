@@ -7,9 +7,10 @@
 #import "ShareWholeScreenMultipartyViewController.h"
 #import "AppDelegate.h"
 #import "OTMultiPartyCommunicator.h"
+#import <WebKit/WebKit.h>
 
 @interface ShareWholeScreenMultipartyViewController () <OTMultiPartyCommunicatorDataSource>
-@property (weak, nonatomic) IBOutlet UIWebView *webView;
+@property (strong, nonatomic) IBOutlet WKWebView *webView;
 @property (weak, nonatomic) IBOutlet UIView *subscriberView1;
 @property (weak, nonatomic) IBOutlet UIView *subscriberView2;
 @property (weak, nonatomic) IBOutlet UIView *subscriberView3;
