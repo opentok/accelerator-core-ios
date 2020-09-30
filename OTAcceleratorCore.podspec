@@ -14,7 +14,7 @@ On the Android and iOS mobile platforms, when you try to set a listener (Android
   s.source           = { :git => "https://github.com/opentok/accelerator-core-ios.git", :tag => s.version.to_s }
   s.social_media_url = 'https://twitter.com/tokbox'
 
-  s.platform     = :ios, '10.0'
+  s.platform     = :ios, '11.0'
   s.requires_arc = true
 
   s.source_files = 'OTAcceleratorCore/**/*.{h,m}'
