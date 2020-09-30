@@ -25,7 +25,7 @@
 
     self.navigationItem.rightBarButtonItem = self.subscribeButton;
 
-    NSURLRequest *requestObj = [NSURLRequest requestWithURL:[NSURL URLWithString:@"https://www.kayak.com/"]];
+    NSURLRequest *requestObj = [NSURLRequest requestWithURL:[NSURL URLWithString:@"https://www.vonage.com/"]];
     [self.webView loadRequest:requestObj];
     [self.webView reload];
     
