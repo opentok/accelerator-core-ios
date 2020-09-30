@@ -31,7 +31,6 @@
 		A05CC9EA1E98415200A1459F /* OTOneToOneCommunicationController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A05CC9E91E98415200A1459F /* OTOneToOneCommunicationController.xib */; };
 		A05CC9EE1E98491500A1459F /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A05CC9EC1E9847F600A1459F /* MainViewController.m */; };
 		A05CC9F61E984AD700A1459F /* OTAcceleratorCoreUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = A05CC9F51E984AD700A1459F /* OTAcceleratorCoreUITests.m */; };
-		A07C06171DEBC32200BB4FD9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A07C06161DEBC32200BB4FD9 /* Assets.xcassets */; };
 		A08831221DF24A3D00F4D866 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A0CDA0981DF23F060018A2BA /* Assets.xcassets */; };
 		A0AB9F0D1E3AC11F0068E20F /* ShareWholeScreenViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A0AB9F0C1E3AC11F0068E20F /* ShareWholeScreenViewController.m */; };
 		A0AB9F101E3AC2D50068E20F /* OTScreenCapture.m in Sources */ = {isa = PBXBuildFile; fileRef = A0AB9F0F1E3AC2D50068E20F /* OTScreenCapture.m */; };
@@ -120,7 +119,6 @@
 		A05CC9F51E984AD700A1459F /* OTAcceleratorCoreUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OTAcceleratorCoreUITests.m; sourceTree = "<group>"; };
 		A05CC9F71E984AD700A1459F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A07C06101DEBC2B500BB4FD9 /* OTAcceleratorCoreBundle.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OTAcceleratorCoreBundle.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
-		A07C06161DEBC32200BB4FD9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A080E47C1E244CFA007972D8 /* OTCommonCommunicator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OTCommonCommunicator.h; sourceTree = "<group>"; };
 		A0AB9F0B1E3AC11F0068E20F /* ShareWholeScreenViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShareWholeScreenViewController.h; sourceTree = "<group>"; };
 		A0AB9F0C1E3AC11F0068E20F /* ShareWholeScreenViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShareWholeScreenViewController.m; sourceTree = "<group>"; };
@@ -183,14 +181,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		96D1A01922B85DC200744ABC /* Recovered References */ = {
-			isa = PBXGroup;
-			children = (
-				A07C06161DEBC32200BB4FD9 /* Assets.xcassets */,
-			);
-			name = "Recovered References";
-			sourceTree = "<group>";
-		};
 		A0127A821D34651B00CDA3F5 = {
 			isa = PBXGroup;
 			children = (
@@ -206,7 +196,6 @@
 				A05CC9F41E984AD700A1459F /* OTAcceleratorCoreUITests */,
 				A0127A8C1D34651B00CDA3F5 /* Products */,
 				D3534160ECF98265C12CC505 /* Pods */,
-				96D1A01922B85DC200744ABC /* Recovered References */,
 				D554E5E8AC17BFB89B393667 /* Frameworks */,
 			);
 			sourceTree = "<group>";
@@ -499,7 +488,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				A08831221DF24A3D00F4D866 /* Assets.xcassets in Resources */,
-				A07C06171DEBC32200BB4FD9 /* Assets.xcassets in Resources */,
 				A05CC9EA1E98415200A1459F /* OTOneToOneCommunicationController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
