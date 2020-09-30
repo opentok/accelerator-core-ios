@@ -1,5 +1,5 @@
 language: objective-c
-osx_image: xcode10
+osx_image: xcode11.6
 cache: cocoapods
 
 env:
@@ -8,12 +8,12 @@ env:
 
   - WORKSPACE="OTAcceleratorCore.xcworkspace"
   - IOS_SCHEME="OTAcceleratorCore"
-  - IOS_SDK=iphonesimulator12.0
+  - IOS_SDK=iphonesimulator13.6
 
   matrix:
 
-  - DESTINATION="OS=10.3.1,name=iPhone 6s"   SDK="$IOS_SDK" SCHEME="$IOS_SCHEME" RUN_TESTS="YES" BUILD_EXAMPLE="NO" POD_LINT="YES" RUN_UI_TESTS="YES"
-  - DESTINATION="OS=12.0,name=iPhone X"   SDK="$IOS_SDK" SCHEME="$IOS_SCHEME" RUN_TESTS="YES" BUILD_EXAMPLE="NO" POD_LINT="YES" RUN_UI_TESTS="YES"
+  - DESTINATION="OS=12.4,name=iPhone 6s"   SDK="$IOS_SDK" SCHEME="$IOS_SCHEME" RUN_TESTS="YES" BUILD_EXAMPLE="NO" POD_LINT="YES" RUN_UI_TESTS="YES"
+  - DESTINATION="OS=13.6,name=iPhone 11 Pro"   SDK="$IOS_SDK" SCHEME="$IOS_SCHEME" RUN_TESTS="YES" BUILD_EXAMPLE="NO" POD_LINT="YES" RUN_UI_TESTS="YES"
 before_install:
   - gem install cocoapods --pre
   - pod update
@@ -26,9 +26,9 @@ script:
   fi
 
 - if [ $RUN_TESTS == "YES" ]; then
-    travis_retry xcodebuild clean build test -workspace "$WORKSPACE" -scheme "$SCHEME" -sdk "$SDK" -destination "$DESTINATION" -configuration Debug ONLY_ACTIVE_ARCH=NO | xcpretty -c;
+    travis_retry xcodebuild clean build test -workspace "$WORKSPACE" -scheme "$SCHEME" -sdk "$SDK" -destination "$DESTINATION" -configuration Debug | xcpretty -c;
   else
-    travis_retry xcodebuild clean build -workspace "$WORKSPACE" -scheme "$SCHEME" -sdk "$SDK" -destination "$DESTINATION" -configuration Debug ONLY_ACTIVE_ARCH=NO | xcpretty -c;
+    travis_retry xcodebuild clean build -workspace "$WORKSPACE" -scheme "$SCHEME" -sdk "$SDK" -destination "$DESTINATION" -configuration Debug | xcpretty -c;
   fi
 notifications:
   slack:
