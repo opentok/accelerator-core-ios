@@ -1,12 +1,12 @@
 PODS:
-  - OpenTok (2.16.5)
+  - OpenTok (2.18.0)
   - OTKAnalytics (2.1.2)
-  - SVProgressHUD (2.2.1)
+  - SVProgressHUD (2.2.5)
 
 DEPENDENCIES:
-  - OpenTok (= 2.16.5)
+  - OpenTok (= 2.18.0)
   - OTKAnalytics (= 2.1.2)
-  - SVProgressHUD (= 2.2.1)
+  - SVProgressHUD (= 2.2.5)
 
 SPEC REPOS:
   trunk:
@@ -15,10 +15,10 @@ SPEC REPOS:
     - SVProgressHUD
 
 SPEC CHECKSUMS:
-  OpenTok: 5d53a0f1375ee79579c2e40329bd5fa6925354ce
+  OpenTok: bf4c81ff741e7976542c61b8f317882f8076eede
   OTKAnalytics: 2de2f8971b5af7f313882ada0b1eae25104296f4
-  SVProgressHUD: db27c54e6e18bc903341661fc9feb55e04905cc4
+  SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
 
-PODFILE CHECKSUM: f71fa710f128c37fa5aa4f9f5817c83d078b7007
+PODFILE CHECKSUM: d986e7a10a719418ba2d34cdd18b3504fc3add79
 
 COCOAPODS: 1.9.3
