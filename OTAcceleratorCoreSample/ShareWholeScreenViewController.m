@@ -9,9 +9,10 @@
 #import "ShareWholeScreenViewController.h"
 #import "AppDelegate.h"
 #import "OTOneToOneCommunicator.h"
+#import <WebKit/WebKit.h>
 
 @interface ShareWholeScreenViewController () <OTOneToOneCommunicatorDataSource>
-@property (weak, nonatomic) IBOutlet UIWebView *webView;
+@property (strong, nonatomic) IBOutlet WKWebView *webView;
 @property (nonatomic) UIColor *viewControllerColor;
 @property (nonatomic) OTOneToOneCommunicator *screenSharer;
 @end
