@@ -114,9 +114,11 @@
     
     dispatch_source_set_event_handler(_timer, ^{
         @autoreleasepool {
-            __block UIImage* screen = [_self screenshot];
-            CGImageRef paddedScreen = [self resizeAndPadImage:screen];
-            [_self consumeFrame:paddedScreen];
+            dispatch_async(dispatch_get_main_queue(), ^{
+                __block UIImage* screen = [_self screenshot];
+                CGImageRef paddedScreen = [self resizeAndPadImage:screen];
+                [_self consumeFrame:paddedScreen];
+            });
         }
     });
 }
