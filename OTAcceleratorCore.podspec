@@ -19,9 +19,9 @@ On the Android and iOS mobile platforms, when you try to set a listener (Android
 
   s.source_files = 'OTAcceleratorCore/**/*.{h,m}'
 
-  # s.resource_bundles = {
-  # 	'OTAcceleratorCoreBundle' => ['OTAcceleratorCoreBundle/**/*']
-  # }
+  s.resource_bundles = {
+    'OTAcceleratorCoreBundle' => ['OTAcceleratorCoreBundle/**/*.xib', 'OTAcceleratorCoreBundle/Assets.xcassets']
+  }
 
   s.static_framework = true
   s.public_header_files = 'OTAcceleratorCore/**/*.{h}'
