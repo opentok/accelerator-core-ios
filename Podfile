@@ -12,8 +12,8 @@ end
 
 target 'OTAcceleratorCore' do 
   core_pods
-  pod 'OTKAnalytics', '= 2.1.2'
-  pod 'SVProgressHUD', '= 2.2.5'
+  pod 'OTKAnalytics', '~> 2.1.2'
+  pod 'SVProgressHUD', '~> 2.2.5'
 end
 
 target 'OTAcceleratorCoreTests' do
@@ -26,4 +26,13 @@ end
 
 target 'OTTextChatTests' do
   core_pods
+end
+
+target 'OTAnnotationSample' do
+  dep_pods
+end
+
+target 'OTAnnotationTests' do
+  dep_pods
+  pod 'Kiwi'
 end
