@@ -16,6 +16,7 @@
 		127C5D67255177F9000549D5 /* OTAudioVideoControlView.m in Sources */ = {isa = PBXBuildFile; fileRef = A05259381E9435EA000F9E88 /* OTAudioVideoControlView.m */; };
 		127C5D6825517873000549D5 /* OTAcceleratorSession.m in Sources */ = {isa = PBXBuildFile; fileRef = A0565F261DF63F62001F9032 /* OTAcceleratorSession.m */; };
 		127C5D6925517B03000549D5 /* UIView+Helper.m in Sources */ = {isa = PBXBuildFile; fileRef = A05259341E9435DA000F9E88 /* UIView+Helper.m */; };
+		127C5D6A25517EB5000549D5 /* OTAcceleratorSession.m in Sources */ = {isa = PBXBuildFile; fileRef = A0565F261DF63F62001F9032 /* OTAcceleratorSession.m */; };
 		129EDD4F253F2C1400541893 /* CustomTimestampTextChatTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 129EDD39253F2C1200541893 /* CustomTimestampTextChatTableViewCell.m */; };
 		129EDD50253F2C1400541893 /* CustomTimestampTextChatTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 129EDD3A253F2C1200541893 /* CustomTimestampTextChatTableViewCell.xib */; };
 		129EDD51253F2C1400541893 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 129EDD3B253F2C1200541893 /* LaunchScreen.storyboard */; };
@@ -1502,6 +1503,7 @@
 				12B6B93E253F2ED000293718 /* OTTextChat.m in Sources */,
 				129EDD4F253F2C1400541893 /* CustomTimestampTextChatTableViewCell.m in Sources */,
 				129EDD56253F2C1400541893 /* DefaultTextChatTableViewController.m in Sources */,
+				127C5D6A25517EB5000549D5 /* OTAcceleratorSession.m in Sources */,
 				129EDD52253F2C1400541893 /* CustomReceiveTextChatTableViewCell.m in Sources */,
 				12B6B944253F2F1A00293718 /* OTTextChatAcceleratorBundle.m in Sources */,
 				129EDD5C253F2C1400541893 /* CustomTextChatTableViewController.m in Sources */,
