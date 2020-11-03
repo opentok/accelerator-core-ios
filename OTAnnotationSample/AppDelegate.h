@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import <OTAcceleratorCore/OTAcceleratorSession.h>
+#import "OTAcceleratorSession.h"
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 

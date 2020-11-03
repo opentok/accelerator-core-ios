@@ -6,6 +6,7 @@
 
 #import "OTAnnotationKitBundle.h"
 #import "OTAnnotationEditTextViewController.h"
+#import "OTAcceleratorCoreBundle.h"
 
 @implementation OTAnnotationAcceleratorBundle
 
@@ -29,7 +30,7 @@
         return annotationBundle;
     }
     
-    return  nil;
+    return [OTAcceleratorCoreBundle acceleratorCoreBundle];;
 }
 
 @end

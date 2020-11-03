@@ -5,7 +5,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import <OTAcceleratorCore/OTAcceleratorSession.h>
+#import "OTAcceleratorSession.h"
 #import "OTAnnotationScrollView.h"
 
 typedef NS_ENUM(NSUInteger, OTAnnotationSignal) {

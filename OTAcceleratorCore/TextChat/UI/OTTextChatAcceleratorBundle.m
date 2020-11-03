@@ -6,6 +6,7 @@
 
 #import "OTTextChatAcceleratorBundle.h"
 #import "OTTextChatViewController.h"
+#import "OTAcceleratorCoreBundle.h"
 
 @implementation OTTextChatAcceleratorBundle
 
@@ -29,7 +30,7 @@
         return textChatViewBundle;
     }
     
-    return  nil;
+    return [OTAcceleratorCoreBundle acceleratorCoreBundle];
 }
 
 @end

@@ -5,7 +5,7 @@
 //
 
 #import <AVFoundation/AVFoundation.h>
-#import <OTAcceleratorCore/OTAcceleratorSession.h>
+#import "OTAcceleratorSession.h"
 #import "OTVideoView.h"
 #import "OTCommonCommunicator.h"
 

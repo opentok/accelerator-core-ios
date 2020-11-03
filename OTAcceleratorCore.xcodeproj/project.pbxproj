@@ -8,6 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		120640222525FEBC008E3516 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 120640212525FEBC008E3516 /* WebKit.framework */; };
+		127C5D62255177A7000549D5 /* OTAcceleratorCoreBundle.m in Sources */ = {isa = PBXBuildFile; fileRef = A0565F241DF63F62001F9032 /* OTAcceleratorCoreBundle.m */; };
+		127C5D63255177A8000549D5 /* OTAcceleratorCoreBundle.m in Sources */ = {isa = PBXBuildFile; fileRef = A0565F241DF63F62001F9032 /* OTAcceleratorCoreBundle.m */; };
+		127C5D64255177C7000549D5 /* OTOneToOneCommunicator.m in Sources */ = {isa = PBXBuildFile; fileRef = A0565F2A1DF63F62001F9032 /* OTOneToOneCommunicator.m */; };
+		127C5D65255177DD000549D5 /* OTVideoView.m in Sources */ = {isa = PBXBuildFile; fileRef = A05259321E9435DA000F9E88 /* OTVideoView.m */; };
+		127C5D66255177E6000549D5 /* OTScreenCapture.m in Sources */ = {isa = PBXBuildFile; fileRef = A0AB9F0F1E3AC2D50068E20F /* OTScreenCapture.m */; };
+		127C5D67255177F9000549D5 /* OTAudioVideoControlView.m in Sources */ = {isa = PBXBuildFile; fileRef = A05259381E9435EA000F9E88 /* OTAudioVideoControlView.m */; };
+		127C5D6825517873000549D5 /* OTAcceleratorSession.m in Sources */ = {isa = PBXBuildFile; fileRef = A0565F261DF63F62001F9032 /* OTAcceleratorSession.m */; };
+		127C5D6925517B03000549D5 /* UIView+Helper.m in Sources */ = {isa = PBXBuildFile; fileRef = A05259341E9435DA000F9E88 /* UIView+Helper.m */; };
 		129EDD4F253F2C1400541893 /* CustomTimestampTextChatTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 129EDD39253F2C1200541893 /* CustomTimestampTextChatTableViewCell.m */; };
 		129EDD50253F2C1400541893 /* CustomTimestampTextChatTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 129EDD3A253F2C1200541893 /* CustomTimestampTextChatTableViewCell.xib */; };
 		129EDD51253F2C1400541893 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 129EDD3B253F2C1200541893 /* LaunchScreen.storyboard */; };
@@ -22,7 +30,6 @@
 		129EDD5A253F2C1400541893 /* CustomSendTextChatTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 129EDD48253F2C1300541893 /* CustomSendTextChatTableViewCell.xib */; };
 		129EDD5C253F2C1400541893 /* CustomTextChatTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 129EDD4A253F2C1300541893 /* CustomTextChatTableViewController.m */; };
 		129EDD5D253F2C1400541893 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 129EDD4B253F2C1400541893 /* Assets.xcassets */; };
-		129EDD5F253F2E0F00541893 /* libOTAcceleratorCore.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 129EDD5E253F2E0F00541893 /* libOTAcceleratorCore.a */; };
 		12B6B93E253F2ED000293718 /* OTTextChat.m in Sources */ = {isa = PBXBuildFile; fileRef = 129EDD00253F0E0600541893 /* OTTextChat.m */; };
 		12B6B93F253F2ED300293718 /* OTTextMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = 129EDCFE253F0E0600541893 /* OTTextMessage.m */; };
 		12B6B940253F2EE100293718 /* OTTextChatViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 129EDD16253F0F3400541893 /* OTTextChatViewController.m */; };
@@ -394,7 +401,7 @@
 		A0CDA0981DF23F060018A2BA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A0CDA09E1DF23F060018A2BA /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A0FEABFC1D73B3BF000BDDA4 /* CHANGELOG.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = CHANGELOG.md; sourceTree = "<group>"; };
-		A0FEABFD1D73B3BF000BDDA4 /* OTAcceleratorCore.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = OTAcceleratorCore.podspec; sourceTree = "<group>"; };
+		A0FEABFD1D73B3BF000BDDA4 /* OTAcceleratorCore.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = OTAcceleratorCore.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		A39404198272CB1E17F2D7F1 /* libPods-OTTextChatTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-OTTextChatTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A80AEBA3854C451B02B1AA34 /* Pods-OTAcceleratorCore.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OTAcceleratorCore.release.xcconfig"; path = "Target Support Files/Pods-OTAcceleratorCore/Pods-OTAcceleratorCore.release.xcconfig"; sourceTree = "<group>"; };
 		ACEB4C4D3DAEA2A424192AF7 /* libPods-OTAnnotationTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-OTAnnotationTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -413,7 +420,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				129EDD5F253F2E0F00541893 /* libOTAcceleratorCore.a in Frameworks */,
 				243662E4D547BD335C65D75D /* libPods-OTTextChatSample.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -967,7 +973,6 @@
 				129EDD1C253F2BBD00541893 /* Sources */,
 				129EDD1D253F2BBD00541893 /* Frameworks */,
 				129EDD1E253F2BBD00541893 /* Resources */,
-				6C8B88EC12050E7544DE7307 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -1022,7 +1027,6 @@
 				12B6B9F52540843200293718 /* Sources */,
 				12B6B9F62540843200293718 /* Frameworks */,
 				12B6B9F72540843200293718 /* Resources */,
-				F7BB2F15C34BDDD547CAEC77 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -1058,7 +1062,6 @@
 				12B6BAEB25409B2C00293718 /* Sources */,
 				12B6BAEC25409B2C00293718 /* Frameworks */,
 				12B6BAED25409B2C00293718 /* Resources */,
-				0D08FFA02EE387478FB1AF5A /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -1359,26 +1362,6 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		0D08FFA02EE387478FB1AF5A /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-OTAnnotationTests/Pods-OTAnnotationTests-resources.sh",
-				"${PODS_ROOT}/SVProgressHUD/SVProgressHUD/SVProgressHUD.bundle",
-				"${PODS_CONFIGURATION_BUILD_DIR}/OTAcceleratorCore/OTAcceleratorCoreBundle.bundle",
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/SVProgressHUD.bundle",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/OTAcceleratorCoreBundle.bundle",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-OTAnnotationTests/Pods-OTAnnotationTests-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		1A89D99390D3C0C5EA66B8F1 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -1467,26 +1450,6 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		6C8B88EC12050E7544DE7307 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-OTTextChatSample/Pods-OTTextChatSample-resources.sh",
-				"${PODS_ROOT}/SVProgressHUD/SVProgressHUD/SVProgressHUD.bundle",
-				"${PODS_CONFIGURATION_BUILD_DIR}/OTAcceleratorCore/OTAcceleratorCoreBundle.bundle",
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/SVProgressHUD.bundle",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/OTAcceleratorCoreBundle.bundle",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-OTTextChatSample/Pods-OTTextChatSample-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		C82D40BB545D1F6718716DD9 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -1527,26 +1490,6 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-OTAcceleratorCore/Pods-OTAcceleratorCore-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		F7BB2F15C34BDDD547CAEC77 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-OTAnnotationSample/Pods-OTAnnotationSample-resources.sh",
-				"${PODS_ROOT}/SVProgressHUD/SVProgressHUD/SVProgressHUD.bundle",
-				"${PODS_CONFIGURATION_BUILD_DIR}/OTAcceleratorCore/OTAcceleratorCoreBundle.bundle",
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/SVProgressHUD.bundle",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/OTAcceleratorCoreBundle.bundle",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-OTAnnotationSample/Pods-OTAnnotationSample-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -1566,6 +1509,7 @@
 				12B6B941253F2EF100293718 /* OTTextChatTableView.m in Sources */,
 				129EDD59253F2C1400541893 /* main.m in Sources */,
 				12B6B940253F2EE100293718 /* OTTextChatViewController.m in Sources */,
+				127C5D62255177A7000549D5 /* OTAcceleratorCoreBundle.m in Sources */,
 				129EDD54253F2C1400541893 /* CustomSendTextChatTableViewCell.m in Sources */,
 				12B6B93F253F2ED300293718 /* OTTextMessage.m in Sources */,
 				12B6B943253F2F0F00293718 /* OTTextChatNavigationBar.m in Sources */,
@@ -1597,6 +1541,7 @@
 			files = (
 				12B6BABB2540936D00293718 /* OTAnnotationColorPickerView.m in Sources */,
 				12B6BAC22540938600293718 /* OTFullScreenAnnotationViewController.m in Sources */,
+				127C5D6925517B03000549D5 /* UIView+Helper.m in Sources */,
 				12B6BA94254092B500293718 /* UIColor+HexString.m in Sources */,
 				12B6BA252540846600293718 /* SendAnnotationViewController.swift in Sources */,
 				12B6BA842540927C00293718 /* AnnLoggingWrapper.m in Sources */,
@@ -1604,15 +1549,18 @@
 				12B6BA262540846600293718 /* AnnotationBlankCanvasViewController.swift in Sources */,
 				12B6BAC12540938600293718 /* OTAnnotationScrollView.m in Sources */,
 				12B6BAD32540943700293718 /* OTAnnotationToolbarView.m in Sources */,
+				127C5D6825517873000549D5 /* OTAcceleratorSession.m in Sources */,
 				12B6BAA92540930C00293718 /* OTAnnotationTextView.m in Sources */,
 				12B6BAAA2540930C00293718 /* OTAnnotationView.m in Sources */,
 				12B6BA232540846600293718 /* ReceiveAnnotationViewController.m in Sources */,
 				12B6BA92254092B500293718 /* OTAnnotationToolbarView+Animation.m in Sources */,
 				12B6BACD2540940600293718 /* OTAnnotationEditTextViewController.m in Sources */,
 				12B6BA2A2540846600293718 /* main.m in Sources */,
+				127C5D63255177A8000549D5 /* OTAcceleratorCoreBundle.m in Sources */,
 				12B6BA96254092B500293718 /* UIViewController+Helper.m in Sources */,
 				12B6BAB52540933B00293718 /* LHToolbarContainerViewItem.m in Sources */,
 				12B6BAC8254093D600293718 /* OTAnnotationScreenCaptureViewController.m in Sources */,
+				127C5D66255177E6000549D5 /* OTScreenCapture.m in Sources */,
 				12B6BAAB2540930C00293718 /* OTAnnotationDataManager.m in Sources */,
 				12B6BAB62540933B00293718 /* LHToolbarContainerView.m in Sources */,
 				12B6BA93254092B500293718 /* JSON.m in Sources */,
@@ -1623,6 +1571,9 @@
 				12B6BAA82540930C00293718 /* OTAnnotationTextView+Gesture.m in Sources */,
 				12B6BA9A254092C600293718 /* OTAnnotationKitBundle.m in Sources */,
 				12B6BA272540846600293718 /* AppDelegate.m in Sources */,
+				127C5D65255177DD000549D5 /* OTVideoView.m in Sources */,
+				127C5D64255177C7000549D5 /* OTOneToOneCommunicator.m in Sources */,
+				127C5D67255177F9000549D5 /* OTAudioVideoControlView.m in Sources */,
 				12B6BAC9254093D600293718 /* OTAnnotationScreenCaptureView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

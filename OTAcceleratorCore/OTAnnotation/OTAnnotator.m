@@ -11,7 +11,7 @@
 #define MAX_EDGE_SIZE_LIMIT 1280.0f
 #define EDGE_DIMENSION_COMMON_FACTOR 16.0f
 
-#import <OTAcceleratorCore/OTAcceleratorSession.h>
+#import "OTAcceleratorSession.h"
 #import "OTAnnotator.h"
 #import "OTAnnotationToolbarView_UserInterfaces.h"
 #import "UIColor+HexString.h"
