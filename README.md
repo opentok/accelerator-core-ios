@@ -288,19 +288,18 @@ The following classes represent the software design for the OpenTok Annotations 
 
 The following sample apps use `Accelerator Core`:
 
-- [Accelerator Sample App](https://github.com/opentok/accelerator-sample-apps-ios)
+- [Accelerator Sample Apps](https://github.com/opentok/accelerator-sample-apps-ios)
+
+The accelerator and sample app access the OpenTok session through the Accelerator Session Pack layer, which allows them to share a single OpenTok session:
+
+![architecture](./accpackarch.png)
+
+On the Android and iOS mobile platforms, when you try to set a listener (Android) or delegate (iOS), it is not normally possible to set multiple listeners or delegates for the same event. For example, on these mobile platforms you can only set one OpenTok signal listener. The Common Accelerator Session Pack, however, allows you to set up several listeners for the same event.
 
 ### Obtaining OpenTok Credentials
 
 To use OpenTok's framework you need a Session ID, a Token, and an API Key. You can get these values at the [OpenTok Developer Dashboard](https://dashboard.tokbox.com/) . For production deployment, you must generate the Session ID and Token values using one of the [OpenTok Server SDKs](https://tokbox.com/developer/sdks/server/).
 
-## Accelerator Core as a dependency
-
-The Accelerator Core includes the audio-video communication logic contained in all [OpenTok One-to-One Communication Sample Apps](https://github.com/opentok/one-to-one-sample-apps). The accelerator and sample app access the OpenTok session through the Accelerator Session Pack layer, which allows them to share a single OpenTok session:
-
-![architecture](./accpackarch.png)
-
-On the Android and iOS mobile platforms, when you try to set a listener (Android) or delegate (iOS), it is not normally possible to set multiple listeners or delegates for the same event. For example, on these mobile platforms you can only set one OpenTok signal listener. The Common Accelerator Session Pack, however, allows you to set up several listeners for the same event.
 
 ## Development and Contributing
 
