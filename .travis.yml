@@ -5,15 +5,19 @@ cache: cocoapods
 env:
   global:
   - LANG=en_US.UTF-8
-
   - WORKSPACE="OTAcceleratorCore.xcworkspace"
-  - IOS_SCHEME="OTAcceleratorCore"
   - IOS_SDK=iphonesimulator13.6
 
   matrix:
+  - DESTINATION="OS=12.4,name=iPhone 6s"   SDK="$IOS_SDK" SCHEME="OTAcceleratorCore" RUN_TESTS="YES" BUILD_EXAMPLE="NO" POD_LINT="YES" RUN_UI_TESTS="YES"
+  - DESTINATION="OS=13.6,name=iPhone 11 Pro"   SDK="$IOS_SDK" SCHEME="OTAcceleratorCore" RUN_TESTS="YES" BUILD_EXAMPLE="NO" POD_LINT="YES" RUN_UI_TESTS="YES"
 
-  - DESTINATION="OS=12.4,name=iPhone 6s"   SDK="$IOS_SDK" SCHEME="$IOS_SCHEME" RUN_TESTS="YES" BUILD_EXAMPLE="NO" POD_LINT="YES" RUN_UI_TESTS="YES"
-  - DESTINATION="OS=13.6,name=iPhone 11 Pro"   SDK="$IOS_SDK" SCHEME="$IOS_SCHEME" RUN_TESTS="YES" BUILD_EXAMPLE="NO" POD_LINT="YES" RUN_UI_TESTS="YES"
+  - DESTINATION="OS=12.4,name=iPhone 6s"   SDK="$IOS_SDK" SCHEME="OTAnnotationSample" RUN_TESTS="YES" BUILD_EXAMPLE="NO" POD_LINT="YES" RUN_UI_TESTS="YES"
+  - DESTINATION="OS=13.6,name=iPhone 11 Pro"   SDK="$IOS_SDK" SCHEME="OTAnnotationSample" RUN_TESTS="YES" BUILD_EXAMPLE="NO" POD_LINT="YES" RUN_UI_TESTS="YES"
+
+  - DESTINATION="OS=12.4,name=iPhone 6s"     SDK="$IOS_SDK" SCHEME="OTTextChatSample" RUN_TESTS="YES" BUILD_EXAMPLE="NO"  POD_LINT="YES" RUN_UI_TESTS="NO"
+  - DESTINATION="OS=13.6,name=iPhone 11 Pro"   SDK="$IOS_SDK" SCHEME="OTTextChatSample" RUN_TESTS="YES" BUILD_EXAMPLE="YES" POD_LINT="YES" RUN_UI_TESTS="NO"
+
 before_install:
   - gem install cocoapods --pre
   - pod update
@@ -30,6 +34,7 @@ script:
   else
     travis_retry xcodebuild clean build -workspace "$WORKSPACE" -scheme "$SCHEME" -sdk "$SDK" -destination "$DESTINATION" -configuration Debug | xcpretty -c;
   fi
+  
 notifications:
   slack:
     rooms:

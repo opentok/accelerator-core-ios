@@ -2,12 +2,37 @@ project 'OTAcceleratorCore.xcodeproj'
 
 platform :ios, '11.0'
 
-target 'OTAcceleratorCore' do 
+def opentok_pod 
   pod 'OpenTok', '2.18.0'
-  pod 'OTKAnalytics', '= 2.1.2'
-  pod 'SVProgressHUD', '= 2.2.5'
+end
+
+def shared_pods 
+  opentok_pod
+  pod 'OTKAnalytics', '~> 2.1.2'
+end
+
+target 'OTAcceleratorCore' do 
+  shared_pods
+  pod 'SVProgressHUD', '~> 2.2.5'
 end
 
 target 'OTAcceleratorCoreTests' do
-  pod 'OpenTok', '2.18.0'
+  opentok_pod
+end
+
+target 'OTTextChatSample' do
+  shared_pods
+end
+
+target 'OTTextChatTests' do
+  opentok_pod
+end
+
+target 'OTAnnotationSample' do
+  shared_pods
+end
+
+target 'OTAnnotationTests' do
+  opentok_pod
+  pod 'Kiwi'
 end

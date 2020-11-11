@@ -1,24 +1,28 @@
 PODS:
+  - Kiwi (3.0.0)
   - OpenTok (2.18.0)
   - OTKAnalytics (2.1.2)
   - SVProgressHUD (2.2.5)
 
 DEPENDENCIES:
+  - Kiwi
   - OpenTok (= 2.18.0)
-  - OTKAnalytics (= 2.1.2)
-  - SVProgressHUD (= 2.2.5)
+  - OTKAnalytics (~> 2.1.2)
+  - SVProgressHUD (~> 2.2.5)
 
 SPEC REPOS:
   trunk:
+    - Kiwi
     - OpenTok
     - OTKAnalytics
     - SVProgressHUD
 
 SPEC CHECKSUMS:
+  Kiwi: fbeafef0f00e4d8f7dcb3420a4930afe70af77f7
   OpenTok: bf4c81ff741e7976542c61b8f317882f8076eede
   OTKAnalytics: 2de2f8971b5af7f313882ada0b1eae25104296f4
   SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
 
-PODFILE CHECKSUM: d986e7a10a719418ba2d34cdd18b3504fc3add79
+PODFILE CHECKSUM: ae6e6613dcc2470123bfbe5ca9e5834f241c46f5
 
-COCOAPODS: 1.9.3
+COCOAPODS: 1.10.0

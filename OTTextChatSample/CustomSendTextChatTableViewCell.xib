@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="CustomSendTextChatTableViewCell" rowHeight="100" id="KGk-i7-Jjw" customClass="CustomSendTextChatTableViewCell">
+            <rect key="frame" x="0.0" y="0.0" width="319" height="100"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="319" height="99.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="19W-Zv-qDA">
+                        <rect key="frame" x="56" y="8" width="255" height="83.5"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="1000" text="Me" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WO4-wA-1Rb">
+                                <rect key="frame" x="229" y="8" width="18" height="15"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="02:50pm" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ePW-jX-rh5">
+                                <rect key="frame" x="182" y="10" width="39" height="12"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="10"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsLetterSpacingToFitWidth="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xv7-HL-o4n">
+                                <rect key="frame" x="0.0" y="27" width="247" height="48.5"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <attributedString key="attributedText">
+                                    <fragment content="Soda wicket wolf porkchop?">
+                                        <attributes>
+                                            <color key="NSColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                            <font key="NSFont" size="18" name="HelveticaNeue"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="right" lineBreakMode="truncatingTail" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="h7g-U8-ZkI">
+                                <rect key="frame" x="253" y="0.0" width="2" height="83.5"/>
+                                <color key="backgroundColor" red="0.16470588235294117" green="0.81568627450980391" blue="0.93333333333333335" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="2" id="ahH-Ul-48H"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="h7g-U8-ZkI" secondAttribute="trailing" id="1e8-RK-fLf"/>
+                            <constraint firstItem="WO4-wA-1Rb" firstAttribute="baseline" secondItem="ePW-jX-rh5" secondAttribute="baseline" id="93G-Vf-q0N"/>
+                            <constraint firstItem="h7g-U8-ZkI" firstAttribute="leading" secondItem="WO4-wA-1Rb" secondAttribute="trailing" constant="6" id="Aau-nO-ed1"/>
+                            <constraint firstItem="WO4-wA-1Rb" firstAttribute="leading" secondItem="ePW-jX-rh5" secondAttribute="trailing" constant="8" id="LPd-G0-YPV"/>
+                            <constraint firstItem="h7g-U8-ZkI" firstAttribute="top" secondItem="19W-Zv-qDA" secondAttribute="top" id="UEQ-Lk-Zs2"/>
+                            <constraint firstItem="Xv7-HL-o4n" firstAttribute="leading" secondItem="19W-Zv-qDA" secondAttribute="leading" id="WTy-Fm-UFn"/>
+                            <constraint firstAttribute="bottom" secondItem="Xv7-HL-o4n" secondAttribute="bottom" constant="8" id="awB-FG-v05"/>
+                            <constraint firstItem="WO4-wA-1Rb" firstAttribute="top" secondItem="19W-Zv-qDA" secondAttribute="top" constant="8" id="d0X-Wi-tuq"/>
+                            <constraint firstItem="Xv7-HL-o4n" firstAttribute="top" secondItem="WO4-wA-1Rb" secondAttribute="bottom" constant="4" id="hPZ-e2-P2y"/>
+                            <constraint firstAttribute="bottom" secondItem="h7g-U8-ZkI" secondAttribute="bottom" id="hgK-ud-84J"/>
+                            <constraint firstItem="h7g-U8-ZkI" firstAttribute="leading" secondItem="Xv7-HL-o4n" secondAttribute="trailing" constant="6" id="urS-gW-7L7"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="bottom" secondItem="19W-Zv-qDA" secondAttribute="bottom" constant="8" id="WBs-om-yKe"/>
+                    <constraint firstItem="19W-Zv-qDA" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="ffD-tn-0e2"/>
+                    <constraint firstAttribute="trailing" secondItem="19W-Zv-qDA" secondAttribute="trailing" constant="8" id="w7m-EE-Dv0"/>
+                </constraints>
+            </tableViewCellContentView>
+            <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="19W-Zv-qDA" firstAttribute="width" secondItem="KGk-i7-Jjw" secondAttribute="width" multiplier="0.8" id="tlt-1o-wQr"/>
+            </constraints>
+            <connections>
+                <outlet property="textLabel" destination="Xv7-HL-o4n" id="HPY-qT-tUy"/>
+                <outlet property="timeLabel" destination="ePW-jX-rh5" id="SsD-AD-hvu"/>
+            </connections>
+            <point key="canvasLocation" x="687.5" y="357"/>
+        </tableViewCell>
+    </objects>
+</document>
