@@ -7,16 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-
-static NSString* const KLogClientVersion = @"ios-accelerator-core-1.1.0";
-static NSString* const kLogComponentIdentifier = @"OTAcceleratorCore";
-static NSString* const KLogActionInitialize = @"Init";
-static NSString* const KLogActionStartCommunication = @"StartComm";
-static NSString* const KLogActionStartScreenCommunication = @"StartScreenComm";
-static NSString* const KLogActionEndCommunication = @"EndComm";
-static NSString* const KLogVariationAttempt = @"Attempt";
-static NSString* const KLogVariationSuccess = @"Success";
-static NSString* const KLogVariationFailure = @"Failure";
+#import "Constants.h"
 
 typedef NS_ENUM(NSUInteger, OTCommunicationSignal) {
     OTPublisherCreated,     // capture camera/screen successfully and publishing in the OpenTok cloud

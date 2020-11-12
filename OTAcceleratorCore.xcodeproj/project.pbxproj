@@ -181,7 +181,6 @@
 
 /* Begin PBXFileReference section */
 		120640212525FEBC008E3516 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
-		129EDCFC253F0E0500541893 /* Constant.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constant.h; sourceTree = "<group>"; };
 		129EDCFD253F0E0600541893 /* OTTextMessage_Private.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OTTextMessage_Private.h; sourceTree = "<group>"; };
 		129EDCFE253F0E0600541893 /* OTTextMessage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OTTextMessage.m; sourceTree = "<group>"; };
 		129EDD00253F0E0600541893 /* OTTextChat.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OTTextChat.m; sourceTree = "<group>"; };
@@ -467,7 +466,6 @@
 		129EDCFB253F0DF500541893 /* TextChat */ = {
 			isa = PBXGroup;
 			children = (
-				129EDCFC253F0E0500541893 /* Constant.h */,
 				129EDD01253F0E0600541893 /* OTTextChat.h */,
 				129EDD00253F0E0600541893 /* OTTextChat.m */,
 				129EDCFD253F0E0600541893 /* OTTextMessage_Private.h */,
@@ -577,7 +575,6 @@
 				12B6BA832540927C00293718 /* AnnLoggingWrapper.h */,
 				12B6BA822540927C00293718 /* AnnLoggingWrapper.m */,
 				12B6BA87254092A400293718 /* Category */,
-				12B6BA97254092C600293718 /* Constants.h */,
 				12B6BA98254092C600293718 /* OTAnnotationKitBundle.h */,
 				12B6BA99254092C600293718 /* OTAnnotationKitBundle.m */,
 				12B6BA9B254092F500293718 /* OTAnnotationNative */,
@@ -854,6 +851,7 @@
 				A080E47C1E244CFA007972D8 /* OTCommonCommunicator.h */,
 				A0AB9F0E1E3AC2D50068E20F /* OTScreenCapture.h */,
 				A0AB9F0F1E3AC2D50068E20F /* OTScreenCapture.m */,
+				12B6BA97254092C600293718 /* Constants.h */,
 				A0565F221DF63F62001F9032 /* Info.plist */,
 			);
 			path = OTAcceleratorCore;
