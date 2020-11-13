@@ -1,0 +1,40 @@
+name: CI
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+jobs:
+  build:
+    name: Build and Test 
+    runs-on: macos-latest
+    strategy:
+      matrix:
+        scheme: [OTAcceleratorCore, OTAnnotationSample, OTTextChatSample]
+        destination: ['platform=iOS Simulator,name=iPhone 6s,OS=12.4', 'platform=iOS Simulator,name=iPhone 11,OS=13.6']
+    
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Cache Pods
+        uses: actions/cache@v2
+        with:
+          path: Pods
+          key: ${{ runner.os }}-pods-${{ hashFiles('**/Podfile.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-pods-
+      - name: Setup Xcode version
+        uses: maxim-lobanov/setup-xcode@v1.2.1
+        with: 
+          xcode-version: '11.6'
+      - name: Prepare iOS 12 simulator
+        run: |
+            sudo mkdir -p /Library/Developer/CoreSimulator/Profiles/Runtimes
+            sudo ln -s /Applications/Xcode_10.3.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/Library/CoreSimulator/Profiles/Runtimes/iOS.simruntime /Library/Developer/CoreSimulator/Profiles/Runtimes/iOS\ 12.4.simruntime
+      - name: Cocoapods
+        run: pod update
+      - name: Test ${{ matrix.scheme }}
+        run: xcodebuild clean build test -workspace OTAcceleratorCore.xcworkspace -scheme ${{ matrix.scheme }} -destination "${{ matrix.destination }}" -configuration Debug || exit 1
+     
