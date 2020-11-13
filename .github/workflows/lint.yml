@@ -19,12 +19,3 @@ jobs:
           xcode-version: '11.6'
       - name: Lint Podspec
         run: pod lib lint --use-libraries --allow-warnings --verbose
-  slack:
-    runs-on: ubuntu-latest
-    env:
-      SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
-    steps:
-      - uses: act10ns/slack@v1
-        with:
-          status: ${{ job.status }}
-        if: always()
