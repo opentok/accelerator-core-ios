@@ -50,6 +50,3 @@ jobs:
         run: pod update
       - name: Test ${{ matrix.scheme }}
         run: xcodebuild clean build test -workspace OTAcceleratorCore.xcworkspace -scheme ${{ matrix.scheme }} -destination "${{ matrix.destination }}" -configuration Debug || exit 1
-
-  slack:
-    name: Post to slack
