@@ -1,6 +1,6 @@
 # Accelerator Core iOS
 
-[![Build Status](https://travis-ci.org/opentok/accelerator-core-ios.svg?branch=master)](https://travis-ci.org/opentok/accelerator-core-ios)
+[![Build Status](https://travis-ci.org/opentok/accelerator-core-ios.svg?branch=main)](https://travis-ci.org/opentok/accelerator-core-ios)
 [![Version Status](https://img.shields.io/cocoapods/v/OTAcceleratorCore.svg)](https://cocoapods.org/pods/OTAcceleratorCore)
 [![license MIT](https://img.shields.io/cocoapods/l/OTAcceleratorCore.svg)](https://cocoapods.org/pods/OTAcceleratorCore)
 [![Platform](https://img.shields.io/cocoapods/p/OTAcceleratorCore.svg)](https://cocoapods.org/pods/OTAcceleratorCore)
