@@ -357,4 +357,6 @@
 }
 
 
+@synthesize videoContentHint;
+
 @end

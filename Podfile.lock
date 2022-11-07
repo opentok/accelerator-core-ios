@@ -1,12 +1,14 @@
 PODS:
   - Kiwi (3.0.0)
-  - OpenTok (2.18.0)
+  - OpenTok (2.24.0):
+    - VonageWebRTC (= 99.2.39)
   - OTKAnalytics (2.1.2)
   - SVProgressHUD (2.2.5)
+  - VonageWebRTC (99.2.39)
 
 DEPENDENCIES:
   - Kiwi
-  - OpenTok (= 2.18.0)
+  - OpenTok (= 2.24.0)
   - OTKAnalytics (~> 2.1.2)
   - SVProgressHUD (~> 2.2.5)
 
@@ -16,13 +18,15 @@ SPEC REPOS:
     - OpenTok
     - OTKAnalytics
     - SVProgressHUD
+    - VonageWebRTC
 
 SPEC CHECKSUMS:
   Kiwi: fbeafef0f00e4d8f7dcb3420a4930afe70af77f7
-  OpenTok: bf4c81ff741e7976542c61b8f317882f8076eede
+  OpenTok: 6995850a6a7a37464ffece03ae0b8563b0f5445d
   OTKAnalytics: 2de2f8971b5af7f313882ada0b1eae25104296f4
   SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
+  VonageWebRTC: 4b57187170ef4ea435006e932600646a0521d6b0
 
-PODFILE CHECKSUM: ae6e6613dcc2470123bfbe5ca9e5834f241c46f5
+PODFILE CHECKSUM: d267e07ef26d14a58243988e5e487e02231ebc77
 
-COCOAPODS: 1.10.0
+COCOAPODS: 1.11.3

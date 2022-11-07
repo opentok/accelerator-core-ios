@@ -98,6 +98,9 @@
 		12B6BB0C25409B4500293718 /* OTAnnotationScreenCaptureViewTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 12B6BB0125409B4500293718 /* OTAnnotationScreenCaptureViewTests.m */; };
 		12B6BB0D25409B4500293718 /* OTAnnotationTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 12B6BB0225409B4500293718 /* OTAnnotationTextView.m */; };
 		12B6BB0E25409B4500293718 /* OTAnnotationScrollViewTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 12B6BB0325409B4500293718 /* OTAnnotationScrollViewTests.m */; };
+		799283F088272AA3E28D6A6F /* libPods-OTAcceleratorCoreTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C3A69B20BEA760667F5FCA69 /* libPods-OTAcceleratorCoreTests.a */; };
+		8200FCF1440526E3C7DCB8C5 /* libPods-OTAnnotationSample.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E75E9DC7AD580ADF4BC735DC /* libPods-OTAnnotationSample.a */; };
+		958024BB935CEC0F2EFF5BD4 /* libPods-OTTextChatSample.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 069AEBF8928CA7BEA0F7B146 /* libPods-OTTextChatSample.a */; };
 		96D1A01A22B85DDF00744ABC /* OTVideoViewTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A0AB9FF31E3ED2060068E20F /* OTVideoViewTests.m */; };
 		96DE392C22B8979400A41369 /* OTVideoView.m in Sources */ = {isa = PBXBuildFile; fileRef = A05259321E9435DA000F9E88 /* OTVideoView.m */; };
 		A0127A901D34651B00CDA3F5 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A0127A8F1D34651B00CDA3F5 /* main.m */; };
@@ -133,6 +136,9 @@
 		A0AB9FF21E3ED08B0068E20F /* OTViewHelperTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A0AB9FF11E3ED08B0068E20F /* OTViewHelperTests.m */; };
 		A0C142BD1E95992B000120E4 /* OTAudioVideoControlViewTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A0C142BC1E95992B000120E4 /* OTAudioVideoControlViewTests.m */; };
 		A0FEAC001D73B3BF000BDDA4 /* OTAcceleratorCore.podspec in Resources */ = {isa = PBXBuildFile; fileRef = A0FEABFD1D73B3BF000BDDA4 /* OTAcceleratorCore.podspec */; };
+		C3000394E703F6979ACE82A3 /* libPods-OTAnnotationTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C62A438C570975EE60FBD84 /* libPods-OTAnnotationTests.a */; };
+		D7D78862A971A37E84F00667 /* libPods-OTAcceleratorCore.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5037FD4BE9803208AF62871B /* libPods-OTAcceleratorCore.a */; };
+		F0531CE311985DFBA638E9D8 /* libPods-OTTextChatTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F8DAD18CB5754CC8013C195D /* libPods-OTTextChatTests.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -180,6 +186,9 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		000871E2B372B7AE8BC8E1A8 /* Pods-OTAnnotationTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OTAnnotationTests.release.xcconfig"; path = "Target Support Files/Pods-OTAnnotationTests/Pods-OTAnnotationTests.release.xcconfig"; sourceTree = "<group>"; };
+		069AEBF8928CA7BEA0F7B146 /* libPods-OTTextChatSample.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-OTTextChatSample.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		107933102B8252CEA39158B7 /* Pods-OTAnnotationSample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OTAnnotationSample.release.xcconfig"; path = "Target Support Files/Pods-OTAnnotationSample/Pods-OTAnnotationSample.release.xcconfig"; sourceTree = "<group>"; };
 		120640212525FEBC008E3516 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 		129EDCFD253F0E0600541893 /* OTTextMessage_Private.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OTTextMessage_Private.h; sourceTree = "<group>"; };
 		129EDCFE253F0E0600541893 /* OTTextMessage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OTTextMessage.m; sourceTree = "<group>"; };
@@ -324,6 +333,14 @@
 		12B6BB0125409B4500293718 /* OTAnnotationScreenCaptureViewTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OTAnnotationScreenCaptureViewTests.m; sourceTree = "<group>"; };
 		12B6BB0225409B4500293718 /* OTAnnotationTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OTAnnotationTextView.m; sourceTree = "<group>"; };
 		12B6BB0325409B4500293718 /* OTAnnotationScrollViewTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OTAnnotationScrollViewTests.m; sourceTree = "<group>"; };
+		1EB5351E36E5DA75C67BF803 /* Pods-OTAcceleratorCore.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OTAcceleratorCore.release.xcconfig"; path = "Target Support Files/Pods-OTAcceleratorCore/Pods-OTAcceleratorCore.release.xcconfig"; sourceTree = "<group>"; };
+		2113E7AEB9C7E6C903C28861 /* Pods-OTAnnotationTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OTAnnotationTests.debug.xcconfig"; path = "Target Support Files/Pods-OTAnnotationTests/Pods-OTAnnotationTests.debug.xcconfig"; sourceTree = "<group>"; };
+		222DF5B350E4E0C0DF2A96EB /* Pods-OTAcceleratorCoreTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OTAcceleratorCoreTests.release.xcconfig"; path = "Target Support Files/Pods-OTAcceleratorCoreTests/Pods-OTAcceleratorCoreTests.release.xcconfig"; sourceTree = "<group>"; };
+		3B1DF5D3521816F49A206234 /* Pods-OTTextChatSample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OTTextChatSample.debug.xcconfig"; path = "Target Support Files/Pods-OTTextChatSample/Pods-OTTextChatSample.debug.xcconfig"; sourceTree = "<group>"; };
+		3C62A438C570975EE60FBD84 /* libPods-OTAnnotationTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-OTAnnotationTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		43DD319754E4E8322C975660 /* Pods-OTTextChatTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OTTextChatTests.debug.xcconfig"; path = "Target Support Files/Pods-OTTextChatTests/Pods-OTTextChatTests.debug.xcconfig"; sourceTree = "<group>"; };
+		5037FD4BE9803208AF62871B /* libPods-OTAcceleratorCore.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-OTAcceleratorCore.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		5543A76E82FDBD44893EEDA2 /* Pods-OTAcceleratorCore.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OTAcceleratorCore.debug.xcconfig"; path = "Target Support Files/Pods-OTAcceleratorCore/Pods-OTAcceleratorCore.debug.xcconfig"; sourceTree = "<group>"; };
 		A0127A8B1D34651B00CDA3F5 /* OTAcceleratorCore.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OTAcceleratorCore.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A0127A8F1D34651B00CDA3F5 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		A0127A911D34651B00CDA3F5 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -386,6 +403,13 @@
 		A0CDA09E1DF23F060018A2BA /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A0FEABFC1D73B3BF000BDDA4 /* CHANGELOG.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = CHANGELOG.md; sourceTree = "<group>"; };
 		A0FEABFD1D73B3BF000BDDA4 /* OTAcceleratorCore.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = OTAcceleratorCore.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		AC5DE2C8F0F7C0C314C7A4C8 /* Pods-OTAcceleratorCoreTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OTAcceleratorCoreTests.debug.xcconfig"; path = "Target Support Files/Pods-OTAcceleratorCoreTests/Pods-OTAcceleratorCoreTests.debug.xcconfig"; sourceTree = "<group>"; };
+		C3A69B20BEA760667F5FCA69 /* libPods-OTAcceleratorCoreTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-OTAcceleratorCoreTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		DE2478BCBDCCC1BF6F59C573 /* Pods-OTTextChatTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OTTextChatTests.release.xcconfig"; path = "Target Support Files/Pods-OTTextChatTests/Pods-OTTextChatTests.release.xcconfig"; sourceTree = "<group>"; };
+		E5613AF0D4C54D6D0C2D35DC /* Pods-OTAnnotationSample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OTAnnotationSample.debug.xcconfig"; path = "Target Support Files/Pods-OTAnnotationSample/Pods-OTAnnotationSample.debug.xcconfig"; sourceTree = "<group>"; };
+		E75E9DC7AD580ADF4BC735DC /* libPods-OTAnnotationSample.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-OTAnnotationSample.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F288DB04BCC38B14D51DFF67 /* Pods-OTTextChatSample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OTTextChatSample.release.xcconfig"; path = "Target Support Files/Pods-OTTextChatSample/Pods-OTTextChatSample.release.xcconfig"; sourceTree = "<group>"; };
+		F8DAD18CB5754CC8013C195D /* libPods-OTTextChatTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-OTTextChatTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -393,6 +417,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				958024BB935CEC0F2EFF5BD4 /* libPods-OTTextChatSample.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -407,6 +432,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F0531CE311985DFBA638E9D8 /* libPods-OTTextChatTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -414,6 +440,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8200FCF1440526E3C7DCB8C5 /* libPods-OTAnnotationSample.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -428,6 +455,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C3000394E703F6979ACE82A3 /* libPods-OTAnnotationTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -443,6 +471,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				120640222525FEBC008E3516 /* WebKit.framework in Frameworks */,
+				D7D78862A971A37E84F00667 /* libPods-OTAcceleratorCore.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -457,6 +486,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				799283F088272AA3E28D6A6F /* libPods-OTAcceleratorCoreTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -894,6 +924,18 @@
 		D3534160ECF98265C12CC505 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
+				5543A76E82FDBD44893EEDA2 /* Pods-OTAcceleratorCore.debug.xcconfig */,
+				1EB5351E36E5DA75C67BF803 /* Pods-OTAcceleratorCore.release.xcconfig */,
+				AC5DE2C8F0F7C0C314C7A4C8 /* Pods-OTAcceleratorCoreTests.debug.xcconfig */,
+				222DF5B350E4E0C0DF2A96EB /* Pods-OTAcceleratorCoreTests.release.xcconfig */,
+				E5613AF0D4C54D6D0C2D35DC /* Pods-OTAnnotationSample.debug.xcconfig */,
+				107933102B8252CEA39158B7 /* Pods-OTAnnotationSample.release.xcconfig */,
+				2113E7AEB9C7E6C903C28861 /* Pods-OTAnnotationTests.debug.xcconfig */,
+				000871E2B372B7AE8BC8E1A8 /* Pods-OTAnnotationTests.release.xcconfig */,
+				3B1DF5D3521816F49A206234 /* Pods-OTTextChatSample.debug.xcconfig */,
+				F288DB04BCC38B14D51DFF67 /* Pods-OTTextChatSample.release.xcconfig */,
+				43DD319754E4E8322C975660 /* Pods-OTTextChatTests.debug.xcconfig */,
+				DE2478BCBDCCC1BF6F59C573 /* Pods-OTTextChatTests.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -903,6 +945,12 @@
 			children = (
 				129EDD5E253F2E0F00541893 /* libOTAcceleratorCore.a */,
 				120640212525FEBC008E3516 /* WebKit.framework */,
+				5037FD4BE9803208AF62871B /* libPods-OTAcceleratorCore.a */,
+				C3A69B20BEA760667F5FCA69 /* libPods-OTAcceleratorCoreTests.a */,
+				E75E9DC7AD580ADF4BC735DC /* libPods-OTAnnotationSample.a */,
+				3C62A438C570975EE60FBD84 /* libPods-OTAnnotationTests.a */,
+				069AEBF8928CA7BEA0F7B146 /* libPods-OTTextChatSample.a */,
+				F8DAD18CB5754CC8013C195D /* libPods-OTTextChatTests.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -914,6 +962,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 129EDD36253F2BBE00541893 /* Build configuration list for PBXNativeTarget "OTTextChatSample" */;
 			buildPhases = (
+				AEEC936FDCF583CB350C79B6 /* [CP] Check Pods Manifest.lock */,
 				129EDD1C253F2BBD00541893 /* Sources */,
 				129EDD1D253F2BBD00541893 /* Frameworks */,
 				129EDD1E253F2BBD00541893 /* Resources */,
@@ -948,6 +997,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 12B6B99425407C1400293718 /* Build configuration list for PBXNativeTarget "OTTextChatTests" */;
 			buildPhases = (
+				F15679DE41B16E854BC34122 /* [CP] Check Pods Manifest.lock */,
 				12B6B98925407C1400293718 /* Sources */,
 				12B6B98A25407C1400293718 /* Frameworks */,
 				12B6B98B25407C1400293718 /* Resources */,
@@ -966,6 +1016,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 12B6BA0F2540843400293718 /* Build configuration list for PBXNativeTarget "OTAnnotationSample" */;
 			buildPhases = (
+				9E1C69703B5AE521116250AB /* [CP] Check Pods Manifest.lock */,
 				12B6B9F52540843200293718 /* Sources */,
 				12B6B9F62540843200293718 /* Frameworks */,
 				12B6B9F72540843200293718 /* Resources */,
@@ -1000,6 +1051,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 12B6BAF625409B2C00293718 /* Build configuration list for PBXNativeTarget "OTAnnotationTests" */;
 			buildPhases = (
+				E7E6EFB8BF2529766F13D81F /* [CP] Check Pods Manifest.lock */,
 				12B6BAEB25409B2C00293718 /* Sources */,
 				12B6BAEC25409B2C00293718 /* Frameworks */,
 				12B6BAED25409B2C00293718 /* Resources */,
@@ -1018,10 +1070,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A0127AA21D34651B00CDA3F5 /* Build configuration list for PBXNativeTarget "OTAcceleratorCore" */;
 			buildPhases = (
+				FBDF66391C5F0D4684C886B5 /* [CP] Check Pods Manifest.lock */,
 				A0127A871D34651B00CDA3F5 /* Sources */,
 				A0127A881D34651B00CDA3F5 /* Frameworks */,
 				A0127A891D34651B00CDA3F5 /* Resources */,
 				A0127AB61D34652500CDA3F5 /* Embed Frameworks */,
+				1BE04AB86476C3A4D0643F4D /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -1071,6 +1125,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A0AB9F251E3AD9F20068E20F /* Build configuration list for PBXNativeTarget "OTAcceleratorCoreTests" */;
 			buildPhases = (
+				228E3699E1BB9B2458BAECED /* [CP] Check Pods Manifest.lock */,
 				A0AB9F181E3AD9F20068E20F /* Sources */,
 				A0AB9F191E3AD9F20068E20F /* Frameworks */,
 				A0AB9F1A1E3AD9F20068E20F /* Resources */,
@@ -1091,7 +1146,7 @@
 		A0127A831D34651B00CDA3F5 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 1150;
+				LastUpgradeCheck = 1410;
 				ORGANIZATIONNAME = "Tokbox, Inc.";
 				TargetAttributes = {
 					129EDD1F253F2BBD00541893 = {
@@ -1276,6 +1331,159 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		1BE04AB86476C3A4D0643F4D /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-OTAcceleratorCore/Pods-OTAcceleratorCore-resources.sh",
+				"${PODS_ROOT}/SVProgressHUD/SVProgressHUD/SVProgressHUD.bundle",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/SVProgressHUD.bundle",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-OTAcceleratorCore/Pods-OTAcceleratorCore-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		228E3699E1BB9B2458BAECED /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-OTAcceleratorCoreTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9E1C69703B5AE521116250AB /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-OTAnnotationSample-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		AEEC936FDCF583CB350C79B6 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-OTTextChatSample-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E7E6EFB8BF2529766F13D81F /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-OTAnnotationTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F15679DE41B16E854BC34122 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-OTTextChatTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FBDF66391C5F0D4684C886B5 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-OTAcceleratorCore-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		129EDD1C253F2BBD00541893 /* Sources */ = {
@@ -1488,6 +1696,7 @@
 /* Begin XCBuildConfiguration section */
 		129EDD37253F2BBE00541893 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3B1DF5D3521816F49A206234 /* Pods-OTTextChatSample.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
@@ -1500,7 +1709,7 @@
 				DEVELOPMENT_TEAM = 7F2B5ZSP8Q;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				INFOPLIST_FILE = OTTextChatSample/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
@@ -1512,6 +1721,7 @@
 		};
 		129EDD38253F2BBE00541893 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F288DB04BCC38B14D51DFF67 /* Pods-OTTextChatSample.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
@@ -1524,7 +1734,7 @@
 				DEVELOPMENT_TEAM = 7F2B5ZSP8Q;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				INFOPLIST_FILE = OTTextChatSample/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MTL_FAST_MATH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = com.vonage.OTTextChat;
@@ -1586,6 +1796,7 @@
 		};
 		12B6B99525407C1400293718 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 43DD319754E4E8322C975660 /* Pods-OTTextChatTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
@@ -1597,7 +1808,7 @@
 				DEVELOPMENT_TEAM = 7F2B5ZSP8Q;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				INFOPLIST_FILE = OTTextChatTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
@@ -1610,6 +1821,7 @@
 		};
 		12B6B99625407C1400293718 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DE2478BCBDCCC1BF6F59C573 /* Pods-OTTextChatTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
@@ -1621,7 +1833,7 @@
 				DEVELOPMENT_TEAM = 7F2B5ZSP8Q;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				INFOPLIST_FILE = OTTextChatTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MTL_FAST_MATH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = com.vonage.OTTextChatTests;
@@ -1633,6 +1845,7 @@
 		};
 		12B6BA102540843400293718 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E5613AF0D4C54D6D0C2D35DC /* Pods-OTAnnotationSample.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
@@ -1645,7 +1858,7 @@
 				DEVELOPMENT_TEAM = 7F2B5ZSP8Q;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				INFOPLIST_FILE = OTAnnotationSample/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
@@ -1660,6 +1873,7 @@
 		};
 		12B6BA112540843400293718 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 107933102B8252CEA39158B7 /* Pods-OTAnnotationSample.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
@@ -1672,7 +1886,7 @@
 				DEVELOPMENT_TEAM = 7F2B5ZSP8Q;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				INFOPLIST_FILE = OTAnnotationSample/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MTL_FAST_MATH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = com.vonage.OTAnnotationSample;
@@ -1734,6 +1948,7 @@
 		};
 		12B6BAF725409B2C00293718 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2113E7AEB9C7E6C903C28861 /* Pods-OTAnnotationTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -1746,7 +1961,7 @@
 				DEVELOPMENT_TEAM = 7F2B5ZSP8Q;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				INFOPLIST_FILE = OTAnnotationTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
@@ -1760,6 +1975,7 @@
 		};
 		12B6BAF825409B2C00293718 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 000871E2B372B7AE8BC8E1A8 /* Pods-OTAnnotationTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -1772,7 +1988,7 @@
 				DEVELOPMENT_TEAM = 7F2B5ZSP8Q;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				INFOPLIST_FILE = OTAnnotationTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MTL_FAST_MATH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = com.vonage.OTAnnotationTests;
@@ -1806,6 +2022,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -1830,7 +2047,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -1862,6 +2079,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -1880,9 +2098,10 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 			};
@@ -1890,12 +2109,13 @@
 		};
 		A0127AA31D34651B00CDA3F5 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5543A76E82FDBD44893EEDA2 /* Pods-OTAcceleratorCore.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = OTAcceleratorCore/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = com.tokbox.OTAcceleratorCore;
@@ -1905,12 +2125,13 @@
 		};
 		A0127AA41D34651B00CDA3F5 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1EB5351E36E5DA75C67BF803 /* Pods-OTAcceleratorCore.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = OTAcceleratorCore/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.tokbox.OTAcceleratorCore;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1923,7 +2144,7 @@
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = OTAcceleratorCoreUITests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.tokbox.OTAcceleratorCoreUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1937,7 +2158,7 @@
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = OTAcceleratorCoreUITests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.tokbox.OTAcceleratorCoreUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1955,7 +2176,7 @@
 				DEVELOPMENT_TEAM = MGD69Q275W;
 				INFOPLIST_FILE = "$(SRCROOT)/OTAcceleratorCoreBundle/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Bundles";
-				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				MACOSX_DEPLOYMENT_TARGET = "$(RECOMMENDED_MACOSX_DEPLOYMENT_TARGET)";
 				PRODUCT_BUNDLE_IDENTIFIER = com.tokbox.OTAcceleratorCoreBundle;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
@@ -1974,7 +2195,7 @@
 				DEVELOPMENT_TEAM = MGD69Q275W;
 				INFOPLIST_FILE = "$(SRCROOT)/OTAcceleratorCoreBundle/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Bundles";
-				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				MACOSX_DEPLOYMENT_TARGET = "$(RECOMMENDED_MACOSX_DEPLOYMENT_TARGET)";
 				PRODUCT_BUNDLE_IDENTIFIER = com.tokbox.OTAcceleratorCoreBundle;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
@@ -1985,12 +2206,13 @@
 		};
 		A0AB9F231E3AD9F20068E20F /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = AC5DE2C8F0F7C0C314C7A4C8 /* Pods-OTAcceleratorCoreTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = OTAcceleratorCoreTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.tokbox.OTAcceleratorCoreTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -2000,12 +2222,13 @@
 		};
 		A0AB9F241E3AD9F20068E20F /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 222DF5B350E4E0C0DF2A96EB /* Pods-OTAcceleratorCoreTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = OTAcceleratorCoreTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.tokbox.OTAcceleratorCoreTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";

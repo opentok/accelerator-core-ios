@@ -31,9 +31,6 @@ class SendAnnotationViewController: UIViewController, OTOneToOneCommunicatorData
                     self.sharer?.isPublishVideo = false
                 }
                 else if signal == .subscriberReady {
-                    self.sharer?.subscriberView.frame = self.shareView.bounds
-                    self.shareView.addSubview(self.sharer!.subscriberView)
-                    
                     self.annotator.dataSource = self
                     self.annotator.connect {
                         (signal, error) in
