@@ -356,7 +356,4 @@
     CVPixelBufferUnlockBaseAddress(ref, 0);
 }
 
-
-@synthesize videoContentHint;
-
 @end
