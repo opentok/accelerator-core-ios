@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
   s.name             = "OTAcceleratorCore"
 
-  s.version          = "3.0.0"
+  s.version          = "4.0.0"
   s.summary          = "A painless way to integrate WebRTC audio/video(camera + screen sharing)/text to any iOS applications via OpenTok."
 
   s.description      = "The OpenTok Accelerator Core is a collection of reusable components built on top of the OpenTok iOS SDK using best practices. The core components help you to use OpenTok to add one to one or multiparty audio and video calls to your application with screen sharing. The text chat components help add text messaging to your application, and the annotation components will help with sharing screen annotations.
