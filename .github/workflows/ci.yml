@@ -2,9 +2,9 @@ name: CI
 
 on:
   push:
-    branches: [ master ]
+    branches: [ main ]
   pull_request:
-    branches: [ master ]
+    branches: [ main ]
 
 jobs:
   lint:
@@ -16,7 +16,7 @@ jobs:
       - name: Setup Xcode version
         uses: maxim-lobanov/setup-xcode@v1.2.1
         with: 
-          xcode-version: '11.6'
+          xcode-version: '14.1'
       - name: Lint Podspec
         run: pod lib lint --use-libraries --allow-warnings --verbose   
 
@@ -26,7 +26,7 @@ jobs:
     strategy:
       matrix:
         scheme: [OTAcceleratorCore, OTAnnotationSample, OTTextChatSample]
-        destination: ['platform=iOS Simulator,name=iPhone 6s,OS=12.4', 'platform=iOS Simulator,name=iPhone 11,OS=13.6']
+        destination: ['platform=iOS Simulator,name=iPhone 14,OS=16.1']
     
     steps:
       - name: Checkout
@@ -41,11 +41,7 @@ jobs:
       - name: Setup Xcode version
         uses: maxim-lobanov/setup-xcode@v1.2.1
         with: 
-          xcode-version: '11.6'
-      - name: Prepare iOS 12 simulator
-        run: |
-            sudo mkdir -p /Library/Developer/CoreSimulator/Profiles/Runtimes
-            sudo ln -s /Applications/Xcode_10.3.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/Library/CoreSimulator/Profiles/Runtimes/iOS.simruntime /Library/Developer/CoreSimulator/Profiles/Runtimes/iOS\ 12.4.simruntime
+          xcode-version: '14.1'
       - name: Cocoapods
         run: pod update
       - name: Test ${{ matrix.scheme }}

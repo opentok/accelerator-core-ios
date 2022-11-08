@@ -1,9 +1,9 @@
 project 'OTAcceleratorCore.xcodeproj'
 
-platform :ios, '11.0'
+platform :ios, '12.0'
 
 def opentok_pod 
-  pod 'OpenTok', '2.18.0'
+  pod 'OpenTok', '2.24.0'
 end
 
 def shared_pods 

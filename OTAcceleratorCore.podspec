@@ -27,6 +27,12 @@ Pod::Spec.new do |s|
       'OTTextChatSampleBundle/**/*.xib', 'OTTextChatSampleBundle/Assets.xcassets',
       'OTAnnotationSampleBundle/**/*.xib', 'OTAnnotationSampleBundle/Assets.xcassets']
   }
+
+   # See https://github.com/CocoaPods/CocoaPods/issues/10065
+   s.pod_target_xcconfig = {
+     'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64'
+   }
+   s.user_target_xcconfig = { 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64' }
   
   s.dependency 'OTKAnalytics', '2.1.2'
   s.dependency 'OpenTok', '2.18.1'

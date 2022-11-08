@@ -356,5 +356,4 @@
     CVPixelBufferUnlockBaseAddress(ref, 0);
 }
 
-
 @end

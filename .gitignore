@@ -59,3 +59,4 @@ fastlane/screenshots
 
 OTAcceleratorCore.xcworkspace
 iOSInjectionProject/
+.DS_Store
