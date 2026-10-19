@@ -8,6 +8,8 @@
 
 <img src="https://assets.tokbox.com/img/vonage/Vonage_VideoAPI_black.svg" height="48px" alt="Tokbox is now known as Vonage" />
 
+> ⚠️ This repository is deprecated and will no longer receive meaningful updates. For new projects and migrations, we recommend using the [Vonage Video iOS reference application](https://github.com/Vonage/vonage-video-ios-app).
+
 The Accelerator Core is a solution to integrate audio/video communication to any iOS applications via OpenTok platform. [Accelerator TextChat](https://github.com/opentok/accelerator-textchat-ios) and [Accelerator Annotation](https://github.com/opentok/accelerator-annotation-ios) have been deprecated and are now part of Accelerator Core.
 
 Accelerator Core helps you with:
